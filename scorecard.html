@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Readiness Scorecard | Bassin Consulting</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='15' fill='%232A2530'/><circle cx='16' cy='16' r='13' fill='none' stroke='%23C07842' stroke-width='1.5'/><text x='16' y='21' font-size='16' font-weight='800' font-family='sans-serif' text-anchor='middle' fill='%23FDFCF9'>B</text></svg>" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --color-cream: #FDFCF9;
+  --color-linen: #F7F3EE;
+  --color-plum: #2A2530;
+  --color-copper: #C07842;
+  --color-copper-light: #D49A68;
+  --color-driftwood: #8E857E;
+  --color-lavender: #F3F0F6;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--color-cream);
+  color: var(--color-plum);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+/* NAV */
+nav {
+  background: var(--color-plum);
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-mark {
+  height: 32px; width: 32px; border-radius: 50%; background: var(--color-plum);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: inset 0 0 0 1.5px var(--color-copper);
+  flex-shrink: 0;
+}
+.nav-mark span { font-family: 'Sora', sans-serif; font-weight: 800; color: var(--color-cream); font-size: 14px; }
+.nav-wordmark {
+  font-family: 'Sora', sans-serif; font-weight: 800; font-size: 13px;
+  letter-spacing: 4px; text-transform: uppercase; color: var(--color-cream);
+}
+
+/* HERO */
+.hero {
+  background: var(--color-plum);
+  padding: 80px 32px 72px;
+  text-align: center;
+}
+.hero-label {
+  font-family: 'Sora', sans-serif; font-weight: 700; font-size: 11px;
+  letter-spacing: 3px; text-transform: uppercase; color: var(--color-copper);
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-family: 'Sora', sans-serif; font-weight: 800; font-size: clamp(28px, 5vw, 44px);
+  color: var(--color-cream); margin-bottom: 16px; line-height: 1.2;
+}
+.hero p {
+  color: var(--color-driftwood); font-size: 18px; max-width: 600px; margin: 0 auto;
+}
+
+/* PROGRESS BAR */
+.progress-section {
+  background: var(--color-linen);
+  padding: 24px 32px;
+  position: sticky; top: 64px; z-index: 90;
+  border-bottom: 1px solid rgba(42,37,48,0.06);
+}
+.progress-inner { max-width: 700px; margin: 0 auto; }
+.progress-meta {
+  display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;
+}
+.progress-meta span { font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; color: var(--color-plum); }
+.progress-meta .count { color: var(--color-copper); }
+.progress-track {
+  height: 6px; background: rgba(42,37,48,0.08); border-radius: 3px; overflow: hidden;
+}
+.progress-fill {
+  height: 100%; width: 0%; background: var(--color-copper); border-radius: 3px;
+  transition: width 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* SCORECARD */
+.scorecard {
+  padding: 64px 32px;
+  max-width: 780px;
+  margin: 0 auto;
+}
+.category {
+  margin-bottom: 56px;
+}
+.category-label {
+  font-family: 'Sora', sans-serif; font-weight: 700; font-size: 11px;
+  letter-spacing: 3px; text-transform: uppercase; color: var(--color-copper);
+  margin-bottom: 8px;
+}
+.category-title {
+  font-family: 'Sora', sans-serif; font-weight: 700; font-size: 22px;
+  color: var(--color-plum); margin-bottom: 32px;
+}
+.question {
+  margin-bottom: 36px;
+}
+.question-text {
+  font-size: 17px; font-weight: 500; color: var(--color-plum); margin-bottom: 16px;
+}
+.rating-group {
+  display: flex; gap: 8px; flex-wrap: wrap;
+}
+.rating-btn {
+  border: 1.5px solid rgba(42,37,48,0.12); background: var(--color-cream);
+  border-radius: 8px; padding: 10px 16px; cursor: pointer;
+  font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--color-plum);
+  transition: all 0.2s ease; min-width: 54px; text-align: center;
+}
+.rating-btn:hover {
+  border-color: var(--color-copper-light); background: var(--color-linen);
+}
+.rating-btn.selected {
+  border-color: var(--color-copper); background: var(--color-copper);
+  color: var(--color-cream); font-weight: 600;
+}
+.rating-label {
+  font-size: 12px; color: var(--color-driftwood); margin-top: 8px;
+  display: flex; justify-content: space-between;
+}
+
+/* RESULTS */
+.results-section {
+  background: var(--color-lavender);
+  padding: 80px 32px;
+  text-align: center;
+  display: none;
+}
+.results-section.visible { display: block; animation: fadeUp 0.6s ease; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.results-inner { max-width: 700px; margin: 0 auto; }
+.results-label {
+  font-family: 'Sora', sans-serif; font-weight: 700; font-size: 11px;
+  letter-spacing: 3px; text-transform: uppercase; color: var(--color-copper);
+  margin-bottom: 24px;
+}
+
+.score-ring-container {
+  position: relative; width: 180px; height: 180px; margin: 0 auto 24px;
+}
+.score-ring-container svg { transform: rotate(-90deg); }
+.score-ring-bg { fill: none; stroke: rgba(42,37,48,0.08); stroke-width: 8; }
+.score-ring-fill {
+  fill: none; stroke: var(--color-copper); stroke-width: 8;
+  stroke-linecap: round; stroke-dasharray: 452; stroke-dashoffset: 452;
+  transition: stroke-dashoffset 1.5s cubic-bezier(0.4,0,0.2,1);
+}
+.score-number {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  font-family: 'Sora', sans-serif; font-weight: 800; font-size: 42px;
+  color: var(--color-copper);
+}
+.score-denominator {
+  font-size: 18px; color: var(--color-driftwood); font-weight: 400;
+}
+
+.tier-badge {
+  display: inline-block; font-family: 'Sora', sans-serif; font-weight: 700;
+  font-size: 14px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--color-copper); background: rgba(192,120,66,0.1);
+  padding: 8px 20px; border-radius: 24px; margin-bottom: 16px;
+}
+.tier-desc {
+  font-size: 17px; color: var(--color-plum); max-width: 520px; margin: 0 auto 40px;
+}
+
+.breakdown {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+  text-align: left; margin-bottom: 48px;
+}
+@media (max-width: 540px) { .breakdown { grid-template-columns: 1fr; } }
+.breakdown-card {
+  background: var(--color-cream); border-radius: 12px; padding: 20px;
+}
+.breakdown-card-label {
+  font-family: 'Sora', sans-serif; font-weight: 700; font-size: 11px;
+  letter-spacing: 2px; text-transform: uppercase; color: var(--color-copper);
+  margin-bottom: 4px;
+}
+.breakdown-card-title {
+  font-family: 'Sora', sans-serif; font-weight: 700; font-size: 16px;
+  color: var(--color-plum); margin-bottom: 12px;
+}
+.breakdown-bar-track {
+  height: 6px; background: rgba(42,37,48,0.06); border-radius: 3px; overflow: hidden;
+}
+.breakdown-bar-fill {
+  height: 100%; background: var(--color-copper); border-radius: 3px;
+  transition: width 1.2s cubic-bezier(0.4,0,0.2,1);
+}
+.breakdown-score {
+  font-family: 'Sora', sans-serif; font-weight: 700; font-size: 14px;
+  color: var(--color-plum); margin-top: 6px;
+}
+
+/* LEAD FORM */
+.lead-section {
+  background: var(--color-plum);
+  padding: 80px 32px;
+  display: none;
+}
+.lead-section.visible { display: block; animation: fadeUp 0.6s ease; }
+.lead-inner { max-width: 640px; margin: 0 auto; }
+.lead-label {
+  font-family: 'Sora', sans-serif; font-weight: 700; font-size: 11px;
+  letter-spacing: 3px; text-transform: uppercase; color: var(--color-copper);
+  margin-bottom: 12px; text-align: center;
+}
+.lead-title {
+  font-family: 'Sora', sans-serif; font-weight: 800; font-size: clamp(22px, 4vw, 32px);
+  color: var(--color-cream); text-align: center; margin-bottom: 12px;
+}
+.lead-subtitle {
+  color: var(--color-driftwood); text-align: center; font-size: 17px; margin-bottom: 40px;
+}
+
+.benefits {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 40px;
+}
+@media (max-width: 540px) { .benefits { grid-template-columns: 1fr; } }
+.benefit {
+  display: flex; align-items: flex-start; gap: 10px; color: var(--color-cream); font-size: 15px;
+}
+.benefit-check {
+  flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%;
+  background: rgba(192,120,66,0.2); display: flex; align-items: center; justify-content: center;
+  color: var(--color-copper); font-size: 12px; margin-top: 2px;
+}
+
+.form-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+}
+@media (max-width: 540px) { .form-grid { grid-template-columns: 1fr; } }
+.form-group { display: flex; flex-direction: column; }
+.form-group.full { grid-column: 1 / -1; }
+.form-group label {
+  font-family: 'Sora', sans-serif; font-weight: 600; font-size: 12px;
+  letter-spacing: 1px; text-transform: uppercase; color: var(--color-copper-light);
+  margin-bottom: 6px;
+}
+.form-group input, .form-group select, .form-group textarea {
+  background: rgba(253,252,249,0.06); border: 1.5px solid rgba(253,252,249,0.12);
+  border-radius: 8px; padding: 12px 14px; color: var(--color-cream);
+  font-family: 'DM Sans', sans-serif; font-size: 15px; outline: none;
+  transition: border-color 0.2s ease;
+}
+.form-group input::placeholder, .form-group textarea::placeholder {
+  color: rgba(253,252,249,0.3);
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  border-color: var(--color-copper);
+}
+.form-group select option { background: var(--color-plum); color: var(--color-cream); }
+.form-group textarea { resize: vertical; min-height: 80px; }
+
+.submit-btn {
+  display: block; width: 100%; margin-top: 24px; padding: 16px;
+  background: var(--color-copper); color: var(--color-cream);
+  font-family: 'Sora', sans-serif; font-weight: 700; font-size: 15px;
+  letter-spacing: 1px; border: none; border-radius: 8px; cursor: pointer;
+  transition: background 0.2s ease;
+}
+.submit-btn:hover { background: var(--color-copper-light); }
+
+/* SUCCESS STATE */
+.success-msg {
+  text-align: center; padding: 40px 0; display: none;
+}
+.success-msg.visible { display: block; animation: fadeUp 0.4s ease; }
+.success-icon {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: rgba(192,120,66,0.15); display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px; font-size: 28px; color: var(--color-copper);
+}
+.success-msg h3 {
+  font-family: 'Sora', sans-serif; font-weight: 700; font-size: 22px;
+  color: var(--color-cream); margin-bottom: 8px;
+}
+.success-msg p { color: var(--color-driftwood); font-size: 16px; }
+
+/* FOOTER */
+footer {
+  background: var(--color-plum);
+  border-top: 1px solid rgba(253,252,249,0.06);
+  padding: 32px;
+  text-align: center;
+}
+.footer-wordmark {
+  font-family: 'Sora', sans-serif; font-weight: 800; font-size: 11px;
+  letter-spacing: 4px; text-transform: uppercase; color: var(--color-copper);
+  margin-bottom: 8px;
+}
+.footer-tagline {
+  color: var(--color-driftwood); font-size: 14px; font-style: italic;
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="./index.html" style="display:flex;align-items:center;gap:14px;text-decoration:none;">
+    <div class="nav-mark"><span>B</span></div>
+    <span class="nav-wordmark">Bassin Consulting</span>
+  </a>
+  <span style="margin-left:auto;font-family:'DM Sans',sans-serif;font-size:14px;">
+    <a href="./index.html" style="color:var(--color-driftwood);text-decoration:none;" onmouseover="this.style.color='var(--color-copper)'" onmouseout="this.style.color='var(--color-driftwood)'">&larr; Back to Home</a>
+  </span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-label">Free Assessment</div>
+  <h1>How AI-Ready Is Your Organization?</h1>
+  <p>Answer 8 quick questions to get your AI Readiness Score, personalized insights, and a clear picture of where to focus next.</p>
+</section>
+
+<!-- PROGRESS -->
+<section class="progress-section">
+  <div class="progress-inner">
+    <div class="progress-meta">
+      <span>Your Progress</span>
+      <span class="count"><span id="answered">0</span> of 8 answered</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SCORECARD -->
+<section class="scorecard" id="scorecard">
+
+  <!-- STRATEGY -->
+  <div class="category">
+    <div class="category-label">Pillar 1</div>
+    <div class="category-title">Strategy &amp; Vision</div>
+
+    <div class="question" data-cat="strategy">
+      <div class="question-text">Does your leadership team have a clear AI strategy tied to business outcomes?</div>
+      <div class="rating-group">
+        <button class="rating-btn" data-val="1">1</button>
+        <button class="rating-btn" data-val="2">2</button>
+        <button class="rating-btn" data-val="3">3</button>
+        <button class="rating-btn" data-val="4">4</button>
+        <button class="rating-btn" data-val="5">5</button>
+      </div>
+      <div class="rating-label"><span>No strategy at all</span><span>Fully aligned strategy</span></div>
+    </div>
+
+    <div class="question" data-cat="strategy">
+      <div class="question-text">How well does your team understand where AI can create the most value in your workflows?</div>
+      <div class="rating-group">
+        <button class="rating-btn" data-val="1">1</button>
+        <button class="rating-btn" data-val="2">2</button>
+        <button class="rating-btn" data-val="3">3</button>
+        <button class="rating-btn" data-val="4">4</button>
+        <button class="rating-btn" data-val="5">5</button>
+      </div>
+      <div class="rating-label"><span>No understanding</span><span>Deep clarity</span></div>
+    </div>
+  </div>
+
+  <!-- INFRASTRUCTURE -->
+  <div class="category">
+    <div class="category-label">Pillar 2</div>
+    <div class="category-title">Data &amp; Infrastructure</div>
+
+    <div class="question" data-cat="infrastructure">
+      <div class="question-text">How accessible and organized is your data for AI tools to work with?</div>
+      <div class="rating-group">
+        <button class="rating-btn" data-val="1">1</button>
+        <button class="rating-btn" data-val="2">2</button>
+        <button class="rating-btn" data-val="3">3</button>
+        <button class="rating-btn" data-val="4">4</button>
+        <button class="rating-btn" data-val="5">5</button>
+      </div>
+      <div class="rating-label"><span>Siloed / messy</span><span>Clean and integrated</span></div>
+    </div>
+
+    <div class="question" data-cat="infrastructure">
+      <div class="question-text">Do you have the technical infrastructure (cloud, APIs, security) to support AI initiatives?</div>
+      <div class="rating-group">
+        <button class="rating-btn" data-val="1">1</button>
+        <button class="rating-btn" data-val="2">2</button>
+        <button class="rating-btn" data-val="3">3</button>
+        <button class="rating-btn" data-val="4">4</button>
+        <button class="rating-btn" data-val="5">5</button>
+      </div>
+      <div class="rating-label"><span>Not at all</span><span>Fully prepared</span></div>
+    </div>
+  </div>
+
+  <!-- PEOPLE -->
+  <div class="category">
+    <div class="category-label">Pillar 3</div>
+    <div class="category-title">People &amp; Culture</div>
+
+    <div class="question" data-cat="people">
+      <div class="question-text">How comfortable is your team with experimenting with AI tools in their daily work?</div>
+      <div class="rating-group">
+        <button class="rating-btn" data-val="1">1</button>
+        <button class="rating-btn" data-val="2">2</button>
+        <button class="rating-btn" data-val="3">3</button>
+        <button class="rating-btn" data-val="4">4</button>
+        <button class="rating-btn" data-val="5">5</button>
+      </div>
+      <div class="rating-label"><span>Resistant / fearful</span><span>Actively experimenting</span></div>
+    </div>
+
+    <div class="question" data-cat="people">
+      <div class="question-text">Do you have internal champions or a dedicated person driving AI adoption?</div>
+      <div class="rating-group">
+        <button class="rating-btn" data-val="1">1</button>
+        <button class="rating-btn" data-val="2">2</button>
+        <button class="rating-btn" data-val="3">3</button>
+        <button class="rating-btn" data-val="4">4</button>
+        <button class="rating-btn" data-val="5">5</button>
+      </div>
+      <div class="rating-label"><span>Nobody owns it</span><span>Strong internal champion</span></div>
+    </div>
+  </div>
+
+  <!-- OPERATIONS -->
+  <div class="category">
+    <div class="category-label">Pillar 4</div>
+    <div class="category-title">Operations &amp; Governance</div>
+
+    <div class="question" data-cat="operations">
+      <div class="question-text">Do you have a process for evaluating, piloting, and scaling AI tools responsibly?</div>
+      <div class="rating-group">
+        <button class="rating-btn" data-val="1">1</button>
+        <button class="rating-btn" data-val="2">2</button>
+        <button class="rating-btn" data-val="3">3</button>
+        <button class="rating-btn" data-val="4">4</button>
+        <button class="rating-btn" data-val="5">5</button>
+      </div>
+      <div class="rating-label"><span>No process</span><span>Mature framework</span></div>
+    </div>
+
+    <div class="question" data-cat="operations">
+      <div class="question-text">How well do you measure the ROI and impact of your current technology investments?</div>
+      <div class="rating-group">
+        <button class="rating-btn" data-val="1">1</button>
+        <button class="rating-btn" data-val="2">2</button>
+        <button class="rating-btn" data-val="3">3</button>
+        <button class="rating-btn" data-val="4">4</button>
+        <button class="rating-btn" data-val="5">5</button>
+      </div>
+      <div class="rating-label"><span>We don't measure</span><span>Rigorous tracking</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results-section" id="results">
+  <div class="results-inner">
+    <div class="results-label">Your Results</div>
+
+    <div class="score-ring-container">
+      <svg width="180" height="180" viewBox="0 0 180 180">
+        <circle class="score-ring-bg" cx="90" cy="90" r="72" />
+        <circle class="score-ring-fill" id="scoreRing" cx="90" cy="90" r="72" />
+      </svg>
+      <div class="score-number"><span id="scoreNum">0</span><span class="score-denominator">/40</span></div>
+    </div>
+
+    <div class="tier-badge" id="tierBadge"></div>
+    <p class="tier-desc" id="tierDesc"></p>
+
+    <div class="breakdown" id="breakdown"></div>
+  </div>
+</section>
+
+<!-- LEAD FORM -->
+<section class="lead-section" id="leadSection">
+  <div class="lead-inner">
+    <div class="lead-label">Next Step</div>
+    <div class="lead-title">Get Your Personalized Roadmap</div>
+    <div class="lead-subtitle">See exactly where to focus and what quick wins are within reach.</div>
+
+    <div class="benefits">
+      <div class="benefit"><div class="benefit-check">&#10003;</div><span>Personalized AI readiness report</span></div>
+      <div class="benefit"><div class="benefit-check">&#10003;</div><span>Quick-win checklist for your tier</span></div>
+      <div class="benefit"><div class="benefit-check">&#10003;</div><span>Benchmark vs. similar orgs</span></div>
+      <div class="benefit"><div class="benefit-check">&#10003;</div><span>Optional 20-min strategy call</span></div>
+    </div>
+
+    <form id="leadForm" class="form-grid" onsubmit="handleSubmit(event)">
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" placeholder="Jane" required>
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" placeholder="Doe" required>
+      </div>
+      <div class="form-group">
+        <label>Work Email</label>
+        <input type="email" placeholder="jane@company.com" required>
+      </div>
+      <div class="form-group">
+        <label>Company</label>
+        <input type="text" placeholder="Acme Corp" required>
+      </div>
+      <div class="form-group">
+        <label>Your Role</label>
+        <select required>
+          <option value="" disabled selected>Select...</option>
+          <option>C-Suite / Executive</option>
+          <option>VP / Director</option>
+          <option>Manager</option>
+          <option>Individual Contributor</option>
+          <option>Consultant / Advisor</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Company Size</label>
+        <select required>
+          <option value="" disabled selected>Select...</option>
+          <option>1-10</option>
+          <option>11-50</option>
+          <option>51-200</option>
+          <option>201-1,000</option>
+          <option>1,001-5,000</option>
+          <option>5,000+</option>
+        </select>
+      </div>
+      <div class="form-group full">
+        <label>Biggest AI Challenge Right Now</label>
+        <textarea placeholder="What's the #1 thing holding your team back from using AI effectively?"></textarea>
+      </div>
+      <div class="form-group full">
+        <button type="submit" class="submit-btn">Get My Personalized Report</button>
+      </div>
+    </form>
+
+    <div class="success-msg" id="successMsg">
+      <div class="success-icon">&#10003;</div>
+      <h3>You're In</h3>
+      <p>Check your inbox — your personalized AI Readiness Report is on the way. If you opted in, we'll be in touch within 24 hours to schedule your strategy call.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-wordmark">Bassin Consulting</div>
+  <div class="footer-tagline">"The deliverable is not just the tool. It is the understanding."</div>
+</footer>
+
+<script>
+const answers = {};
+const catScores = { strategy: [], infrastructure: [], people: [], operations: [] };
+const catNames = { strategy: 'Strategy & Vision', infrastructure: 'Data & Infrastructure', people: 'People & Culture', operations: 'Operations & Governance' };
+
+const tiers = [
+  { max: 12, name: 'Early Stage', desc: 'You\'re at the beginning of your AI journey — and that\'s a great place to start. Most organizations at this stage benefit enormously from a clear strategy before investing in tools. Small, focused moves now prevent costly missteps later.' },
+  { max: 20, name: 'Building Foundations', desc: 'You\'ve started thinking about AI, but there are gaps to fill before you can move confidently. The good news: you\'re past the hardest part — getting started. Targeted investments in data readiness and internal buy-in will unlock the next level.' },
+  { max: 30, name: 'Accelerating', desc: 'Your organization has real momentum. You\'re past the "should we?" phase and into "how do we do this well?" Refining your governance and measurement frameworks will turn experiments into lasting competitive advantages.' },
+  { max: 40, name: 'AI-Forward', desc: 'You\'re operating at a high level of AI maturity. The opportunity now is optimization — finding the next 10% of efficiency, scaling what works across teams, and building the internal muscle to stay ahead as the landscape evolves.' }
+];
+
+document.querySelectorAll('.rating-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const question = this.closest('.question');
+    const cat = question.dataset.cat;
+    const qIndex = Array.from(document.querySelectorAll(`.question[data-cat="${cat}"]`)).indexOf(question);
+    const key = cat + qIndex;
+    const val = parseInt(this.dataset.val);
+
+    question.querySelectorAll('.rating-btn').forEach(b => b.classList.remove('selected'));
+    this.classList.add('selected');
+    answers[key] = { cat, val };
+
+    updateProgress();
+  });
+});
+
+function updateProgress() {
+  const count = Object.keys(answers).length;
+  document.getElementById('answered').textContent = count;
+  document.getElementById('progressFill').style.width = (count / 8 * 100) + '%';
+
+  if (count === 8) {
+    setTimeout(showResults, 400);
+  }
+}
+
+function showResults() {
+  // Calculate scores
+  const cats = { strategy: 0, infrastructure: 0, people: 0, operations: 0 };
+  Object.values(answers).forEach(a => cats[a.cat] += a.val);
+  const total = Object.values(cats).reduce((s, v) => s + v, 0);
+
+  // Show results section
+  const resultsEl = document.getElementById('results');
+  resultsEl.classList.add('visible');
+  resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  // Animate score number
+  let current = 0;
+  const interval = setInterval(() => {
+    current++;
+    document.getElementById('scoreNum').textContent = current;
+    if (current >= total) clearInterval(interval);
+  }, 40);
+
+  // Animate ring
+  const ring = document.getElementById('scoreRing');
+  const circumference = 2 * Math.PI * 72;
+  setTimeout(() => {
+    ring.style.strokeDashoffset = circumference - (total / 40 * circumference);
+  }, 100);
+
+  // Tier
+  const tier = tiers.find(t => total <= t.max) || tiers[3];
+  document.getElementById('tierBadge').textContent = tier.name;
+  document.getElementById('tierDesc').textContent = tier.desc;
+
+  // Breakdown
+  const breakdownEl = document.getElementById('breakdown');
+  breakdownEl.innerHTML = '';
+  Object.entries(cats).forEach(([key, score]) => {
+    const card = document.createElement('div');
+    card.className = 'breakdown-card';
+    card.innerHTML = `
+      <div class="breakdown-card-label">Pillar</div>
+      <div class="breakdown-card-title">${catNames[key]}</div>
+      <div class="breakdown-bar-track"><div class="breakdown-bar-fill" style="width: 0%"></div></div>
+      <div class="breakdown-score">${score} / 10</div>
+    `;
+    breakdownEl.appendChild(card);
+    setTimeout(() => {
+      card.querySelector('.breakdown-bar-fill').style.width = (score / 10 * 100) + '%';
+    }, 300);
+  });
+
+  // Show lead form
+  setTimeout(() => {
+    document.getElementById('leadSection').classList.add('visible');
+  }, 800);
+}
+
+function handleSubmit(e) {
+  e.preventDefault();
+  document.getElementById('leadForm').style.display = 'none';
+  document.getElementById('successMsg').classList.add('visible');
+}
+</script>
+</body>
+</html>

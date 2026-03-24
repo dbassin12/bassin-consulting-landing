@@ -49,10 +49,11 @@
 
     .section-wrap {
       border-radius: 1.5rem;
-      padding: 1rem;
+      padding: 1.5rem;
+      border: 1px solid rgba(247, 243, 238, 0.8);
     }
     @media (min-width: 640px) {
-      .section-wrap { padding: 2rem; }
+      .section-wrap { padding: 2.5rem; }
     }
 
     .lift-card {
@@ -147,7 +148,7 @@
             AI solutions for your <br/><span class="text-copper">small business.</span>
           </h1>
 
-          <p class="mt-4 text-lg font-medium text-plum/80 sm:mt-6 sm:text-xl md:text-2xl leading-snug">
+          <p class="mt-4 text-lg font-medium text-plum sm:mt-6 sm:text-xl md:text-2xl leading-snug">
             I help small business owners figure out where AI can save them time and money, build the solution with them, and train them to run it on their own.
           </p>
 
@@ -165,30 +166,37 @@
           </div>
         </div>
 
-        <div class="hidden lg:block w-full lg:flex-[0.35]">
-          <div class="rounded-2xl border border-cream bg-cream p-6 shadow-card">
-            <div class="space-y-4">
+        <div class="hidden lg:flex w-full lg:flex-[0.35] flex-col gap-5">
+          <div class="rounded-2xl border border-cream bg-cream p-3 shadow-card">
+            <img src="./headshot.png" alt="David Bassin" class="w-full rounded-xl object-cover aspect-[4/5] object-top" loading="lazy" />
+            <div class="p-3 text-center">
+              <div class="font-display font-bold text-lg text-plum">David Bassin</div>
+              <div class="text-sm font-semibold text-copper uppercase tracking-wide mt-0.5">Founder & Principal Consultant</div>
+            </div>
+          </div>
+          <div class="rounded-2xl border border-cream bg-cream p-5 shadow-card">
+            <div class="space-y-3">
               <div class="flex items-center gap-3">
-                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-copper/10 text-copper font-display font-bold text-lg">1</div>
+                <div class="flex h-9 w-9 items-center justify-center rounded-full bg-copper/10 text-copper font-display font-bold text-base">1</div>
                 <div>
-                  <div class="font-bold text-plum">Free Discovery Call</div>
-                  <div class="text-sm text-driftwood">15-20 min — understand your pain</div>
+                  <div class="font-bold text-plum text-sm">Free Discovery Call</div>
+                  <div class="text-xs text-driftwood">15-20 min — understand your pain</div>
                 </div>
               </div>
-              <div class="border-l-2 border-dashed border-copper/20 ml-5 h-4"></div>
+              <div class="border-l-2 border-dashed border-copper/20 ml-[18px] h-2"></div>
               <div class="flex items-center gap-3">
-                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-copper/10 text-copper font-display font-bold text-lg">2</div>
+                <div class="flex h-9 w-9 items-center justify-center rounded-full bg-copper/10 text-copper font-display font-bold text-base">2</div>
                 <div>
-                  <div class="font-bold text-plum">AI Quick Assessment</div>
-                  <div class="text-sm text-driftwood">Prioritized opportunities + ROI</div>
+                  <div class="font-bold text-plum text-sm">AI Quick Assessment</div>
+                  <div class="text-xs text-driftwood">Prioritized opportunities + ROI</div>
                 </div>
               </div>
-              <div class="border-l-2 border-dashed border-copper/20 ml-5 h-4"></div>
+              <div class="border-l-2 border-dashed border-copper/20 ml-[18px] h-2"></div>
               <div class="flex items-center gap-3">
-                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-copper/10 text-copper font-display font-bold text-lg">3</div>
+                <div class="flex h-9 w-9 items-center justify-center rounded-full bg-copper/10 text-copper font-display font-bold text-base">3</div>
                 <div>
-                  <div class="font-bold text-plum">Build + Handoff</div>
-                  <div class="text-sm text-driftwood">You own the solution</div>
+                  <div class="font-bold text-plum text-sm">Build + Handoff</div>
+                  <div class="text-xs text-driftwood">You own the solution</div>
                 </div>
               </div>
             </div>
@@ -255,7 +263,7 @@
     </section>
 
     <!-- ========== SERVICES & PRICING ========== -->
-    <section id="services" data-reveal class="section-wrap bg-cream mx-auto mt-8 sm:mt-12 max-w-6xl">
+    <section id="services" data-reveal class="section-wrap bg-linen mx-auto mt-8 sm:mt-12 max-w-6xl">
       <div>
         <div class="text-xs font-display font-700 uppercase tracking-[0.2em] text-copper mb-2">Services</div>
         <h2 class="font-display text-3xl font-bold tracking-tight text-plum sm:text-4xl">Accessible pricing for small businesses.</h2>
@@ -263,7 +271,7 @@
       </div>
 
       <div class="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        <div class="lift-card rounded-2xl border border-linen bg-linen p-6 shadow-card">
+        <div class="lift-card rounded-2xl border border-cream bg-cream p-6 shadow-card">
           <div class="text-xs font-display font-700 uppercase tracking-[0.15em] text-copper mb-2">Start Here</div>
           <div class="text-xl font-bold text-plum">Qualifying Call</div>
           <div class="mt-2 font-display text-3xl font-bold text-plum">Free</div>
@@ -291,7 +299,7 @@
           </ul>
         </div>
 
-        <div class="lift-card rounded-2xl border border-linen bg-linen p-6 shadow-card">
+        <div class="lift-card rounded-2xl border border-cream bg-cream p-6 shadow-card">
           <div class="text-xs font-display font-700 uppercase tracking-[0.15em] text-copper mb-2">Full Build</div>
           <div class="text-xl font-bold text-plum">Implementation</div>
           <div class="mt-2 font-display text-3xl font-bold text-plum">$1K–$5K</div>
@@ -305,7 +313,7 @@
           </ul>
         </div>
 
-        <div class="lift-card rounded-2xl border border-linen bg-linen p-6 shadow-card">
+        <div class="lift-card rounded-2xl border border-cream bg-cream p-6 shadow-card">
           <div class="text-xs font-display font-700 uppercase tracking-[0.15em] text-copper mb-2">Ongoing</div>
           <div class="text-xl font-bold text-plum">Retainer</div>
           <div class="mt-2 font-display text-3xl font-bold text-plum">$500–$1,500</div>
@@ -322,7 +330,7 @@
     </section>
 
     <!-- ========== CASE STUDIES ========== -->
-    <section id="work" data-reveal class="section-wrap bg-linen mx-auto mt-8 sm:mt-12 max-w-6xl">
+    <section id="work" data-reveal class="section-wrap bg-cream mx-auto mt-8 sm:mt-12 max-w-6xl">
       <div>
         <div class="text-xs font-display font-700 uppercase tracking-[0.2em] text-copper mb-2">Case Studies</div>
         <h2 class="font-display text-3xl font-bold tracking-tight text-plum sm:text-4xl">Real Work, Real Results</h2>
@@ -331,7 +339,7 @@
       </div>
 
       <div class="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2">
-        <div class="lift-card rounded-2xl border border-cream bg-cream shadow-card overflow-hidden">
+        <div class="lift-card rounded-2xl border border-linen bg-linen shadow-card overflow-hidden">
           <div class="overflow-hidden">
             <img src="./pergolaflow-screenshot.png" alt="PergolaFlow CRM Dashboard showing customer stats, active jobs, and voice recording interface" class="w-full h-48 sm:h-56 object-cover object-top" loading="lazy" />
           </div>
@@ -356,7 +364,7 @@
           </div>
         </div>
 
-        <div class="lift-card rounded-2xl border border-cream bg-cream shadow-card overflow-hidden">
+        <div class="lift-card rounded-2xl border border-linen bg-linen shadow-card overflow-hidden">
           <div class="overflow-hidden relative">
             <img src="./finaid-screenshot.png" alt="FinAid Decision Support Dashboard showing student metrics, aid calculations, and cost-of-living adjustments" class="w-full h-48 sm:h-56 object-cover object-top" loading="lazy" />
             <div class="bg-plum/80 backdrop-blur-sm text-cream text-xs font-medium px-3 py-1.5 absolute bottom-0 left-0 right-0 text-center">All names shown are simulated demo data — no real student records.</div>
@@ -432,7 +440,7 @@
     </section>
 
     <!-- ========== ABOUT ========== -->
-    <section id="about" data-reveal class="section-wrap bg-cream mx-auto mt-8 sm:mt-12 max-w-6xl">
+    <section id="about" data-reveal class="section-wrap bg-linen mx-auto mt-8 sm:mt-12 max-w-6xl">
       <div>
         <div class="text-xs font-display font-700 uppercase tracking-[0.2em] text-copper mb-2">About</div>
         <h2 class="font-display text-3xl font-bold tracking-tight text-plum sm:text-4xl">A teacher who builds, not an engineer who presents.</h2>

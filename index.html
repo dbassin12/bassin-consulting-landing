@@ -11,11 +11,11 @@
   <meta property="og:title" content="Bassin Consulting — AI Enablement for Small Business">
   <meta property="og:description" content="Stop wasting time on things a computer should be doing. We help small businesses adopt AI with a teaching-first approach.">
 
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23bae6fd'/><text x='16' y='22' font-size='14' font-weight='bold' font-family='sans-serif' text-anchor='middle' fill='%230f172a'>BC</text></svg>" type="image/svg+xml">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%232A2530'/><text x='16' y='21' font-size='11' font-weight='800' font-family='sans-serif' text-anchor='middle' fill='%23C07842' letter-spacing='1'>BC</text></svg>" type="image/svg+xml">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -24,22 +24,20 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Manrope', 'ui-sans-serif', 'system-ui'],
-            display: ['Space Grotesk', 'Manrope', 'ui-sans-serif', 'system-ui']
+            sans: ['DM Sans', 'ui-sans-serif', 'system-ui'],
+            display: ['Sora', 'DM Sans', 'ui-sans-serif', 'system-ui']
           },
           colors: {
-            pastel: {
-              blue: '#e0f2fe',
-              purple: '#f3e8ff',
-              green: '#d1fae5',
-              amber: '#fef3c7',
-              rose: '#ffe4e6'
-            },
-            accent: { 400: '#38BDF8', 500: '#0EA5E9', 600: '#0284c7' }
+            cream: '#FDFCF9',
+            linen: '#F7F3EE',
+            plum: '#2A2530',
+            copper: { DEFAULT: '#C07842', light: '#D49A68' },
+            driftwood: '#8E857E',
+            lavender: '#F3F0F6',
           },
           boxShadow: {
-            'card': '0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 0 3px rgba(15, 23, 42, 0.02)',
-            'card-hover': '0 12px 30px -4px rgba(15, 23, 42, 0.08), 0 0 4px rgba(15, 23, 42, 0.03)',
+            'card': '0 4px 20px -2px rgba(42, 37, 48, 0.05), 0 0 3px rgba(42, 37, 48, 0.02)',
+            'card-hover': '0 12px 30px -4px rgba(42, 37, 48, 0.08), 0 0 4px rgba(42, 37, 48, 0.03)',
           },
         }
       }
@@ -49,32 +47,20 @@
     html { font-size: 100%; }
     @media (min-width: 640px) { html { font-size: 112.5%; } }
 
-    .section-tint {
-      border: 1px solid rgba(255, 255, 255, 0.6);
+    .section-wrap {
       border-radius: 1.5rem;
       padding: 1rem;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 24px -4px rgba(0,0,0,0.02);
     }
     @media (min-width: 640px) {
-      .section-tint { padding: 2rem; }
+      .section-wrap { padding: 2rem; }
     }
-
-    .section-tint-hero { background: linear-gradient(135deg, rgba(224, 242, 254, 0.6), rgba(243, 232, 255, 0.4)); }
-    .section-tint-amber { background: linear-gradient(135deg, rgba(254, 243, 199, 0.6), rgba(255, 255, 255, 0.6)); }
-    .section-tint-emerald { background: linear-gradient(135deg, rgba(209, 250, 229, 0.5), rgba(255, 255, 255, 0.6)); }
-    .section-tint-sky { background: linear-gradient(135deg, rgba(186, 230, 253, 0.4), rgba(255, 255, 255, 0.6)); }
-    .section-tint-purple { background: linear-gradient(135deg, rgba(233, 213, 255, 0.4), rgba(255, 255, 255, 0.6)); }
-    .section-tint-rose { background: linear-gradient(135deg, rgba(255, 228, 230, 0.5), rgba(255, 255, 255, 0.6)); }
 
     .lift-card {
       transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1);
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(8px);
     }
     .lift-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 30px -4px rgba(15, 23, 42, 0.08), 0 0 4px rgba(15, 23, 42, 0.03);
+      box-shadow: 0 12px 30px -4px rgba(42, 37, 48, 0.08), 0 0 4px rgba(42, 37, 48, 0.03);
     }
 
     .reveal-item {
@@ -87,127 +73,122 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* Copper accent line used sparingly */
+    .copper-rule { width: 48px; height: 3px; background: #C07842; border-radius: 2px; }
   </style>
 </head>
 
-<body class="h-full bg-[#f8fafc] text-base leading-[1.6] text-slate-800 font-sans antialiased selection:bg-accent-400/20 selection:text-slate-900 relative">
-
-  <!-- Ambient background blobs -->
-  <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-    <div class="absolute top-[-10%] left-[-10%] w-[40rem] h-[40rem] rounded-full bg-pastel-blue blur-[100px] opacity-60"></div>
-    <div class="absolute top-[40%] right-[-10%] w-[35rem] h-[35rem] rounded-full bg-pastel-purple blur-[100px] opacity-50"></div>
-    <div class="absolute bottom-[-10%] left-[20%] w-[30rem] h-[30rem] rounded-full bg-pastel-amber blur-[100px] opacity-40"></div>
-  </div>
+<body class="h-full bg-cream text-base leading-[1.75] text-driftwood font-sans antialiased selection:bg-copper/10 selection:text-plum">
 
   <!-- ========== HEADER ========== -->
-  <header class="sticky top-0 z-40 border-b border-white/50 bg-white/70 backdrop-blur-md">
+  <header class="sticky top-0 z-40 border-b border-linen bg-cream/90 backdrop-blur-sm">
     <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
       <div class="flex items-center gap-3">
-        <div class="h-8 w-8 rounded-lg bg-gradient-to-br from-sky-200 to-purple-200 border border-white flex items-center justify-center text-slate-800 font-display font-bold text-sm shadow-sm">BC</div>
         <div class="leading-tight">
-          <div class="text-base font-display font-bold tracking-tight text-slate-900">Bassin Consulting</div>
-          <div class="text-xs font-medium text-slate-500 uppercase tracking-wide">AI Enablement for Small Business</div>
+          <div class="text-sm font-display font-800 tracking-[0.2em] uppercase text-plum">Bassin Consulting</div>
+          <div class="text-xs font-medium text-copper italic">AI Enablement for Small Business</div>
         </div>
       </div>
 
       <div class="hidden items-center gap-6 sm:flex">
-        <a href="#problem" class="text-sm font-semibold text-slate-600 hover:text-accent-600 transition-colors">The Problem</a>
-        <a href="#how-it-works" class="text-sm font-semibold text-slate-600 hover:text-accent-600 transition-colors">How It Works</a>
-        <a href="#services" class="text-sm font-semibold text-slate-600 hover:text-accent-600 transition-colors">Services</a>
-        <a href="#work" class="text-sm font-semibold text-slate-600 hover:text-accent-600 transition-colors">Work</a>
-        <a href="#about" class="text-sm font-semibold text-slate-600 hover:text-accent-600 transition-colors">About</a>
-        <a href="mailto:david@bassinconsulting.com?subject=AI%20Consulting%20Inquiry" class="inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-slate-800 transition-all hover:-translate-y-0.5">
+        <a href="#problem" class="text-sm font-semibold text-driftwood hover:text-copper transition-colors">The Problem</a>
+        <a href="#how-it-works" class="text-sm font-semibold text-driftwood hover:text-copper transition-colors">How It Works</a>
+        <a href="#services" class="text-sm font-semibold text-driftwood hover:text-copper transition-colors">Services</a>
+        <a href="#work" class="text-sm font-semibold text-driftwood hover:text-copper transition-colors">Work</a>
+        <a href="#about" class="text-sm font-semibold text-driftwood hover:text-copper transition-colors">About</a>
+        <a href="mailto:david@bassinconsulting.com?subject=AI%20Consulting%20Inquiry" class="inline-flex items-center gap-2 rounded-lg bg-copper px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-copper-light transition-all hover:-translate-y-0.5">
           Book a Free Call
         </a>
       </div>
 
-      <button id="mobileMenuBtn" class="sm:hidden inline-flex items-center justify-center rounded-lg p-2 text-slate-600 bg-white shadow-sm border border-slate-100" aria-label="Open menu">
+      <button id="mobileMenuBtn" class="sm:hidden inline-flex items-center justify-center rounded-lg p-2 text-driftwood bg-linen border border-linen" aria-label="Open menu">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
       </button>
     </nav>
 
-    <div id="mobileMenu" class="sm:hidden hidden border-t border-slate-200 bg-white/95 backdrop-blur-md absolute w-full shadow-xl">
+    <div id="mobileMenu" class="sm:hidden hidden border-t border-linen bg-cream absolute w-full shadow-xl">
       <div class="mx-auto px-4 py-4 flex flex-col gap-2">
-        <a href="#problem" class="rounded-lg px-4 py-3 text-sm font-semibold text-slate-700 bg-slate-50 border border-slate-100">The Problem</a>
-        <a href="#how-it-works" class="rounded-lg px-4 py-3 text-sm font-semibold text-slate-700 bg-slate-50 border border-slate-100">How It Works</a>
-        <a href="#services" class="rounded-lg px-4 py-3 text-sm font-semibold text-slate-700 bg-slate-50 border border-slate-100">Services</a>
-        <a href="#work" class="rounded-lg px-4 py-3 text-sm font-semibold text-slate-700 bg-slate-50 border border-slate-100">Work</a>
-        <a href="#about" class="rounded-lg px-4 py-3 text-sm font-semibold text-slate-700 bg-slate-50 border border-slate-100">About</a>
-        <a href="mailto:david@bassinconsulting.com?subject=AI%20Consulting%20Inquiry" class="rounded-lg px-4 py-3 text-sm font-semibold text-white bg-slate-900 text-center mt-2">Book a Free Call</a>
+        <a href="#problem" class="rounded-lg px-4 py-3 text-sm font-semibold text-plum bg-linen">The Problem</a>
+        <a href="#how-it-works" class="rounded-lg px-4 py-3 text-sm font-semibold text-plum bg-linen">How It Works</a>
+        <a href="#services" class="rounded-lg px-4 py-3 text-sm font-semibold text-plum bg-linen">Services</a>
+        <a href="#work" class="rounded-lg px-4 py-3 text-sm font-semibold text-plum bg-linen">Work</a>
+        <a href="#about" class="rounded-lg px-4 py-3 text-sm font-semibold text-plum bg-linen">About</a>
+        <a href="mailto:david@bassinconsulting.com?subject=AI%20Consulting%20Inquiry" class="rounded-lg px-4 py-3 text-sm font-semibold text-white bg-copper text-center mt-2">Book a Free Call</a>
       </div>
     </div>
   </header>
 
-  <main class="relative z-10">
+  <main>
 
     <!-- ========== HERO ========== -->
-    <section data-reveal class="section-tint section-tint-hero mx-auto mt-6 sm:mt-10 max-w-6xl">
-      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 relative z-10">
+    <section data-reveal class="section-wrap bg-linen mx-auto mt-6 sm:mt-10 max-w-6xl">
+      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
         <div class="w-full lg:flex-[0.65]">
-          <div class="inline-flex items-center gap-2 rounded-full border border-white bg-white/60 px-3 py-1.5 text-sm font-semibold text-slate-700 shadow-sm backdrop-blur-md">
+          <div class="inline-flex items-center gap-2 rounded-full border border-cream bg-cream px-3 py-1.5 text-sm font-semibold text-plum shadow-sm">
             <span class="relative flex h-2 w-2">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2 w-2 bg-accent-500"></span>
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-copper opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-copper"></span>
             </span>
             Accepting New Clients
           </div>
 
           <div class="flex items-center gap-4 mt-6 sm:hidden">
-            <img src="./headshot.png" alt="David Bassin" class="h-16 w-16 rounded-full object-cover border-4 border-white shadow-md shrink-0" loading="lazy" />
+            <img src="./headshot.png" alt="David Bassin" class="h-16 w-16 rounded-full object-cover border-4 border-cream shadow-md shrink-0" loading="lazy" />
             <div>
-              <div class="font-display text-lg font-bold text-slate-900">David Bassin</div>
-              <div class="text-xs font-semibold text-accent-600 uppercase tracking-wide">Founder & Principal Consultant</div>
+              <div class="font-display text-lg font-bold text-plum">David Bassin</div>
+              <div class="text-xs font-semibold text-copper uppercase tracking-wide">Founder & Principal Consultant</div>
             </div>
           </div>
 
-          <h1 class="mt-6 font-display text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl md:text-6xl leading-[1.1]">
-            AI solutions for your <br/><span class="text-accent-600">small business.</span>
+          <h1 class="mt-6 font-display text-4xl font-bold tracking-tight text-plum sm:text-5xl md:text-6xl leading-[1.1]">
+            AI solutions for your <br/><span class="text-copper">small business.</span>
           </h1>
 
-          <p class="mt-4 text-lg font-medium text-slate-700 sm:mt-6 sm:text-xl md:text-2xl leading-snug">
+          <p class="mt-4 text-lg font-medium text-plum/80 sm:mt-6 sm:text-xl md:text-2xl leading-snug">
             I help small business owners figure out where AI can save them time and money, build the solution with them, and train them to run it on their own.
           </p>
 
-          <p class="mt-4 text-base text-slate-600 italic">
+          <p class="mt-4 text-base text-driftwood italic">
             "The deliverable is not just a tool. It is the understanding."
           </p>
 
           <div class="mt-6 flex flex-wrap items-center gap-3">
-            <a href="mailto:david@bassinconsulting.com?subject=AI%20Consulting%20Inquiry" class="inline-flex h-12 items-center justify-center rounded-xl bg-slate-900 px-6 text-base font-semibold text-white shadow-md hover:bg-slate-800 transition-all hover:-translate-y-0.5">
+            <a href="mailto:david@bassinconsulting.com?subject=AI%20Consulting%20Inquiry" class="inline-flex h-12 items-center justify-center rounded-lg bg-copper px-6 text-base font-semibold text-white shadow-md hover:bg-copper-light transition-all hover:-translate-y-0.5">
               Book a Free Call
             </a>
-            <a href="#how-it-works" class="inline-flex h-12 items-center justify-center rounded-xl border border-slate-300 bg-white/80 px-6 text-base font-semibold text-slate-700 shadow-sm hover:bg-white transition-all">
+            <a href="#how-it-works" class="inline-flex h-12 items-center justify-center rounded-lg border border-plum/20 bg-cream px-6 text-base font-semibold text-plum shadow-sm hover:bg-white transition-all">
               See How It Works
             </a>
           </div>
         </div>
 
         <div class="hidden lg:block w-full lg:flex-[0.35]">
-          <div class="rounded-3xl border border-white bg-white/60 p-6 shadow-xl backdrop-blur-md">
+          <div class="rounded-2xl border border-cream bg-cream p-6 shadow-card">
             <div class="space-y-4">
               <div class="flex items-center gap-3">
-                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 font-bold text-lg">1</div>
+                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-copper/10 text-copper font-display font-bold text-lg">1</div>
                 <div>
-                  <div class="font-bold text-slate-900">Free Discovery Call</div>
-                  <div class="text-sm text-slate-500">15-20 min — understand your pain</div>
+                  <div class="font-bold text-plum">Free Discovery Call</div>
+                  <div class="text-sm text-driftwood">15-20 min — understand your pain</div>
                 </div>
               </div>
-              <div class="border-l-2 border-dashed border-slate-200 ml-5 h-4"></div>
+              <div class="border-l-2 border-dashed border-copper/20 ml-5 h-4"></div>
               <div class="flex items-center gap-3">
-                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-sky-100 text-sky-600 font-bold text-lg">2</div>
+                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-copper/10 text-copper font-display font-bold text-lg">2</div>
                 <div>
-                  <div class="font-bold text-slate-900">AI Quick Assessment</div>
-                  <div class="text-sm text-slate-500">Prioritized opportunities + ROI</div>
+                  <div class="font-bold text-plum">AI Quick Assessment</div>
+                  <div class="text-sm text-driftwood">Prioritized opportunities + ROI</div>
                 </div>
               </div>
-              <div class="border-l-2 border-dashed border-slate-200 ml-5 h-4"></div>
+              <div class="border-l-2 border-dashed border-copper/20 ml-5 h-4"></div>
               <div class="flex items-center gap-3">
-                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 text-purple-600 font-bold text-lg">3</div>
+                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-copper/10 text-copper font-display font-bold text-lg">3</div>
                 <div>
-                  <div class="font-bold text-slate-900">Build + Handoff</div>
-                  <div class="text-sm text-slate-500">You own the solution</div>
+                  <div class="font-bold text-plum">Build + Handoff</div>
+                  <div class="text-sm text-driftwood">You own the solution</div>
                 </div>
               </div>
             </div>
@@ -216,228 +197,234 @@
       </div>
     </section>
 
-    <!-- ========== THE PROBLEM ========== -->
-    <section id="problem" data-reveal class="section-tint section-tint-rose mx-auto mt-8 sm:mt-12 max-w-6xl">
+    <!-- ========== THE PROBLEM (Lavender moment) ========== -->
+    <section id="problem" data-reveal class="section-wrap bg-lavender mx-auto mt-8 sm:mt-12 max-w-6xl">
       <div>
-        <h2 class="font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">The Problem</h2>
-        <p class="mt-2 text-lg text-slate-600">Small businesses are caught in an AI adoption gap.</p>
+        <div class="text-xs font-display font-700 uppercase tracking-[0.2em] text-copper mb-2">The Problem</div>
+        <h2 class="font-display text-3xl font-bold tracking-tight text-plum sm:text-4xl">Small businesses are caught in an AI adoption gap.</h2>
+        <div class="copper-rule mt-4"></div>
       </div>
 
       <div class="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-3">
-        <div class="lift-card rounded-2xl border border-white p-6 shadow-card text-center">
-          <div class="font-display text-4xl font-bold text-accent-600">58%</div>
-          <p class="mt-2 text-base text-slate-700">of small businesses now use generative AI — but <strong>51% are just experimenting</strong> without a clear path to real implementation.</p>
+        <div class="lift-card rounded-2xl border border-white bg-cream p-6 shadow-card text-center">
+          <div class="font-display text-4xl font-bold text-copper">58%</div>
+          <p class="mt-2 text-base text-driftwood">of small businesses now use generative AI — but <strong class="text-plum">51% are just experimenting</strong> without a clear path to real implementation.</p>
         </div>
-        <div class="lift-card rounded-2xl border border-white p-6 shadow-card text-center">
-          <div class="font-display text-4xl font-bold text-accent-600">62%</div>
-          <p class="mt-2 text-base text-slate-700">of non-adopters cite <strong>lack of understanding</strong> as their primary barrier to using AI in their business.</p>
+        <div class="lift-card rounded-2xl border border-white bg-cream p-6 shadow-card text-center">
+          <div class="font-display text-4xl font-bold text-copper">62%</div>
+          <p class="mt-2 text-base text-driftwood">of non-adopters cite <strong class="text-plum">lack of understanding</strong> as their primary barrier to using AI in their business.</p>
         </div>
-        <div class="lift-card rounded-2xl border border-white p-6 shadow-card text-center">
-          <div class="font-display text-4xl font-bold text-accent-600">82%</div>
-          <p class="mt-2 text-base text-slate-700">of the smallest businesses (under 5 employees) believe <strong>AI simply doesn't apply to them.</strong></p>
+        <div class="lift-card rounded-2xl border border-white bg-cream p-6 shadow-card text-center">
+          <div class="font-display text-4xl font-bold text-copper">82%</div>
+          <p class="mt-2 text-base text-driftwood">of the smallest businesses (under 5 employees) believe <strong class="text-plum">AI simply doesn't apply to them.</strong></p>
         </div>
       </div>
 
-      <div class="mt-6 rounded-2xl border border-white bg-white/70 p-6 shadow-card backdrop-blur-md">
-        <p class="text-base text-slate-700 leading-relaxed">
-          The problem isn't a shortage of AI tools. It's a shortage of people who can <strong>explain</strong> those tools, <strong>implement</strong> them for a specific business context, and <strong>train</strong> the owner to maintain the result. Only 13% of AI projects make it from proof-of-concept to production. That gap is an education and implementation problem — and that's exactly what I solve.
+      <div class="mt-6 rounded-2xl border border-white bg-cream p-6 shadow-card">
+        <p class="text-base text-driftwood leading-relaxed">
+          The problem isn't a shortage of AI tools. It's a shortage of people who can <strong class="text-plum">explain</strong> those tools, <strong class="text-plum">implement</strong> them for a specific business context, and <strong class="text-plum">train</strong> the owner to maintain the result. Only 13% of AI projects make it from proof-of-concept to production. That gap is an education and implementation problem — and that's exactly what I solve.
         </p>
       </div>
     </section>
 
     <!-- ========== HOW IT WORKS ========== -->
-    <section id="how-it-works" data-reveal class="section-tint section-tint-amber mx-auto mt-8 sm:mt-12 max-w-6xl">
+    <section id="how-it-works" data-reveal class="section-wrap bg-linen mx-auto mt-8 sm:mt-12 max-w-6xl">
       <div>
-        <h2 class="font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">How It Works</h2>
-        <p class="mt-2 text-lg text-slate-600">Three phases, designed to move you from confusion to capability.</p>
+        <div class="text-xs font-display font-700 uppercase tracking-[0.2em] text-copper mb-2">How It Works</div>
+        <h2 class="font-display text-3xl font-bold tracking-tight text-plum sm:text-4xl">Three phases, from confusion to capability.</h2>
+        <div class="copper-rule mt-4"></div>
       </div>
 
       <div class="mt-6 grid grid-cols-1 gap-5 md:grid-cols-3">
-        <div class="lift-card rounded-2xl border border-white p-6 shadow-card">
-          <div class="flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-amber-600 font-display font-bold text-xl mb-4">1</div>
-          <div class="text-lg font-bold text-slate-900">Diagnosis</div>
-          <p class="mt-2 text-base leading-relaxed text-slate-600">A free 15-20 minute call to understand your business problem, assess whether AI is the right tool, and determine fit. This isn't a sales call — it's a teacher sitting down and asking, "Show me what's eating your time."</p>
+        <div class="lift-card rounded-2xl border border-cream bg-cream p-6 shadow-card">
+          <div class="flex h-12 w-12 items-center justify-center rounded-full bg-copper/10 text-copper font-display font-bold text-xl mb-4">1</div>
+          <div class="text-lg font-bold text-plum">Diagnosis</div>
+          <p class="mt-2 text-base leading-relaxed text-driftwood">A free 15-20 minute call to understand your business problem, assess whether AI is the right tool, and determine fit. This isn't a sales call — it's a teacher sitting down and asking, "Show me what's eating your time."</p>
         </div>
-        <div class="lift-card rounded-2xl border border-white p-6 shadow-card">
-          <div class="flex h-12 w-12 items-center justify-center rounded-full bg-sky-100 text-sky-600 font-display font-bold text-xl mb-4">2</div>
-          <div class="text-lg font-bold text-slate-900">Build</div>
-          <p class="mt-2 text-base leading-relaxed text-slate-600">We build the AI-powered solution together. You provide the domain expertise, I handle design and implementation. The iterative loop — you describe, I build, you test, I adjust — ensures the output actually fits your business.</p>
+        <div class="lift-card rounded-2xl border border-cream bg-cream p-6 shadow-card">
+          <div class="flex h-12 w-12 items-center justify-center rounded-full bg-copper/10 text-copper font-display font-bold text-xl mb-4">2</div>
+          <div class="text-lg font-bold text-plum">Build</div>
+          <p class="mt-2 text-base leading-relaxed text-driftwood">We build the AI-powered solution together. You provide the domain expertise, I handle design and implementation. The iterative loop — you describe, I build, you test, I adjust — ensures the output actually fits your business.</p>
         </div>
-        <div class="lift-card rounded-2xl border border-white p-6 shadow-card">
-          <div class="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 font-display font-bold text-xl mb-4">3</div>
-          <div class="text-lg font-bold text-slate-900">Handoff</div>
-          <p class="mt-2 text-base leading-relaxed text-slate-600">Training and documentation so you can maintain, adjust, and extend the tool independently. The goal is capability transfer, not recurring dependency. Every engagement ends with you understanding what was built and how to keep it running.</p>
+        <div class="lift-card rounded-2xl border border-cream bg-cream p-6 shadow-card">
+          <div class="flex h-12 w-12 items-center justify-center rounded-full bg-copper/10 text-copper font-display font-bold text-xl mb-4">3</div>
+          <div class="text-lg font-bold text-plum">Handoff</div>
+          <p class="mt-2 text-base leading-relaxed text-driftwood">Training and documentation so you can maintain, adjust, and extend the tool independently. The goal is capability transfer, not recurring dependency. Every engagement ends with you understanding what was built and how to keep it running.</p>
         </div>
       </div>
     </section>
 
     <!-- ========== SERVICES & PRICING ========== -->
-    <section id="services" data-reveal class="section-tint section-tint-emerald mx-auto mt-8 sm:mt-12 max-w-6xl">
+    <section id="services" data-reveal class="section-wrap bg-cream mx-auto mt-8 sm:mt-12 max-w-6xl">
       <div>
-        <h2 class="font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Services</h2>
-        <p class="mt-2 text-lg text-slate-600">Accessible pricing designed for small businesses, not enterprise budgets.</p>
+        <div class="text-xs font-display font-700 uppercase tracking-[0.2em] text-copper mb-2">Services</div>
+        <h2 class="font-display text-3xl font-bold tracking-tight text-plum sm:text-4xl">Accessible pricing for small businesses.</h2>
+        <div class="copper-rule mt-4"></div>
       </div>
 
       <div class="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        <div class="lift-card rounded-2xl border border-white p-6 shadow-card">
-          <div class="text-sm font-bold uppercase tracking-wide text-emerald-600 mb-2">Start Here</div>
-          <div class="text-xl font-bold text-slate-900">Qualifying Call</div>
-          <div class="mt-2 font-display text-3xl font-bold text-slate-900">Free</div>
-          <div class="text-sm text-slate-500 mt-1">15-20 minutes</div>
-          <hr class="my-4 border-slate-200">
-          <ul class="space-y-2 text-sm text-slate-600">
-            <li class="flex gap-2"><span class="text-emerald-500 font-bold">&#10003;</span> Assess fit</li>
-            <li class="flex gap-2"><span class="text-emerald-500 font-bold">&#10003;</span> Understand your pain</li>
-            <li class="flex gap-2"><span class="text-emerald-500 font-bold">&#10003;</span> Determine if AI can help</li>
+        <div class="lift-card rounded-2xl border border-linen bg-linen p-6 shadow-card">
+          <div class="text-xs font-display font-700 uppercase tracking-[0.15em] text-copper mb-2">Start Here</div>
+          <div class="text-xl font-bold text-plum">Qualifying Call</div>
+          <div class="mt-2 font-display text-3xl font-bold text-plum">Free</div>
+          <div class="text-sm text-driftwood mt-1">15-20 minutes</div>
+          <hr class="my-4 border-cream">
+          <ul class="space-y-2 text-sm text-driftwood">
+            <li class="flex gap-2"><span class="text-copper font-bold">&#10003;</span> Assess fit</li>
+            <li class="flex gap-2"><span class="text-copper font-bold">&#10003;</span> Understand your pain</li>
+            <li class="flex gap-2"><span class="text-copper font-bold">&#10003;</span> Determine if AI can help</li>
           </ul>
         </div>
 
-        <div class="lift-card rounded-2xl border-2 border-accent-400 p-6 shadow-card relative">
-          <div class="absolute -top-3 right-4 bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full">Most Popular</div>
-          <div class="text-sm font-bold uppercase tracking-wide text-accent-600 mb-2">Gateway</div>
-          <div class="text-xl font-bold text-slate-900">AI Quick Assessment</div>
-          <div class="mt-2 font-display text-3xl font-bold text-slate-900">$300–$500</div>
-          <div class="text-sm text-slate-500 mt-1">3-5 hour deep-dive</div>
-          <hr class="my-4 border-slate-200">
-          <ul class="space-y-2 text-sm text-slate-600">
-            <li class="flex gap-2"><span class="text-emerald-500 font-bold">&#10003;</span> Workflow audit</li>
-            <li class="flex gap-2"><span class="text-emerald-500 font-bold">&#10003;</span> Top 3-5 AI opportunities</li>
-            <li class="flex gap-2"><span class="text-emerald-500 font-bold">&#10003;</span> Prioritized action plan</li>
-            <li class="flex gap-2"><span class="text-emerald-500 font-bold">&#10003;</span> ROI estimates for each</li>
+        <div class="lift-card rounded-2xl border-2 border-copper p-6 shadow-card relative bg-cream">
+          <div class="absolute -top-3 right-4 bg-copper text-white text-xs font-display font-bold px-3 py-1 rounded-full uppercase tracking-wider">Most Popular</div>
+          <div class="text-xs font-display font-700 uppercase tracking-[0.15em] text-copper mb-2">Gateway</div>
+          <div class="text-xl font-bold text-plum">AI Quick Assessment</div>
+          <div class="mt-2 font-display text-3xl font-bold text-plum">$300–$500</div>
+          <div class="text-sm text-driftwood mt-1">3-5 hour deep-dive</div>
+          <hr class="my-4 border-linen">
+          <ul class="space-y-2 text-sm text-driftwood">
+            <li class="flex gap-2"><span class="text-copper font-bold">&#10003;</span> Workflow audit</li>
+            <li class="flex gap-2"><span class="text-copper font-bold">&#10003;</span> Top 3-5 AI opportunities</li>
+            <li class="flex gap-2"><span class="text-copper font-bold">&#10003;</span> Prioritized action plan</li>
+            <li class="flex gap-2"><span class="text-copper font-bold">&#10003;</span> ROI estimates for each</li>
           </ul>
         </div>
 
-        <div class="lift-card rounded-2xl border border-white p-6 shadow-card">
-          <div class="text-sm font-bold uppercase tracking-wide text-purple-600 mb-2">Full Build</div>
-          <div class="text-xl font-bold text-slate-900">Implementation</div>
-          <div class="mt-2 font-display text-3xl font-bold text-slate-900">$1K–$5K</div>
-          <div class="text-sm text-slate-500 mt-1">Project-based</div>
-          <hr class="my-4 border-slate-200">
-          <ul class="space-y-2 text-sm text-slate-600">
-            <li class="flex gap-2"><span class="text-emerald-500 font-bold">&#10003;</span> Custom AI solution</li>
-            <li class="flex gap-2"><span class="text-emerald-500 font-bold">&#10003;</span> Built collaboratively</li>
-            <li class="flex gap-2"><span class="text-emerald-500 font-bold">&#10003;</span> Full training & docs</li>
-            <li class="flex gap-2"><span class="text-emerald-500 font-bold">&#10003;</span> You own everything</li>
+        <div class="lift-card rounded-2xl border border-linen bg-linen p-6 shadow-card">
+          <div class="text-xs font-display font-700 uppercase tracking-[0.15em] text-copper mb-2">Full Build</div>
+          <div class="text-xl font-bold text-plum">Implementation</div>
+          <div class="mt-2 font-display text-3xl font-bold text-plum">$1K–$5K</div>
+          <div class="text-sm text-driftwood mt-1">Project-based</div>
+          <hr class="my-4 border-cream">
+          <ul class="space-y-2 text-sm text-driftwood">
+            <li class="flex gap-2"><span class="text-copper font-bold">&#10003;</span> Custom AI solution</li>
+            <li class="flex gap-2"><span class="text-copper font-bold">&#10003;</span> Built collaboratively</li>
+            <li class="flex gap-2"><span class="text-copper font-bold">&#10003;</span> Full training & docs</li>
+            <li class="flex gap-2"><span class="text-copper font-bold">&#10003;</span> You own everything</li>
           </ul>
         </div>
 
-        <div class="lift-card rounded-2xl border border-white p-6 shadow-card">
-          <div class="text-sm font-bold uppercase tracking-wide text-amber-600 mb-2">Ongoing</div>
-          <div class="text-xl font-bold text-slate-900">Retainer</div>
-          <div class="mt-2 font-display text-3xl font-bold text-slate-900">$500–$1,500</div>
-          <div class="text-sm text-slate-500 mt-1">per month</div>
-          <hr class="my-4 border-slate-200">
-          <ul class="space-y-2 text-sm text-slate-600">
-            <li class="flex gap-2"><span class="text-emerald-500 font-bold">&#10003;</span> Ongoing optimization</li>
-            <li class="flex gap-2"><span class="text-emerald-500 font-bold">&#10003;</span> New use cases</li>
-            <li class="flex gap-2"><span class="text-emerald-500 font-bold">&#10003;</span> Training refreshers</li>
-            <li class="flex gap-2"><span class="text-emerald-500 font-bold">&#10003;</span> Priority support</li>
+        <div class="lift-card rounded-2xl border border-linen bg-linen p-6 shadow-card">
+          <div class="text-xs font-display font-700 uppercase tracking-[0.15em] text-copper mb-2">Ongoing</div>
+          <div class="text-xl font-bold text-plum">Retainer</div>
+          <div class="mt-2 font-display text-3xl font-bold text-plum">$500–$1,500</div>
+          <div class="text-sm text-driftwood mt-1">per month</div>
+          <hr class="my-4 border-cream">
+          <ul class="space-y-2 text-sm text-driftwood">
+            <li class="flex gap-2"><span class="text-copper font-bold">&#10003;</span> Ongoing optimization</li>
+            <li class="flex gap-2"><span class="text-copper font-bold">&#10003;</span> New use cases</li>
+            <li class="flex gap-2"><span class="text-copper font-bold">&#10003;</span> Training refreshers</li>
+            <li class="flex gap-2"><span class="text-copper font-bold">&#10003;</span> Priority support</li>
           </ul>
         </div>
       </div>
     </section>
 
     <!-- ========== CASE STUDIES ========== -->
-    <section id="work" data-reveal class="section-tint section-tint-sky mx-auto mt-8 sm:mt-12 max-w-6xl">
+    <section id="work" data-reveal class="section-wrap bg-linen mx-auto mt-8 sm:mt-12 max-w-6xl">
       <div>
-        <h2 class="font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Real Work, Real Results</h2>
-        <p class="mt-2 text-lg text-slate-600">Two different industries, two different end users, same throughline.</p>
+        <div class="text-xs font-display font-700 uppercase tracking-[0.2em] text-copper mb-2">Case Studies</div>
+        <h2 class="font-display text-3xl font-bold tracking-tight text-plum sm:text-4xl">Real Work, Real Results</h2>
+        <div class="copper-rule mt-4"></div>
+        <p class="mt-3 text-lg text-driftwood">Two different industries, two different end users, same throughline.</p>
       </div>
 
       <div class="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2">
-        <div class="lift-card rounded-2xl border border-white shadow-card overflow-hidden">
+        <div class="lift-card rounded-2xl border border-cream bg-cream shadow-card overflow-hidden">
           <div class="overflow-hidden">
             <img src="./pergolaflow-screenshot.png" alt="PergolaFlow CRM Dashboard showing customer stats, active jobs, and voice recording interface" class="w-full h-48 sm:h-56 object-cover object-top" loading="lazy" />
           </div>
           <div class="p-6">
             <div class="flex items-center gap-3 mb-4">
-              <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-sky-100 text-sky-600">
+              <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-copper/10 text-copper">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
               </div>
               <div>
-                <div class="font-bold text-lg text-slate-900">PergolaFlow</div>
-                <div class="text-sm text-slate-500">Voice-to-CRM for Construction</div>
+                <div class="font-bold text-lg text-plum">PergolaFlow</div>
+                <div class="text-sm text-driftwood">Voice-to-CRM for Construction</div>
               </div>
             </div>
-            <p class="text-base text-slate-700 leading-relaxed">A pergola construction business owner was tracking leads on paper and in his head. I built a voice-to-CRM system where he speaks into his phone, AI transcribes and extracts structured data, matches it against existing customers, and saves it to a database.</p>
+            <p class="text-base text-driftwood leading-relaxed">A pergola construction business owner was tracking leads on paper and in his head. I built a voice-to-CRM system where he speaks into his phone, AI transcribes and extracts structured data, matches it against existing customers, and saves it to a database.</p>
             <div class="mt-4 flex flex-wrap gap-2">
-              <span class="text-xs font-semibold bg-sky-50 text-sky-700 px-2.5 py-1 rounded-full border border-sky-200">Next.js</span>
-              <span class="text-xs font-semibold bg-sky-50 text-sky-700 px-2.5 py-1 rounded-full border border-sky-200">Whisper</span>
-              <span class="text-xs font-semibold bg-sky-50 text-sky-700 px-2.5 py-1 rounded-full border border-sky-200">Gemini</span>
-              <span class="text-xs font-semibold bg-sky-50 text-sky-700 px-2.5 py-1 rounded-full border border-sky-200">PocketBase</span>
+              <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Next.js</span>
+              <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Whisper</span>
+              <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Gemini</span>
+              <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">PocketBase</span>
             </div>
-            <p class="mt-4 text-sm font-semibold text-slate-500 italic">"He talks into his phone and the AI handles the rest."</p>
+            <p class="mt-4 text-sm font-semibold text-driftwood italic">"He talks into his phone and the AI handles the rest."</p>
           </div>
         </div>
 
-        <div class="lift-card rounded-2xl border border-white shadow-card overflow-hidden">
+        <div class="lift-card rounded-2xl border border-cream bg-cream shadow-card overflow-hidden">
           <div class="overflow-hidden relative">
             <img src="./finaid-screenshot.png" alt="FinAid Decision Support Dashboard showing student metrics, aid calculations, and cost-of-living adjustments" class="w-full h-48 sm:h-56 object-cover object-top" loading="lazy" />
-            <div class="bg-slate-800/80 backdrop-blur-sm text-white text-xs font-medium px-3 py-1.5 absolute bottom-0 left-0 right-0 text-center">All names shown are simulated demo data — no real student records.</div>
+            <div class="bg-plum/80 backdrop-blur-sm text-cream text-xs font-medium px-3 py-1.5 absolute bottom-0 left-0 right-0 text-center">All names shown are simulated demo data — no real student records.</div>
           </div>
           <div class="p-6">
             <div class="flex items-center gap-3 mb-4">
-              <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-purple-100 text-purple-600">
+              <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-copper/10 text-copper">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
               </div>
               <div>
-                <div class="font-bold text-lg text-slate-900">FinAid Dashboard</div>
-                <div class="text-sm text-slate-500">Higher Ed Decision Support</div>
+                <div class="font-bold text-lg text-plum">FinAid Dashboard</div>
+                <div class="text-sm text-driftwood">Higher Ed Decision Support</div>
               </div>
             </div>
-            <p class="text-base text-slate-700 leading-relaxed">A financial aid counselor needed a tool to account for regional cost-of-living differences and K-12 tuition burden — blind spots in the federal FAFSA formula. I built a full-stack decision-support dashboard that adjusts the Student Aid Index using real economic data.</p>
+            <p class="text-base text-driftwood leading-relaxed">A financial aid counselor needed a tool to account for regional cost-of-living differences and K-12 tuition burden — blind spots in the federal FAFSA formula. I built a full-stack decision-support dashboard that adjusts the Student Aid Index using real economic data.</p>
             <div class="mt-4 flex flex-wrap gap-2">
-              <span class="text-xs font-semibold bg-purple-50 text-purple-700 px-2.5 py-1 rounded-full border border-purple-200">Next.js</span>
-              <span class="text-xs font-semibold bg-purple-50 text-purple-700 px-2.5 py-1 rounded-full border border-purple-200">TypeScript</span>
-              <span class="text-xs font-semibold bg-purple-50 text-purple-700 px-2.5 py-1 rounded-full border border-purple-200">Tailwind</span>
-              <span class="text-xs font-semibold bg-purple-50 text-purple-700 px-2.5 py-1 rounded-full border border-purple-200">Cloudflare</span>
+              <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Next.js</span>
+              <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">TypeScript</span>
+              <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Tailwind</span>
+              <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Cloudflare</span>
             </div>
-            <p class="mt-4 text-sm font-semibold text-slate-500 italic">"Understand the problem, build the solution, transfer the capability."</p>
+            <p class="mt-4 text-sm font-semibold text-driftwood italic">"Understand the problem, build the solution, transfer the capability."</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ========== TESTIMONIALS ========== -->
-    <section id="testimonials" data-reveal class="section-tint section-tint-amber mx-auto mt-8 sm:mt-12 max-w-6xl">
+    <!-- ========== TESTIMONIALS (Lavender moment) ========== -->
+    <section id="testimonials" data-reveal class="section-wrap bg-lavender mx-auto mt-8 sm:mt-12 max-w-6xl">
       <div>
-        <h2 class="font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">What Clients Say</h2>
-        <p class="mt-2 text-lg text-slate-600">Real business owners, real results.</p>
+        <div class="text-xs font-display font-700 uppercase tracking-[0.2em] text-copper mb-2">Testimonials</div>
+        <h2 class="font-display text-3xl font-bold tracking-tight text-plum sm:text-4xl">What Clients Say</h2>
+        <div class="copper-rule mt-4"></div>
       </div>
 
       <div class="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2">
-        <div class="lift-card rounded-2xl border border-white p-6 shadow-card">
-          <div class="flex items-center gap-1 mb-4 text-amber-400">
+        <div class="lift-card rounded-2xl border border-white bg-cream p-6 shadow-card">
+          <div class="flex items-center gap-1 mb-4 text-copper">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <p class="text-base text-slate-700 leading-relaxed italic">"I was spending hours every week just organizing new client information — pulling details out of emails, phone notes, and intake forms into our case management system. David built us an AI workflow that handles the extraction automatically. What used to take my paralegal half a day now takes minutes. But the best part is he actually showed us how it works so we're not dependent on him."</p>
+          <p class="text-base text-driftwood leading-relaxed italic">"I was spending hours every week just organizing new client information — pulling details out of emails, phone notes, and intake forms into our case management system. David built us an AI workflow that handles the extraction automatically. What used to take my paralegal half a day now takes minutes. But the best part is he actually showed us how it works so we're not dependent on him."</p>
           <div class="mt-5 flex items-center gap-3">
-            <div class="h-10 w-10 rounded-full bg-slate-200 flex items-center justify-center font-display font-bold text-slate-600 text-sm">EL</div>
+            <div class="h-10 w-10 rounded-full bg-linen flex items-center justify-center font-display font-bold text-plum text-sm">EL</div>
             <div>
-              <div class="font-bold text-slate-900">Eli Lekht</div>
-              <div class="text-sm text-slate-500">Attorney, Solo Practice</div>
+              <div class="font-bold text-plum">Eli Lekht</div>
+              <div class="text-sm text-driftwood">Attorney, Solo Practice</div>
             </div>
           </div>
         </div>
 
-        <div class="lift-card rounded-2xl border border-white p-6 shadow-card">
-          <div class="flex items-center gap-1 mb-4 text-amber-400">
+        <div class="lift-card rounded-2xl border border-white bg-cream p-6 shadow-card">
+          <div class="flex items-center gap-1 mb-4 text-copper">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <p class="text-base text-slate-700 leading-relaxed italic">"I was keeping track of everything in my head — customer calls, job estimates, follow-ups. David built me a system where I just talk into my phone after a call and it does the rest. Names, addresses, job details — it all goes straight into the database. I'm not a tech guy at all, but he walked me through everything so I actually understand how it works."</p>
+          <p class="text-base text-driftwood leading-relaxed italic">"I was keeping track of everything in my head — customer calls, job estimates, follow-ups. David built me a system where I just talk into my phone after a call and it does the rest. Names, addresses, job details — it all goes straight into the database. I'm not a tech guy at all, but he walked me through everything so I actually understand how it works."</p>
           <div class="mt-5 flex items-center gap-3">
-            <div class="h-10 w-10 rounded-full bg-slate-200 flex items-center justify-center font-display font-bold text-slate-600 text-sm">IL</div>
+            <div class="h-10 w-10 rounded-full bg-linen flex items-center justify-center font-display font-bold text-plum text-sm">IL</div>
             <div>
-              <div class="font-bold text-slate-900">Ilya Lurye</div>
-              <div class="text-sm text-slate-500">Owner, Pergola Construction</div>
+              <div class="font-bold text-plum">Ilya Lurye</div>
+              <div class="text-sm text-driftwood">Owner, Pergola Construction</div>
             </div>
           </div>
         </div>
@@ -445,68 +432,69 @@
     </section>
 
     <!-- ========== ABOUT ========== -->
-    <section id="about" data-reveal class="section-tint section-tint-purple mx-auto mt-8 sm:mt-12 max-w-6xl">
+    <section id="about" data-reveal class="section-wrap bg-cream mx-auto mt-8 sm:mt-12 max-w-6xl">
       <div>
-        <h2 class="font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Why Me</h2>
-        <p class="mt-2 text-lg text-slate-600">A teacher who builds, not an engineer who presents.</p>
+        <div class="text-xs font-display font-700 uppercase tracking-[0.2em] text-copper mb-2">About</div>
+        <h2 class="font-display text-3xl font-bold tracking-tight text-plum sm:text-4xl">A teacher who builds, not an engineer who presents.</h2>
+        <div class="copper-rule mt-4"></div>
       </div>
 
       <div class="mt-6 grid grid-cols-1 gap-5 md:grid-cols-3">
-        <div class="lift-card rounded-2xl border border-white p-4 shadow-card flex flex-col items-center justify-center text-center">
-          <img src="./headshot.png" alt="David Bassin" class="w-36 h-36 rounded-2xl object-cover object-top border-4 border-white shadow-lg" loading="lazy" />
-          <div class="mt-4 font-display font-bold text-xl text-slate-900">David Bassin</div>
-          <div class="text-sm font-semibold text-accent-600 uppercase tracking-wide mt-1">Founder & Principal Consultant</div>
-          <div class="mt-3 text-sm text-slate-500">M.S. Education, Pace University<br>B.A. History, Baruch College</div>
+        <div class="lift-card rounded-2xl border border-linen bg-linen p-4 shadow-card flex flex-col items-center justify-center text-center">
+          <img src="./headshot.png" alt="David Bassin" class="w-36 h-36 rounded-2xl object-cover object-top border-4 border-cream shadow-lg" loading="lazy" />
+          <div class="mt-4 font-display font-bold text-xl text-plum">David Bassin</div>
+          <div class="text-sm font-semibold text-copper uppercase tracking-wide mt-1">Founder & Principal Consultant</div>
+          <div class="mt-3 text-sm text-driftwood">M.S. Education, Pace University<br>B.A. History, Baruch College</div>
         </div>
-        <div class="lift-card rounded-2xl border border-white p-6 shadow-card">
-          <div class="text-sm font-bold uppercase tracking-wide text-slate-500 mb-3">The Background</div>
-          <p class="text-base text-slate-700 leading-relaxed">
+        <div class="lift-card rounded-2xl border border-linen bg-linen p-6 shadow-card">
+          <div class="text-xs font-display font-700 uppercase tracking-[0.15em] text-copper mb-3">The Background</div>
+          <p class="text-base text-driftwood leading-relaxed">
             Eight years teaching World History and AP Economics. Three years in IT at a media publishing company. A Master's in Education from Pace University.
           </p>
-          <p class="mt-3 text-base text-slate-700 leading-relaxed">
-            The teaching background isn't incidental to the consulting practice — <strong>it is the practice.</strong> The core professional skill is making complex, intimidating ideas accessible to people who don't yet understand them. Same skill whether the audience is a classroom of students or a small business owner trying to understand what AI can do.
+          <p class="mt-3 text-base text-driftwood leading-relaxed">
+            The teaching background isn't incidental to the consulting practice — <strong class="text-plum">it is the practice.</strong> The core professional skill is making complex, intimidating ideas accessible to people who don't yet understand them. Same skill whether the audience is a classroom of students or a small business owner trying to understand what AI can do.
           </p>
         </div>
 
-        <div class="lift-card rounded-2xl border border-white p-6 shadow-card">
-          <div class="text-sm font-bold uppercase tracking-wide text-slate-500 mb-3">The Differentiator</div>
-          <p class="text-base text-slate-700 leading-relaxed mb-4">
+        <div class="lift-card rounded-2xl border border-linen bg-linen p-6 shadow-card">
+          <div class="text-xs font-display font-700 uppercase tracking-[0.15em] text-copper mb-3">The Differentiator</div>
+          <p class="text-base text-driftwood leading-relaxed mb-4">
             Most AI consultants come from engineering or data science backgrounds and struggle to communicate with non-technical business owners. I come from the opposite direction: I start with understanding your problem, then apply the technology.
           </p>
           <div class="space-y-3">
             <div class="flex items-center gap-3">
-              <span class="text-emerald-500 font-bold">&#10003;</span>
-              <span class="text-sm text-slate-700">Teaching over selling — every interaction creates understanding</span>
+              <span class="text-copper font-bold">&#10003;</span>
+              <span class="text-sm text-driftwood">Teaching over selling — every interaction creates understanding</span>
             </div>
             <div class="flex items-center gap-3">
-              <span class="text-emerald-500 font-bold">&#10003;</span>
-              <span class="text-sm text-slate-700">Build with you, not just for you</span>
+              <span class="text-copper font-bold">&#10003;</span>
+              <span class="text-sm text-driftwood">Build with you, not just for you</span>
             </div>
             <div class="flex items-center gap-3">
-              <span class="text-emerald-500 font-bold">&#10003;</span>
-              <span class="text-sm text-slate-700">No black boxes, no jargon, no mystification</span>
+              <span class="text-copper font-bold">&#10003;</span>
+              <span class="text-sm text-driftwood">No black boxes, no jargon, no mystification</span>
             </div>
             <div class="flex items-center gap-3">
-              <span class="text-emerald-500 font-bold">&#10003;</span>
-              <span class="text-sm text-slate-700">If AI isn't the right answer, I'll tell you</span>
+              <span class="text-copper font-bold">&#10003;</span>
+              <span class="text-sm text-driftwood">If AI isn't the right answer, I'll tell you</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ========== FINAL CTA ========== -->
-    <section data-reveal class="section-tint section-tint-hero mx-auto mt-8 sm:mt-12 max-w-6xl mb-12">
+    <!-- ========== FINAL CTA (Dark Plum section) ========== -->
+    <section data-reveal class="section-wrap bg-plum mx-auto mt-8 sm:mt-12 max-w-6xl mb-12">
       <div class="text-center max-w-2xl mx-auto">
-        <h2 class="font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Ready to see what AI can do for your business?</h2>
-        <p class="mt-4 text-lg text-slate-600">
+        <h2 class="font-display text-3xl font-bold tracking-tight text-cream sm:text-4xl">Ready to see what AI can do for your business?</h2>
+        <p class="mt-4 text-lg text-cream/70">
           Start with a free 15-20 minute call. No sales pitch — just an honest conversation about whether AI makes sense for your situation.
         </p>
         <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
-          <a href="mailto:david@bassinconsulting.com?subject=AI%20Consulting%20Inquiry" class="inline-flex h-12 items-center justify-center rounded-xl bg-slate-900 px-8 text-base font-semibold text-white shadow-md hover:bg-slate-800 transition-all hover:-translate-y-0.5">
+          <a href="mailto:david@bassinconsulting.com?subject=AI%20Consulting%20Inquiry" class="inline-flex h-12 items-center justify-center rounded-lg bg-copper px-8 text-base font-semibold text-white shadow-md hover:bg-copper-light transition-all hover:-translate-y-0.5">
             Book a Free Call
           </a>
-          <a href="mailto:david@bassinconsulting.com?subject=Question%20About%20AI%20Consulting" class="inline-flex h-12 items-center justify-center rounded-xl border border-slate-300 bg-white/80 px-8 text-base font-semibold text-slate-700 shadow-sm hover:bg-white transition-all">
+          <a href="mailto:david@bassinconsulting.com?subject=Question%20About%20AI%20Consulting" class="inline-flex h-12 items-center justify-center rounded-lg border border-cream/30 px-8 text-base font-semibold text-cream shadow-sm hover:bg-cream/10 transition-all">
             Ask a Question
           </a>
         </div>
@@ -516,19 +504,19 @@
   </main>
 
   <!-- ========== FOOTER ========== -->
-  <footer class="bg-slate-900 text-slate-300 py-12 mt-12 border-t border-slate-800">
+  <footer class="bg-plum text-cream/60 py-12 mt-12 border-t border-cream/10">
     <div class="mx-auto max-w-6xl px-6 flex flex-col md:flex-row items-center justify-between gap-6">
       <div class="text-center md:text-left">
-        <div class="font-display font-bold text-xl text-white">Bassin Consulting</div>
-        <div class="text-slate-400 text-sm mt-1">AI Enablement for Small Business</div>
+        <div class="text-sm font-display font-800 tracking-[0.2em] uppercase text-copper">Bassin Consulting</div>
+        <div class="text-cream/40 text-sm mt-1 italic">AI Enablement for Small Business</div>
       </div>
 
       <div class="flex items-center gap-6 text-sm font-semibold">
-        <a href="mailto:david@bassinconsulting.com" class="hover:text-white transition-colors">Email</a>
-        <a href="https://linkedin.com/in/davidbassin" target="_blank" class="hover:text-white transition-colors">LinkedIn</a>
+        <a href="mailto:david@bassinconsulting.com" class="hover:text-copper transition-colors">Email</a>
+        <a href="https://linkedin.com/in/davidbassin" target="_blank" class="hover:text-copper transition-colors">LinkedIn</a>
       </div>
     </div>
-    <div class="mx-auto max-w-6xl px-6 mt-6 pt-6 border-t border-slate-800 text-center text-xs text-slate-500">
+    <div class="mx-auto max-w-6xl px-6 mt-6 pt-6 border-t border-cream/10 text-center text-xs text-cream/30">
       &copy; 2026 Bassin Consulting. Woodmere, NY (Nassau County). All rights reserved.
     </div>
   </footer>

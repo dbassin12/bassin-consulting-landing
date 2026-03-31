@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bassinconsulting.com/sitemap.xml

@@ -1,6 +1,45 @@
 const { Resend } = require('resend');
 
-const GOOGLE_SCRIPT_URL = process.env.GOOGLE_SCRIPT_URL;
+const SHEET_TIMEOUT_MS = 8000;
+
+async function writeToSheet(payload) {
+  const url = process.env.GOOGLE_SCRIPT_URL;
+  if (!url) {
+    console.warn('[sheet] GOOGLE_SCRIPT_URL not set — skipping sheet write');
+    return 'skipped';
+  }
+
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), SHEET_TIMEOUT_MS);
+  try {
+    const r = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+      signal: controller.signal
+    });
+    if (!r.ok) {
+      const body = await r.text().catch(() => '');
+      console.error('[sheet] non-ok response', r.status, r.statusText, body.slice(0, 500));
+      return 'failed';
+    }
+    const json = await r.json().catch(() => null);
+    if (json && json.ok === false) {
+      console.error('[sheet] Apps Script reported failure', json);
+      return 'failed';
+    }
+    return 'ok';
+  } catch (err) {
+    if (err && err.name === 'AbortError') {
+      console.error(`[sheet] timeout after ${SHEET_TIMEOUT_MS}ms`);
+    } else {
+      console.error('[sheet] fetch failed', err);
+    }
+    return 'failed';
+  } finally {
+    clearTimeout(timer);
+  }
+}
 
 module.exports = async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -10,36 +49,31 @@ module.exports = async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
+  const {
+    firstName, lastName, email, company, role, companySize,
+    challenge, totalScore, strategy, infrastructure, people, operations
+  } = req.body || {};
+
+  if (!firstName || !lastName || !email || !company || !role || !companySize) {
+    return res.status(400).json({ error: 'Missing required fields' });
+  }
+
+  const tier = totalScore <= 12 ? 'Early Stage'
+    : totalScore <= 20 ? 'Building Foundations'
+    : totalScore <= 30 ? 'Accelerating'
+    : 'AI-Forward';
+
+  const sheetWrite = await writeToSheet({
+    firstName, lastName, email, company, role, companySize,
+    challenge, totalScore, strategy, infrastructure, people, operations,
+    source: 'Scorecard'
+  });
+
+  const resend = new Resend(process.env.RESEND_API_KEY);
+  let notificationEmail = 'ok';
+  let resultsEmail = 'ok';
+
   try {
-    const {
-      firstName, lastName, email, company, role, companySize,
-      challenge, totalScore, strategy, infrastructure, people, operations
-    } = req.body;
-
-    if (!firstName || !lastName || !email || !company || !role || !companySize) {
-      return res.status(400).json({ error: 'Missing required fields' });
-    }
-
-    const tier = totalScore <= 12 ? 'Early Stage'
-      : totalScore <= 20 ? 'Building Foundations'
-      : totalScore <= 30 ? 'Accelerating'
-      : 'AI-Forward';
-
-    // --- Write to Google Sheet via Apps Script ---
-    await fetch(GOOGLE_SCRIPT_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        firstName, lastName, email, company, role, companySize,
-        challenge, totalScore, strategy, infrastructure, people, operations,
-        source: 'Scorecard'
-      })
-    });
-
-    // --- Emails via Resend ---
-    const resend = new Resend(process.env.RESEND_API_KEY);
-
-    // Notification to David
     await resend.emails.send({
       from: 'Bassin Consulting <notifications@bassinconsulting.com>',
       to: 'david@bassinconsulting.com',
@@ -61,23 +95,27 @@ module.exports = async function handler(req, res) {
         </table>
       `
     });
+  } catch (err) {
+    console.error('[email] notification send failed', err);
+    notificationEmail = 'failed';
+  }
 
-    // Results email to the lead
-    const weakest = Object.entries({ strategy, infrastructure, people, operations })
-      .sort((a, b) => a[1] - b[1])[0][0];
-    const catLabels = {
-      strategy: 'Strategy & Vision',
-      infrastructure: 'Data & Infrastructure',
-      people: 'People & Culture',
-      operations: 'Operations & Governance'
-    };
-    const recommendations = {
-      strategy: 'Start by aligning your leadership team around 2-3 specific business outcomes where AI could have the biggest impact. A clear strategy prevents wasted investment.',
-      infrastructure: 'Focus on organizing your existing data — even basic cleanup of spreadsheets and file systems makes AI tools dramatically more effective.',
-      people: 'Identify 1-2 team members who are curious about AI and empower them to experiment. Internal champions drive adoption faster than top-down mandates.',
-      operations: 'Build a simple framework for evaluating AI tools: what problem does it solve, how will you measure success, and what does "good enough" look like to scale?'
-    };
+  const weakest = Object.entries({ strategy, infrastructure, people, operations })
+    .sort((a, b) => a[1] - b[1])[0][0];
+  const catLabels = {
+    strategy: 'Strategy & Vision',
+    infrastructure: 'Data & Infrastructure',
+    people: 'People & Culture',
+    operations: 'Operations & Governance'
+  };
+  const recommendations = {
+    strategy: 'Start by aligning your leadership team around 2-3 specific business outcomes where AI could have the biggest impact. A clear strategy prevents wasted investment.',
+    infrastructure: 'Focus on organizing your existing data — even basic cleanup of spreadsheets and file systems makes AI tools dramatically more effective.',
+    people: 'Identify 1-2 team members who are curious about AI and empower them to experiment. Internal champions drive adoption faster than top-down mandates.',
+    operations: 'Build a simple framework for evaluating AI tools: what problem does it solve, how will you measure success, and what does "good enough" look like to scale?'
+  };
 
+  try {
     await resend.emails.send({
       from: 'David Bassin <david@bassinconsulting.com>',
       to: email,
@@ -129,10 +167,30 @@ module.exports = async function handler(req, res) {
         </div>
       `
     });
-
-    return res.status(200).json({ success: true, tier, totalScore });
   } catch (err) {
-    console.error('Scorecard API error:', err);
-    return res.status(500).json({ error: 'Something went wrong. Please try again.' });
+    console.error('[email] results send failed', err);
+    resultsEmail = 'failed';
   }
+
+  const emailStatus = (notificationEmail === 'ok' || resultsEmail === 'ok') ? 'ok' : 'failed';
+
+  if (sheetWrite === 'failed' && emailStatus === 'failed') {
+    return res.status(500).json({
+      error: 'Something went wrong. Please try again.',
+      sheetWrite,
+      email: emailStatus,
+      notificationEmail,
+      resultsEmail
+    });
+  }
+
+  return res.status(200).json({
+    success: true,
+    tier,
+    totalScore,
+    sheetWrite,
+    email: emailStatus,
+    notificationEmail,
+    resultsEmail
+  });
 };

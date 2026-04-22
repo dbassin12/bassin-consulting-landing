@@ -38,6 +38,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
+  <!-- Calendly widget assets -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+
   <script src="https://cdn.tailwindcss.com"></script>
 
   <script>
@@ -125,7 +128,7 @@
         <a href="./scorecard.html" class="inline-flex items-center gap-2 rounded-lg border border-copper/30 bg-cream px-5 py-2.5 text-sm font-semibold text-copper shadow-sm hover:bg-copper hover:text-white transition-all hover:-translate-y-0.5">
           Free AI Scorecard
         </a>
-        <a href="#contact" class="inline-flex items-center gap-2 rounded-lg bg-copper px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-copper-light transition-all hover:-translate-y-0.5">
+        <a href="https://calendly.com/davidbassin12/30min?hide_gdpr_banner=1&utm_source=website&utm_content=nav_desktop" target="_blank" rel="noopener" onclick="return openCalendly('nav_desktop')" class="inline-flex items-center gap-2 rounded-lg bg-copper px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-copper-light transition-all hover:-translate-y-0.5">
           Book a Free Call
         </a>
       </div>
@@ -145,7 +148,7 @@
         <a href="#work" class="rounded-lg px-4 py-3 text-sm font-semibold text-plum bg-linen">Work</a>
         <a href="#about" class="rounded-lg px-4 py-3 text-sm font-semibold text-plum bg-linen">About</a>
         <a href="./scorecard.html" class="rounded-lg px-4 py-3 text-sm font-semibold text-copper bg-linen text-center mt-2 border border-copper/30">Free AI Scorecard</a>
-        <a href="#contact" class="rounded-lg px-4 py-3 text-sm font-semibold text-white bg-copper text-center">Book a Free Call</a>
+        <a href="https://calendly.com/davidbassin12/30min?hide_gdpr_banner=1&utm_source=website&utm_content=nav_mobile" target="_blank" rel="noopener" onclick="return openCalendly('nav_mobile')" class="rounded-lg px-4 py-3 text-sm font-semibold text-white bg-copper text-center">Book a Free Call</a>
       </div>
     </div>
   </header>
@@ -185,7 +188,7 @@
           </p>
 
           <div class="mt-6 flex flex-wrap items-center gap-3">
-            <a href="#contact" class="inline-flex h-12 items-center justify-center rounded-lg bg-copper px-6 text-base font-semibold text-white shadow-md hover:bg-copper-light transition-all hover:-translate-y-0.5">
+            <a href="https://calendly.com/davidbassin12/30min?hide_gdpr_banner=1&utm_source=website&utm_content=hero" target="_blank" rel="noopener" onclick="return openCalendly('hero')" class="inline-flex h-12 items-center justify-center rounded-lg bg-copper px-6 text-base font-semibold text-white shadow-md hover:bg-copper-light transition-all hover:-translate-y-0.5">
               Book a Free Call
             </a>
             <a href="./scorecard.html" class="inline-flex h-12 items-center justify-center rounded-lg border border-copper/30 bg-cream px-6 text-base font-semibold text-copper shadow-sm hover:bg-copper hover:text-white transition-all hover:-translate-y-0.5">
@@ -661,7 +664,20 @@
   </footer>
 
   <!-- ========== SCRIPTS ========== -->
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
   <script>
+    // Calendly booking helper — opens popup with branded colors + UTM tracking.
+    // Fallback to default link navigation if Calendly hasn't loaded yet.
+    function openCalendly(source) {
+      if (window.Calendly) {
+        Calendly.initPopupWidget({
+          url: 'https://calendly.com/davidbassin12/30min?hide_gdpr_banner=1&primary_color=C07842&background_color=FDFCF9&text_color=2A2530&utm_source=website&utm_content=' + encodeURIComponent(source || 'button')
+        });
+        return false;
+      }
+      return true;
+    }
+
     // Mobile menu toggle
     const btn = document.getElementById('mobileMenuBtn');
     const menu = document.getElementById('mobileMenu');

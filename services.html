@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What We Build &mdash; Bassin Consulting</title>
+  <meta name="description" content="20 ways Bassin Consulting automates the manual work eating your week — lead-gen, phone-to-CRM, customer reactivation, invoice chasing, document workflows, and weekly reporting. Built for Five Towns small businesses.">
+  <meta name="author" content="David Bassin">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="What We Build — Bassin Consulting">
+  <meta property="og:description" content="Find · Catch · Keep — 20 ways we automate the manual work eating your week.">
+  <link rel="canonical" href="https://bassinconsulting.com/services.html">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='15' fill='%232A2530'/><circle cx='16' cy='16' r='13' fill='none' stroke='%23C07842' stroke-width='1.5'/><text x='16' y='21' font-size='16' font-weight='800' font-family='sans-serif' text-anchor='middle' fill='%23FDFCF9'>B</text></svg>" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['DM Sans', 'ui-sans-serif', 'system-ui'],
+            display: ['Sora', 'DM Sans', 'ui-sans-serif', 'system-ui']
+          },
+          colors: {
+            cream: '#FDFCF9',
+            linen: '#F7F3EE',
+            plum: '#2A2530',
+            copper: { DEFAULT: '#C07842', light: '#D49A68' },
+            driftwood: '#8E857E',
+            lavender: '#F3F0F6',
+          },
+          boxShadow: {
+            'card': '0 4px 20px -2px rgba(42, 37, 48, 0.05), 0 0 3px rgba(42, 37, 48, 0.02)',
+            'card-hover': '0 12px 30px -4px rgba(42, 37, 48, 0.08), 0 0 4px rgba(42, 37, 48, 0.03)',
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    html { font-size: 100%; }
+    @media (min-width: 640px) { html { font-size: 112.5%; } }
+
+    .section-wrap {
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      border: 1px solid rgba(247, 243, 238, 0.8);
+    }
+    @media (min-width: 640px) {
+      .section-wrap { padding: 2.5rem; }
+    }
+
+    .lift-card {
+      transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .lift-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px -4px rgba(42, 37, 48, 0.08), 0 0 4px rgba(42, 37, 48, 0.03);
+    }
+
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 600ms ease, transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal-item.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .copper-rule { width: 48px; height: 3px; background: #C07842; border-radius: 2px; }
+  </style>
+</head>
+
+<body class="h-full bg-cream text-base leading-[1.75] text-driftwood font-sans antialiased selection:bg-copper/10 selection:text-plum">
+
+  <!-- ========== HEADER ========== -->
+  <header class="sticky top-0 z-40 border-b border-linen bg-cream/90 backdrop-blur-sm">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
+      <a href="./index.html" class="flex items-center gap-2.5">
+        <div class="h-8 w-8 rounded-full bg-plum flex items-center justify-center shrink-0" style="box-shadow: inset 0 0 0 1.5px #C07842;">
+          <span class="font-display font-[800] text-cream text-xs leading-none">B</span>
+        </div>
+        <div class="leading-tight">
+          <div class="text-xs sm:text-sm font-display font-bold tracking-[0.18em] uppercase text-plum">Bassin Consulting</div>
+          <div class="text-xs sm:text-sm font-semibold text-copper italic">AI Solutions for Small Business</div>
+        </div>
+      </a>
+
+      <div class="hidden items-center gap-6 sm:flex">
+        <a href="./index.html" class="inline-flex items-center gap-1.5 text-sm font-semibold text-driftwood hover:text-copper transition-colors">
+          <span aria-hidden="true">&larr;</span> Home
+        </a>
+        <a href="./services.html" class="text-sm font-semibold text-copper transition-colors">What We Build</a>
+        <a href="./index.html#about" class="text-sm font-semibold text-driftwood hover:text-copper transition-colors">About</a>
+        <a href="./scorecard.html" class="inline-flex items-center gap-2 rounded-lg border border-copper/30 bg-cream px-5 py-2.5 text-sm font-semibold text-copper shadow-sm hover:bg-copper hover:text-white transition-all hover:-translate-y-0.5">
+          Free AI Scorecard
+        </a>
+        <a href="https://calendly.com/davidbassin12/30min?hide_gdpr_banner=1&utm_source=website&utm_content=nav_desktop" target="_blank" rel="noopener" onclick="return openCalendly('nav_desktop')" class="inline-flex items-center gap-2 rounded-lg bg-copper px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-copper-light transition-all hover:-translate-y-0.5">
+          Book a Free Call
+        </a>
+      </div>
+
+      <button id="mobileMenuBtn" class="sm:hidden inline-flex items-center justify-center rounded-lg p-2 text-driftwood bg-linen border border-linen" aria-label="Open menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </nav>
+
+    <div id="mobileMenu" class="sm:hidden hidden border-t border-linen bg-cream absolute w-full shadow-xl">
+      <div class="mx-auto px-4 py-4 flex flex-col gap-2">
+        <a href="./index.html" class="rounded-lg px-4 py-3 text-sm font-semibold text-plum bg-linen">&larr; Home</a>
+        <a href="./services.html" class="rounded-lg px-4 py-3 text-sm font-semibold text-plum bg-linen">What We Build</a>
+        <a href="./index.html#about" class="rounded-lg px-4 py-3 text-sm font-semibold text-plum bg-linen">About</a>
+        <a href="./scorecard.html" class="rounded-lg px-4 py-3 text-sm font-semibold text-copper bg-linen text-center mt-2 border border-copper/30">Free AI Scorecard</a>
+        <a href="https://calendly.com/davidbassin12/30min?hide_gdpr_banner=1&utm_source=website&utm_content=nav_mobile" target="_blank" rel="noopener" onclick="return openCalendly('nav_mobile')" class="rounded-lg px-4 py-3 text-sm font-semibold text-white bg-copper text-center">Book a Free Call</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========== MINI HERO ========== -->
+    <section data-reveal class="section-wrap bg-linen mx-auto mt-6 sm:mt-10 max-w-6xl">
+      <div class="text-center">
+        <div class="text-xs font-display font-700 uppercase tracking-[0.2em] text-copper mb-3">What We Build</div>
+        <h1 class="font-display text-4xl font-bold tracking-tight text-plum sm:text-5xl md:text-6xl leading-[1.1]">
+          20 ways to <span class="text-copper">get the time back.</span>
+        </h1>
+        <p class="mt-5 mx-auto max-w-2xl text-lg text-driftwood">
+          Anywhere a human is copy-pasting, retyping, chasing, or forgetting &mdash; that&rsquo;s where we automate. Six categories, one-to-two-week builds, flat-fee setup. Built for businesses your size, not enterprise.
+        </p>
+
+        <div class="mt-8 flex items-center justify-center gap-3 flex-wrap">
+          <a href="#find" class="px-5 py-2 rounded-full bg-plum text-cream text-sm font-display font-semibold tracking-wide uppercase hover:bg-copper transition-colors">Find</a>
+          <span class="copper-rule"></span>
+          <a href="#catch" class="px-5 py-2 rounded-full bg-plum text-cream text-sm font-display font-semibold tracking-wide uppercase hover:bg-copper transition-colors">Catch</a>
+          <span class="copper-rule"></span>
+          <a href="#keep" class="px-5 py-2 rounded-full bg-plum text-cream text-sm font-display font-semibold tracking-wide uppercase hover:bg-copper transition-colors">Keep</a>
+          <span class="text-xs font-semibold uppercase tracking-[0.18em] text-driftwood ml-2 italic">flywheel</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 1. FIND — Lead & Customer Acquisition ========== -->
+    <section id="find" data-reveal class="section-wrap bg-cream mx-auto mt-8 sm:mt-12 max-w-6xl scroll-mt-24">
+      <div class="flex items-start gap-5 sm:gap-7">
+        <div class="flex h-14 w-14 sm:h-16 sm:w-16 shrink-0 items-center justify-center rounded-full bg-copper/10 text-copper font-display font-bold text-2xl sm:text-3xl">1</div>
+        <div class="flex-1 min-w-0">
+          <div class="text-xs font-display font-700 uppercase tracking-[0.2em] text-copper mb-2">Find</div>
+          <h2 class="font-display text-3xl font-bold tracking-tight text-plum sm:text-4xl">Lead &amp; Customer Acquisition</h2>
+          <div class="copper-rule mt-4"></div>
+          <p class="mt-3 text-lg text-driftwood">Stop relying on word-of-mouth and Google luck. Build a steady flow of new customers on rails.</p>
+        </div>
+      </div>
+
+      <div class="mt-6 grid grid-cols-1 gap-5 md:grid-cols-3">
+        <div class="lift-card relative rounded-2xl border-2 border-copper bg-linen p-6 shadow-card flex flex-col">
+          <div class="absolute -top-3 right-4 bg-copper text-white text-[10px] font-display font-bold px-3 py-1 rounded-full uppercase tracking-[0.15em]">Where to Start</div>
+          <div class="text-lg font-bold text-plum">Lead Generation</div>
+          <p class="mt-2 text-sm text-driftwood leading-relaxed flex-1">We find your next 100 best-fit customers &mdash; by neighborhood, industry, and buying signal &mdash; and put them in front of you with a hook for each one. No spray-and-pray lists.</p>
+          <div class="mt-4 pt-4 border-t border-cream">
+            <div class="text-sm font-semibold text-plum">A steady weekly flow of qualified, ready-to-pitch prospects.</div>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-1.5">
+            <span class="text-xs font-semibold bg-cream text-plum px-2.5 py-1 rounded-full border border-cream">Home services</span>
+            <span class="text-xs font-semibold bg-cream text-plum px-2.5 py-1 rounded-full border border-cream">Professional services</span>
+            <span class="text-xs font-semibold bg-cream text-plum px-2.5 py-1 rounded-full border border-cream">Healthcare</span>
+          </div>
+        </div>
+
+        <div class="lift-card rounded-2xl border border-linen bg-linen p-6 shadow-card flex flex-col">
+          <div class="text-lg font-bold text-plum">AI Website Chatbot</div>
+          <p class="mt-2 text-sm text-driftwood leading-relaxed flex-1">A 24/7 chatbot trained on your business that answers FAQs, qualifies leads, and books calls or appointments straight into your calendar &mdash; even at 2am.</p>
+          <div class="mt-4 pt-4 border-t border-cream">
+            <div class="text-sm font-semibold text-plum">Captured leads that would have otherwise bounced; fewer &ldquo;what are your hours?&rdquo; calls.</div>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-1.5">
+            <span class="text-xs font-semibold bg-cream text-plum px-2.5 py-1 rounded-full border border-cream">Any business with a website</span>
+          </div>
+        </div>
+
+        <div class="lift-card rounded-2xl border border-linen bg-linen p-6 shadow-card flex flex-col">
+          <div class="text-lg font-bold text-plum">Quote &amp; Estimate Automation</div>
+          <p class="mt-2 text-sm text-driftwood leading-relaxed flex-1">Form on your site &rarr; auto-generated quote &rarr; sent to the prospect &rarr; logged in your CRM &rarr; reminder fires if they don&rsquo;t reply. No more spending an hour writing a $300 estimate.</p>
+          <div class="mt-4 pt-4 border-t border-cream">
+            <div class="text-sm font-semibold text-plum">Faster turnaround on quotes &mdash; the #1 reason small businesses lose deals to competitors.</div>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-1.5">
+            <span class="text-xs font-semibold bg-cream text-plum px-2.5 py-1 rounded-full border border-cream">Contractors</span>
+            <span class="text-xs font-semibold bg-cream text-plum px-2.5 py-1 rounded-full border border-cream">Home services</span>
+            <span class="text-xs font-semibold bg-cream text-plum px-2.5 py-1 rounded-full border border-cream">B2B services</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 2. CATCH — Front-Door & Phone Automation ========== -->
+    <section id="catch" data-reveal class="section-wrap bg-linen mx-auto mt-8 sm:mt-12 max-w-6xl scroll-mt-24">
+      <div class="flex items-start gap-5 sm:gap-7">
+        <div class="flex h-14 w-14 sm:h-16 sm:w-16 shrink-0 items-center justify-center rounded-full bg-copper/10 text-copper font-display font-bold text-2xl sm:text-3xl">2</div>
+        <div class="flex-1 min-w-0">
+          <div class="text-xs font-display font-700 uppercase tracking-[0.2em] text-copper mb-2">Catch</div>
+          <h2 class="font-display text-3xl font-bold tracking-tight text-plum sm:text-4xl">Front-Door &amp; Phone Automation</h2>
+          <div class="copper-rule mt-4"></div>
+          <p class="mt-3 text-lg text-driftwood">Most small businesses lose 30% of inbound calls. Make every ring, voicemail, and missed text count.</p>
+        </div>
+      </div>
+
+      <div class="mt-6 grid grid-cols-1 gap-5 md:grid-cols-3">
+        <div class="lift-card relative rounded-2xl border-2 border-copper bg-cream p-6 shadow-card flex flex-col">
+          <div class="absolute -top-3 right-4 bg-copper text-white text-[10px] font-display font-bold px-3 py-1 rounded-full uppercase tracking-[0.15em]">Where to Start</div>
+          <div class="text-lg font-bold text-plum">Missed-Call Text-Back</div>
+          <p class="mt-2 text-sm text-driftwood leading-relaxed flex-1">Anyone who calls when you&rsquo;re busy gets an instant SMS: &ldquo;Sorry we missed you &mdash; what can we help with?&rdquo; Most small businesses lose 30% of inbound calls. This recovers them.</p>
+          <div class="mt-4 pt-4 border-t border-linen">
+            <div class="text-sm font-semibold text-plum">Dramatically fewer lost leads from a single 30-minute setup.</div>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-1.5">
+            <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Home services</span>
+            <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Salons</span>
+            <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Healthcare</span>
+            <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Restaurants</span>
+          </div>
+        </div>
+
+        <div class="lift-card rounded-2xl border border-cream bg-cream p-6 shadow-card flex flex-col">
+          <div class="text-lg font-bold text-plum">AI Phone Receptionist</div>
+          <p class="mt-2 text-sm text-driftwood leading-relaxed flex-1">AI answers your phone, handles FAQs, books appointments into your calendar, and routes urgent calls to you. Sounds like a real person. Built for owner-operators who can&rsquo;t afford a $50K/yr receptionist but lose business to voicemail.</p>
+          <div class="mt-4 pt-4 border-t border-linen">
+            <div class="text-sm font-semibold text-plum">Every call answered, every booking captured &mdash; even when you&rsquo;re on a job.</div>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-1.5">
+            <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Owner-operators</span>
+            <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Phone-driven business</span>
+          </div>
+        </div>
+
+        <div class="lift-card rounded-2xl border border-cream bg-cream p-6 shadow-card flex flex-col">
+          <div class="text-lg font-bold text-plum">Appointment Scheduling &amp; Reminders</div>
+          <p class="mt-2 text-sm text-driftwood leading-relaxed flex-1">Online booking flow + automated SMS/email reminders 24h and 2h before. Cuts no-shows by 50%+. The owner stops being the receptionist.</p>
+          <div class="mt-4 pt-4 border-t border-linen">
+            <div class="text-sm font-semibold text-plum">Fewer no-shows, less back-and-forth scheduling.</div>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-1.5">
+            <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Dental</span>
+            <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Medical</span>
+            <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Fitness</span>
+            <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Professional services</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PULL QUOTE — Voice-to-CRM proof ========== -->
+    <section data-reveal class="section-wrap bg-plum mx-auto mt-8 sm:mt-12 max-w-6xl">
+      <div class="text-center py-4 sm:py-6">
+        <div class="text-xs font-display font-700 uppercase tracking-[0.25em] text-copper-light mb-5">In production today</div>
+        <p class="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-cream leading-tight max-w-3xl mx-auto">
+          Nine seconds. Hangup to <span class="text-copper">structured CRM deal</span> &mdash; with the address, the price, and the follow-up time already captured.
+        </p>
+        <p class="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-cream/50">A residential plumbing contractor &middot; <span class="text-copper-light">Catch, in action</span></p>
+      </div>
+    </section>
+
+    <!-- ========== 3. KEEP — Customer Communication & Retention ========== -->
+    <section id="keep" data-reveal class="section-wrap bg-lavender mx-auto mt-8 sm:mt-12 max-w-6xl scroll-mt-24">
+      <div class="flex items-start gap-5 sm:gap-7">
+        <div class="flex h-14 w-14 sm:h-16 sm:w-16 shrink-0 items-center justify-center rounded-full bg-copper/10 text-copper font-display font-bold text-2xl sm:text-3xl">3</div>
+        <div class="flex-1 min-w-0">
+          <div class="text-xs font-display font-700 uppercase tracking-[0.2em] text-copper mb-2">Keep</div>
+          <h2 class="font-display text-3xl font-bold tracking-tight text-plum sm:text-4xl">Customer Communication &amp; Retention</h2>
+          <div class="copper-rule mt-4"></div>
+          <p class="mt-3 text-lg text-driftwood">Your existing customers are your highest-margin growth lever. Stop forgetting them.</p>
+        </div>
+      </div>
+
+      <div class="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div class="lift-card relative rounded-2xl border-2 border-copper bg-cream p-6 shadow-card flex flex-col">
+          <div class="absolute -top-3 right-4 bg-copper text-white text-[10px] font-display font-bold px-3 py-1 rounded-full uppercase tracking-[0.15em]">Where to Start</div>
+          <div class="text-lg font-bold text-plum">Customer Database Build-Out</div>
+          <p class="mt-2 text-sm text-driftwood leading-relaxed flex-1">Most owners have customer info scattered across Square, Stripe, QuickBooks, paper intake forms, iPhone contacts, Gmail, and sticky notes. We consolidate everything into one clean CRM &mdash; name, phone, email, history, lifetime value, and tags.</p>
+          <div class="mt-4 pt-4 border-t border-linen">
+            <div class="text-sm font-semibold text-plum">The asset every other automation runs on top of.</div>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-1.5">
+            <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Any business 2+ years old</span>
+          </div>
+        </div>
+
+        <div class="lift-card rounded-2xl border border-white bg-cream p-6 shadow-card flex flex-col">
+          <div class="text-lg font-bold text-plum">Customer Reactivation / Win-Back</div>
+          <p class="mt-2 text-sm text-driftwood leading-relaxed flex-1">Lapsed customers (60/90/180 days quiet) automatically get a &ldquo;we miss you&rdquo; email or SMS with an offer. The math is brutal: a 5% reactivation rate on 800 dormant customers is a meaningful month.</p>
+          <div class="mt-4 pt-4 border-t border-linen">
+            <div class="text-sm font-semibold text-plum">A recurring monthly revenue lift from people who already know and trust you.</div>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-1.5">
+            <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Dental</span>
+            <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Fitness</span>
+            <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Salons</span>
+            <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Restaurants</span>
+            <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Retail</span>
+          </div>
+        </div>
+
+        <div class="lift-card rounded-2xl border border-white bg-cream p-6 shadow-card flex flex-col">
+          <div class="text-lg font-bold text-plum">Birthday, Anniversary &amp; Milestone Outreach</div>
+          <p class="mt-2 text-sm text-driftwood leading-relaxed flex-1">Automated personalized message + offer on a customer&rsquo;s birthday, their kid&rsquo;s birthday, their &ldquo;X years as a customer&rdquo; anniversary, or holiday seasons (Pesach, Sukkos, summer, back-to-school).</p>
+          <div class="mt-4 pt-4 border-t border-linen">
+            <div class="text-sm font-semibold text-plum">Goodwill touchpoints that drive bookings without you remembering anyone&rsquo;s birthday.</div>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-1.5">
+            <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Personal-relationship businesses</span>
+          </div>
+        </div>
+
+        <div class="lift-card rounded-2xl border border-white bg-cream p-6 shadow-card flex flex-col">
+          <div class="text-lg font-bold text-plum">Post-Purchase / Post-Visit Follow-Up</div>
+          <p class="mt-2 text-sm text-driftwood leading-relaxed flex-1">Triggered sequence: 7-day check-in &rarr; 30-day review ask &rarr; 90-day cross-sell or rebook nudge. Each step automatic, each one personalized.</p>
+          <div class="mt-4 pt-4 border-t border-linen">
+            <div class="text-sm font-semibold text-plum">Higher repeat rate, more reviews, more cross-sells.</div>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-1.5">
+            <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Anyone with a transaction event</span>
+          </div>
+        </div>
+
+        <div class="lift-card rounded-2xl border border-white bg-cream p-6 shadow-card flex flex-col">
+          <div class="text-lg font-bold text-plum">Review Generation</div>
+          <p class="mt-2 text-sm text-driftwood leading-relaxed flex-1">Automatically text or email happy customers right after a job/visit asking for a Google review. Filters unhappy responses to a private feedback channel before they hit your public profile.</p>
+          <div class="mt-4 pt-4 border-t border-linen">
+            <div class="text-sm font-semibold text-plum">Steady review velocity, higher star average, better local SEO.</div>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-1.5">
+            <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Any local business</span>
+          </div>
+        </div>
+
+        <div class="lift-card rounded-2xl border border-white bg-cream p-6 shadow-card flex flex-col">
+          <div class="text-lg font-bold text-plum">Referral Engine</div>
+          <p class="mt-2 text-sm text-driftwood leading-relaxed flex-1">Automated &ldquo;refer a friend&rdquo; prompts to your top customers with tracked links and rewards.</p>
+          <div class="mt-4 pt-4 border-t border-linen">
+            <div class="text-sm font-semibold text-plum">Referrals stop being something you &ldquo;should ask for&rdquo; and start being a system.</div>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-1.5">
+            <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Service businesses</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 4. MONEY — Money & Document Workflows ========== -->
+    <section id="money" data-reveal class="section-wrap bg-cream mx-auto mt-8 sm:mt-12 max-w-6xl scroll-mt-24">
+      <div class="flex items-start gap-5 sm:gap-7">
+        <div class="flex h-14 w-14 sm:h-16 sm:w-16 shrink-0 items-center justify-center rounded-full bg-copper/10 text-copper font-display font-bold text-2xl sm:text-3xl">4</div>
+        <div class="flex-1 min-w-0">
+          <div class="text-xs font-display font-700 uppercase tracking-[0.2em] text-copper mb-2">Money &amp; Documents</div>
+          <h2 class="font-display text-3xl font-bold tracking-tight text-plum sm:text-4xl">Money &amp; Document Workflows</h2>
+          <div class="copper-rule mt-4"></div>
+          <p class="mt-3 text-lg text-driftwood">Quotes, invoices, contracts, intake forms &mdash; the paperwork chain that runs your business should run itself.</p>
+        </div>
+      </div>
+
+      <div class="mt-6 grid grid-cols-1 gap-5 md:grid-cols-3">
+        <div class="lift-card relative rounded-2xl border-2 border-copper bg-linen p-6 shadow-card flex flex-col">
+          <div class="absolute -top-3 right-4 bg-copper text-white text-[10px] font-display font-bold px-3 py-1 rounded-full uppercase tracking-[0.15em]">Where to Start</div>
+          <div class="text-lg font-bold text-plum">Invoice Chasing / AR Follow-Up</div>
+          <p class="mt-2 text-sm text-driftwood leading-relaxed flex-1">Invoices past due automatically get reminder emails on day 7, 14, 30 &mdash; each one tonally calibrated based on prior emails with that customer. You stop being the bad guy.</p>
+          <div class="mt-4 pt-4 border-t border-cream">
+            <div class="text-sm font-semibold text-plum">Faster cash collection, dramatically fewer write-offs.</div>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-1.5">
+            <span class="text-xs font-semibold bg-cream text-plum px-2.5 py-1 rounded-full border border-cream">Any service business that invoices</span>
+          </div>
+        </div>
+
+        <div class="lift-card rounded-2xl border border-linen bg-linen p-6 shadow-card flex flex-col">
+          <div class="text-lg font-bold text-plum">Client Onboarding Sequences</div>
+          <p class="mt-2 text-sm text-driftwood leading-relaxed flex-1">New customer signs &rarr; welcome email fires &rarr; intake form sent &rarr; contract auto-generated &rarr; e-sign routed &rarr; CRM updated &rarr; folder created in Drive. All without you touching it.</p>
+          <div class="mt-4 pt-4 border-t border-cream">
+            <div class="text-sm font-semibold text-plum">Day-one professionalism, zero dropped balls, no onboarding bottlenecks.</div>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-1.5">
+            <span class="text-xs font-semibold bg-cream text-plum px-2.5 py-1 rounded-full border border-cream">CPA</span>
+            <span class="text-xs font-semibold bg-cream text-plum px-2.5 py-1 rounded-full border border-cream">Law</span>
+            <span class="text-xs font-semibold bg-cream text-plum px-2.5 py-1 rounded-full border border-cream">Real estate</span>
+            <span class="text-xs font-semibold bg-cream text-plum px-2.5 py-1 rounded-full border border-cream">Insurance</span>
+            <span class="text-xs font-semibold bg-cream text-plum px-2.5 py-1 rounded-full border border-cream">Agencies</span>
+          </div>
+        </div>
+
+        <div class="lift-card rounded-2xl border border-linen bg-linen p-6 shadow-card flex flex-col">
+          <div class="text-lg font-bold text-plum">Document Workflows</div>
+          <p class="mt-2 text-sm text-driftwood leading-relaxed flex-1">Intake form &rarr; CRM record &rarr; contract &rarr; e-signature &rarr; confirmation &rarr; calendar event &rarr; file storage. The full chain, automated.</p>
+          <div class="mt-4 pt-4 border-t border-cream">
+            <div class="text-sm font-semibold text-plum">Hours per week back, plus a clean audit trail.</div>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-1.5">
+            <span class="text-xs font-semibold bg-cream text-plum px-2.5 py-1 rounded-full border border-cream">Anything form/contract-driven</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 5. OPS — Internal Operations & Glue ========== -->
+    <section id="ops" data-reveal class="section-wrap bg-linen mx-auto mt-8 sm:mt-12 max-w-6xl scroll-mt-24">
+      <div class="flex items-start gap-5 sm:gap-7">
+        <div class="flex h-14 w-14 sm:h-16 sm:w-16 shrink-0 items-center justify-center rounded-full bg-copper/10 text-copper font-display font-bold text-2xl sm:text-3xl">5</div>
+        <div class="flex-1 min-w-0">
+          <div class="text-xs font-display font-700 uppercase tracking-[0.2em] text-copper mb-2">Internal Ops</div>
+          <h2 class="font-display text-3xl font-bold tracking-tight text-plum sm:text-4xl">Internal Operations &amp; Glue</h2>
+          <div class="copper-rule mt-4"></div>
+          <p class="mt-3 text-lg text-driftwood">If your team is exporting a CSV from one place and importing it to another, that&rsquo;s where we connect things.</p>
+        </div>
+      </div>
+
+      <div class="mt-6 grid grid-cols-1 gap-5 md:grid-cols-3">
+        <div class="lift-card relative rounded-2xl border-2 border-copper bg-cream p-6 shadow-card flex flex-col">
+          <div class="absolute -top-3 right-4 bg-copper text-white text-[10px] font-display font-bold px-3 py-1 rounded-full uppercase tracking-[0.15em]">Where to Start</div>
+          <div class="text-lg font-bold text-plum">CRM Integration</div>
+          <p class="mt-2 text-sm text-driftwood leading-relaxed flex-1">Connect your existing tools &mdash; QuickBooks, Jobber, HouseCall Pro, Calendly, Gmail, Sheets, Square &mdash; so customer data flows automatically and stops getting re-typed across systems.</p>
+          <div class="mt-4 pt-4 border-t border-linen">
+            <div class="text-sm font-semibold text-plum">One source of truth, no duplicate data entry, accurate reports.</div>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-1.5">
+            <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Any business with 2+ tools</span>
+          </div>
+        </div>
+
+        <div class="lift-card rounded-2xl border border-cream bg-cream p-6 shadow-card flex flex-col">
+          <div class="text-lg font-bold text-plum">Inbox Triage</div>
+          <p class="mt-2 text-sm text-driftwood leading-relaxed flex-1">AI sorts incoming email by urgency and topic, drafts replies for routine messages, and flags what actually needs you. You go from drowning in 200 emails to handling the 12 that matter.</p>
+          <div class="mt-4 pt-4 border-t border-linen">
+            <div class="text-sm font-semibold text-plum">Mornings back, faster reply times, nothing falling through the cracks.</div>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-1.5">
+            <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">1+ hour/day in email</span>
+          </div>
+        </div>
+
+        <div class="lift-card rounded-2xl border border-cream bg-cream p-6 shadow-card flex flex-col">
+          <div class="text-lg font-bold text-plum">Internal Ops Glue</div>
+          <p class="mt-2 text-sm text-driftwood leading-relaxed flex-1">The custom catch-all: anywhere two tools should talk to each other but don&rsquo;t, anywhere your team is exporting a CSV from one place and importing it to another, anywhere data is being typed twice. We connect it.</p>
+          <div class="mt-4 pt-4 border-t border-linen">
+            <div class="text-sm font-semibold text-plum">The manual handoffs that quietly cost you hours per week disappear.</div>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-1.5">
+            <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Every business</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 6. REPORTING — Owner Visibility & Reporting ========== -->
+    <section id="reporting" data-reveal class="section-wrap bg-lavender mx-auto mt-8 sm:mt-12 max-w-6xl scroll-mt-24">
+      <div class="flex items-start gap-5 sm:gap-7">
+        <div class="flex h-14 w-14 sm:h-16 sm:w-16 shrink-0 items-center justify-center rounded-full bg-copper/10 text-copper font-display font-bold text-2xl sm:text-3xl">6</div>
+        <div class="flex-1 min-w-0">
+          <div class="text-xs font-display font-700 uppercase tracking-[0.2em] text-copper mb-2">Visibility</div>
+          <h2 class="font-display text-3xl font-bold tracking-tight text-plum sm:text-4xl">Owner Visibility &amp; Reporting</h2>
+          <div class="copper-rule mt-4"></div>
+          <p class="mt-3 text-lg text-driftwood">The numbers you should know but never have time to pull. Delivered Monday morning, ready in five minutes.</p>
+        </div>
+      </div>
+
+      <div class="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2">
+        <div class="lift-card relative rounded-2xl border-2 border-copper bg-cream p-6 shadow-card flex flex-col">
+          <div class="absolute -top-3 right-4 bg-copper text-white text-[10px] font-display font-bold px-3 py-1 rounded-full uppercase tracking-[0.15em]">Where to Start</div>
+          <div class="text-lg font-bold text-plum">Reporting Dashboards</div>
+          <p class="mt-2 text-sm text-driftwood leading-relaxed flex-1">Weekly KPI snapshot emailed to your inbox every Monday morning: revenue, jobs booked, leads captured, reviews earned, AR outstanding, top customers. The numbers you should know but never have time to pull.</p>
+          <div class="mt-4 pt-4 border-t border-linen">
+            <div class="text-sm font-semibold text-plum">Decisions made on data instead of gut, every Monday for five minutes.</div>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-1.5">
+            <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Every owner</span>
+          </div>
+        </div>
+
+        <div class="lift-card rounded-2xl border border-white bg-cream p-6 shadow-card flex flex-col">
+          <div class="text-lg font-bold text-plum">Social Media Repurposing</div>
+          <p class="mt-2 text-sm text-driftwood leading-relaxed flex-1">One piece of content &mdash; a video, blog post, customer testimonial, or job photo &mdash; automatically reformatted into LinkedIn, Instagram, and X posts. Post once, show up everywhere.</p>
+          <div class="mt-4 pt-4 border-t border-linen">
+            <div class="text-sm font-semibold text-plum">Consistent presence on every platform from a single 10-minute weekly capture.</div>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-1.5">
+            <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Owners who know they should be posting</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== HOW WE WORK ========== -->
+    <section data-reveal class="section-wrap bg-cream mx-auto mt-8 sm:mt-12 max-w-6xl">
+      <div>
+        <div class="text-xs font-display font-700 uppercase tracking-[0.2em] text-copper mb-2">How We Work</div>
+        <h2 class="font-display text-3xl font-bold tracking-tight text-plum sm:text-4xl">One automation that pays for itself in 30&ndash;60 days. Then we expand.</h2>
+        <div class="copper-rule mt-4"></div>
+      </div>
+
+      <div class="mt-6 grid grid-cols-1 gap-5 md:grid-cols-3">
+        <div class="lift-card rounded-2xl border border-linen bg-linen p-6 shadow-card">
+          <div class="flex h-12 w-12 items-center justify-center rounded-full bg-copper/10 text-copper font-display font-bold text-xl mb-4">1</div>
+          <div class="text-lg font-bold text-plum">Free 30-minute call</div>
+          <p class="mt-2 text-base leading-relaxed text-driftwood">We map your manual processes and find the highest-ROI automation to start with. No sales pitch &mdash; just a clear-eyed look at where your time is going.</p>
+        </div>
+        <div class="lift-card rounded-2xl border border-linen bg-linen p-6 shadow-card">
+          <div class="flex h-12 w-12 items-center justify-center rounded-full bg-copper/10 text-copper font-display font-bold text-xl mb-4">2</div>
+          <div class="text-lg font-bold text-plum">Build &amp; install</div>
+          <p class="mt-2 text-base leading-relaxed text-driftwood">Most automations are live within 1&ndash;2 weeks. Flat-fee setup. We train you to operate it independently &mdash; the goal is capability transfer, not recurring dependency.</p>
+        </div>
+        <div class="lift-card rounded-2xl border border-linen bg-linen p-6 shadow-card">
+          <div class="flex h-12 w-12 items-center justify-center rounded-full bg-copper/10 text-copper font-display font-bold text-xl mb-4">3</div>
+          <div class="text-lg font-bold text-plum">Optional ongoing support</div>
+          <p class="mt-2 text-base leading-relaxed text-driftwood">Monthly retainer for monitoring, tuning, and adding new automations as the business grows. No long contracts. No bloated software stacks.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CLOSING CTA (Dark Plum) ========== -->
+    <section data-reveal class="section-wrap bg-plum mx-auto mt-8 sm:mt-12 max-w-6xl">
+      <div class="text-center">
+        <div class="text-xs font-display font-700 uppercase tracking-[0.2em] text-copper-light mb-2">Start Here</div>
+        <h2 class="font-display text-3xl font-bold tracking-tight text-cream sm:text-4xl">Not sure which one to start with?</h2>
+        <div class="copper-rule mx-auto mt-4"></div>
+        <p class="mt-5 mx-auto max-w-2xl text-lg text-cream/70">Free 30-minute call &mdash; we map your manual processes and find the highest-ROI automation to start with. Or take the AI Readiness Scorecard for a structured self-assessment.</p>
+        <div class="mt-7 flex flex-wrap items-center justify-center gap-3">
+          <a href="https://calendly.com/davidbassin12/30min?hide_gdpr_banner=1&utm_source=website&utm_content=services_cta" target="_blank" rel="noopener" onclick="return openCalendly('services_cta')" class="inline-flex h-12 items-center justify-center rounded-lg bg-copper px-6 text-base font-semibold text-white shadow-md hover:bg-copper-light transition-all hover:-translate-y-0.5">
+            Book a Free Call
+          </a>
+          <a href="./scorecard.html" class="inline-flex h-12 items-center justify-center rounded-lg border border-copper-light/40 bg-transparent px-6 text-base font-semibold text-cream hover:bg-copper hover:border-copper transition-all">
+            Free AI Readiness Scorecard
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="bg-plum text-cream/60 py-12 mt-12 border-t border-cream/10">
+    <div class="mx-auto max-w-6xl px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="text-center md:text-left">
+        <div class="text-sm font-display font-800 tracking-[0.2em] uppercase text-copper">Bassin Consulting</div>
+        <div class="text-cream/40 text-sm mt-1 italic">AI Solutions for Small Business</div>
+      </div>
+
+      <div class="flex items-center gap-6 text-sm font-semibold">
+        <a href="./index.html" class="hover:text-copper transition-colors">Home</a>
+        <a href="mailto:david@bassinconsulting.com" class="hover:text-copper transition-colors">Email</a>
+        <a href="https://www.linkedin.com/in/dbassin/" target="_blank" class="hover:text-copper transition-colors">LinkedIn</a>
+      </div>
+    </div>
+    <div class="mx-auto max-w-6xl px-6 mt-6 pt-6 border-t border-cream/10 text-center text-xs text-cream/30">
+      &copy; 2026 Bassin Consulting. Woodmere, NY (Nassau County). All rights reserved.
+    </div>
+  </footer>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <script>
+    function openCalendly(source) {
+      if (window.Calendly) {
+        Calendly.initPopupWidget({
+          url: 'https://calendly.com/davidbassin12/30min?hide_gdpr_banner=1&primary_color=C07842&background_color=FDFCF9&text_color=2A2530&utm_source=website&utm_content=' + encodeURIComponent(source || 'button')
+        });
+        return false;
+      }
+      return true;
+    }
+
+    const btn = document.getElementById('mobileMenuBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.add('hidden')));
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.reveal-item').forEach((el, i) => {
+            setTimeout(() => el.classList.add('is-visible'), i * 100);
+          });
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('[data-reveal]').forEach(section => {
+      section.classList.add('reveal-item');
+      observer.observe(section);
+    });
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

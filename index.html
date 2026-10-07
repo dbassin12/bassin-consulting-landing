@@ -85,8 +85,8 @@ ul,ol{padding:0;list-style:none}
 
 /* buttons and links */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:10px;font:700 19px/1.1 var(--display);letter-spacing:-.01em;text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:transform .3s var(--ease),background-color .2s,border-color .2s,box-shadow .3s var(--ease)}
-.btn-primary{background:var(--copper);color:#fff;box-shadow:0 10px 22px -12px rgba(156,91,44,.8)}
-.btn-primary:hover{background:#B26C38;transform:translateY(-2px);box-shadow:0 16px 28px -14px rgba(156,91,44,.9)}
+.btn-primary{background:#AA6332;color:#fff;box-shadow:0 10px 22px -12px rgba(156,91,44,.8)}
+.btn-primary:hover{background:var(--copper-ink);transform:translateY(-2px);box-shadow:0 16px 28px -14px rgba(156,91,44,.9)}
 .btn-ghost{background:var(--cream);color:var(--plum);border-color:var(--line)}
 .btn-ghost:hover{border-color:var(--copper);color:var(--copper-ink);transform:translateY(-2px)}
 .btn-light{background:var(--cream);color:var(--plum)}
@@ -351,7 +351,7 @@ label .opt{font-weight:500;letter-spacing:.04em;text-transform:none;color:#B9B0B
 input,textarea{width:100%;font:400 17px/1.5 var(--body);color:var(--cream);background:#352F3C;border:1px solid rgba(253,252,249,.16);border-radius:12px;padding:13px 15px;transition:border-color .2s,background-color .2s}
 textarea{min-height:140px;resize:vertical}
 input::placeholder,textarea::placeholder{color:#9D94A3}
-input:focus,textarea:focus{outline:none;border-color:var(--copper-light);background:#3A3442}
+input:focus,textarea:focus{outline:none;border-color:var(--copper-light);background:#3A3442;box-shadow:0 0 0 3px rgba(212,154,104,.4)}
 [aria-invalid="true"]{border-color:#E8A07A}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 form .btn{width:100%;margin-top:4px}
@@ -487,7 +487,7 @@ form .btn{width:100%;margin-top:4px}
       </div></div>
       <div class="mbody">
         <h3>Automate the busywork</h3>
-        <p>Let AI draft the report card comments, the weekly email, and the grade transfer, and keep your judgment for the parts that matter. Student names come out before anything goes to AI.</p>
+        <p>Let AI draft report card comments and the weekly email, move grades between systems without retyping, and keep your judgment for the parts that matter. Student names come out before anything goes to AI.</p>
         <p class="leave"><b>Teachers leave with</b>One weekly task that takes minutes instead of hours.</p>
       </div>
     </article>
@@ -607,7 +607,7 @@ form .btn{width:100%;margin-top:4px}
       <p class="kicker">A pergola construction company</p>
       <h3>Talk into the phone, and the job is in the system</h3>
       <p>After a call, the owner records a voice note. AI writes it down, pulls out the names, addresses, and job details, matches existing customers, and saves everything to the database. No paperwork at the end of the day.</p>
-      <ul class="facts"><li>Voice notes</li><li>Whisper</li><li>Gemini</li><li>A real database</li></ul>
+      <ul class="facts"><li>Voice notes</li><li>Whisper</li><li>Gemini</li><li>PocketBase</li></ul>
     </div>
     <div class="frame"><img src="img/pergola-system.webp" srcset="img/pergola-system-800.webp 800w, img/pergola-system.webp 1280w" sizes="(min-width:900px) 520px, 94vw" width="1280" height="800" alt="The pergola company's dashboard: customers, active jobs, follow-ups, and a big Record Voice Note button" loading="lazy" decoding="async"></div>
   </div>
@@ -648,9 +648,9 @@ form .btn{width:100%;margin-top:4px}
 
   <div class="feat flip" data-rv>
     <div>
-      <p class="kicker">A university financial aid office</p>
+      <p class="kicker">With a university financial aid counselor</p>
       <h3>FinAid Dashboard</h3>
-      <p>Built with a financial aid counselor. The federal aid formula misses regional cost of living and K-12 tuition. This dashboard adjusts for both with real economic data and shows each step of the math, so the counselor can explain every number.</p>
+      <p>The federal aid formula misses regional cost of living and K-12 tuition. This dashboard adjusts for both with real economic data and shows each step of the math, so the counselor can explain every number.</p>
       <ul class="facts"><li>Next.js</li><li>TypeScript</li><li>Real economic data</li></ul>
     </div>
     <div class="frame"><img src="img/finaid.webp" srcset="img/finaid-800.webp 800w, img/finaid.webp 1280w" sizes="(min-width:900px) 520px, 94vw" width="1280" height="800" alt="FinAid Dashboard with a list of students and aid figures, labeled sample data, not real students" loading="lazy" decoding="async"></div>

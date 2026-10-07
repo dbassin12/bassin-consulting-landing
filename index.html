@@ -1,857 +1,479 @@
-<!DOCTYPE html>
-<html lang="en" class="h-full scroll-smooth">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bassin Consulting — AI Solutions for Small Business</title>
-  <meta name="description" content="Bassin Consulting helps small business owners identify where AI can save time and money, builds the solution with them, and trains them to maintain it independently.">
-  <meta name="author" content="David Bassin">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bassin Consulting | AI for schools and ed-tech teams</title>
+<meta name="description" content="AI training and tools for schools, and a working teacher's eye for ed-tech teams. From David Bassin, who builds AI tools that real people use and teaches every day.">
+<meta name="author" content="David Bassin">
+<link rel="canonical" href="https://www.bassinconsulting.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.bassinconsulting.com/">
+<meta property="og:title" content="Bassin Consulting | AI that works in a real classroom">
+<meta property="og:description" content="Training and tools for schools. A teacher's eye for ed-tech teams.">
+<meta property="og:image" content="https://www.bassinconsulting.com/img/social-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#2A2530">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Bassin Consulting",
+  "description": "AI training and tools for schools, and classroom know-how for ed-tech teams: teacher workshops, custom classroom tools, AI guidelines, product feedback from a working teacher, lesson content, and teacher training.",
+  "url": "https://www.bassinconsulting.com/",
+  "founder": { "@type": "Person", "name": "David Bassin", "url": "https://dbassin12.github.io/" },
+  "areaServed": "United States",
+  "address": { "@type": "PostalAddress", "addressLocality": "Woodmere", "addressRegion": "NY", "addressCountry": "US" },
+  "email": "david@bassinconsulting.com",
+  "sameAs": ["https://www.linkedin.com/in/dbassin/", "https://dbassin12.github.io/"]
+}
+</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='15' fill='%232A2530'/><circle cx='16' cy='16' r='13' fill='none' stroke='%23C07842' stroke-width='1.5'/><text x='16' y='21' font-size='16' font-weight='800' font-family='sans-serif' text-anchor='middle' fill='%23FDFCF9'>B</text></svg>" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FDFCF9; --linen:#F7F3EE; --plum:#2A2530; --copper:#C07842; --copper-light:#D49A68;
+  --driftwood:#8E857E; --lavender:#F3F0F6; --ink:#4A4450; --line:#E5DBCF;
+  --display:'Sora','DM Sans',ui-sans-serif,system-ui,sans-serif;
+  --body:'DM Sans',ui-sans-serif,system-ui,sans-serif;
+  --wrap:1140px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--cream);color:var(--plum);font-family:var(--body);font-size:17px;line-height:1.7}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--copper);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);color:var(--plum);margin:0}
+h2{font-size:clamp(28px,3.4vw,38px);font-weight:700;line-height:1.18;letter-spacing:-.01em}
+h3{font-size:20px;font-weight:700;line-height:1.3}
+p{margin:0 0 1em}
+.label{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--copper);margin:0 0 14px}
+.lede{font-size:19px;color:var(--ink);max-width:62ch}
+.muted{color:var(--ink)}
+.skip{position:absolute;left:-999px;top:8px;background:var(--plum);color:var(--cream);padding:8px 14px;border-radius:8px;z-index:20}
+.skip:focus{left:12px}
 
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Bassin Consulting — AI Solutions for Small Business">
-  <meta property="og:description" content="Stop wasting time on things a computer should be doing. We help small businesses adopt AI with a teaching-first approach.">
-  <link rel="canonical" href="https://bassinconsulting.com/">
+.nav{background:var(--plum);color:var(--cream);position:sticky;top:0;z-index:10}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:66px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--cream)}
+.mark{height:32px;width:32px;border-radius:50%;background:var(--plum);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 1.5px var(--copper);flex:none}
+.mark span{font-family:var(--display);font-weight:800;color:var(--cream);font-size:14px}
+.wordmark{font-family:var(--display);font-weight:800;letter-spacing:.3em;font-size:14px;white-space:nowrap}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;gap:26px;align-items:center}
+.nav ul a{font-family:var(--display);font-size:14px;font-weight:600;text-decoration:none;color:#E9E3EC;white-space:nowrap}
+.nav ul a:hover{color:var(--copper-light)}
+.nav .navbtn{display:inline-block;background:var(--copper-light);color:var(--plum);padding:9px 16px;border-radius:8px}
+.nav .navbtn:hover{background:var(--cream);color:var(--plum)}
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Bassin Consulting",
-    "description": "AI Solutions for Small Business — helping small business owners identify where AI can save time and money, building the solution with them, and training them to run it independently.",
-    "url": "https://bassinconsulting.com",
-    "founder": { "@type": "Person", "name": "David Bassin" },
-    "areaServed": "United States",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Woodmere",
-      "addressRegion": "NY",
-      "addressCountry": "US"
-    },
-    "sameAs": ["https://www.linkedin.com/in/dbassin/"],
-    "priceRange": "$300-$5,000"
-  }
-  </script>
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:12px 22px;border-radius:8px;font-family:var(--display);font-weight:700;font-size:19px;text-decoration:none;border:2px solid transparent;cursor:pointer}
+.btn-primary{background:var(--copper);color:#fff}
+.btn-primary:hover{background:var(--copper-light);color:var(--plum)}
+.btn-ghost{border-color:var(--plum);color:var(--plum);background:transparent}
+.btn-ghost:hover{background:var(--plum);color:var(--cream)}
+.btn[disabled]{opacity:.7;cursor:wait}
+.textlink{font-family:var(--display);font-weight:700;font-size:16px;color:var(--plum);text-decoration:underline;text-decoration-color:var(--copper);text-decoration-thickness:2px;text-underline-offset:5px}
+.textlink:hover{color:var(--copper)}
 
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='15' fill='%232A2530'/><circle cx='16' cy='16' r='13' fill='none' stroke='%23C07842' stroke-width='1.5'/><text x='16' y='21' font-size='16' font-weight='800' font-family='sans-serif' text-anchor='middle' fill='%23FDFCF9'>B</text></svg>" type="image/svg+xml">
+.hero{padding:72px 0 84px}
+.hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(38px,5.2vw,62px);font-weight:800;line-height:1.06;letter-spacing:-.02em;max-width:13ch}
+.hero .lede{margin-top:22px}
+.tagline{margin:26px 0 0;padding-left:16px;border-left:3px solid var(--copper);font-family:var(--display);font-weight:600;font-size:17px;line-height:1.5;color:var(--plum);max-width:44ch}
+.agenda{background:var(--linen);border:1px solid var(--line);border-radius:14px;padding:26px 26px 18px}
+.agenda-head{border-bottom:2px solid var(--copper);padding-bottom:12px;margin-bottom:6px}
+.agenda-head h2{font-size:22px}
+.agenda-head p{margin:4px 0 0;font-size:15px;color:var(--ink)}
+.agenda ol{list-style:none;margin:0;padding:0}
+.agenda li{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 2px;border-bottom:1px solid var(--line);font-size:17px;font-weight:500}
+.agenda li:last-child{border-bottom:0}
+.agenda .time{flex:none;font-family:var(--display);font-size:13px;font-weight:700;background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+.agenda .time.exit{background:var(--plum);color:var(--cream);border-color:var(--plum)}
+.agenda-note{font-size:15px;color:var(--ink);margin:12px 2px 0}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+section{padding:88px 0}
+.alt{background:var(--linen)}
+.section-head{max-width:720px;margin-bottom:44px}
+.section-head .lede{margin-top:16px}
 
-  <!-- Calendly widget assets -->
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+.problems{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.problems div{border-top:2px solid var(--copper);padding-top:18px}
+.problems h3{font-size:19px;margin-bottom:8px}
+.problems p{margin:0;color:var(--ink);font-size:16px}
 
-  <script src="https://cdn.tailwindcss.com"></script>
+.buyers{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}
+.buyer{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:28px 28px 10px}
+.buyer.dark{background:var(--plum);border-color:var(--plum);color:#E9E3EC}
+.buyer.dark .label{color:var(--copper-light)}
+.buyer-h{font-size:24px;line-height:1.25;margin-bottom:8px}
+.buyer.dark .buyer-h,.buyer.dark h4{color:var(--cream)}
+.olist{list-style:none;margin:0;padding:0}
+.olist li{padding:16px 0;border-top:1px solid var(--line)}
+.buyer.dark .olist li{border-top-color:#4A4252}
+.olist h4{font-family:var(--display);font-size:18px;font-weight:700;margin:0 0 4px;color:var(--plum)}
+.olist p{margin:0;color:var(--ink);font-size:16px}
+.buyer.dark .olist p{color:#D9D2DE}
+.note-line{margin:28px 0 0;font-size:17px;color:var(--ink);border-left:3px solid var(--copper);padding-left:14px;max-width:70ch}
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['DM Sans', 'ui-sans-serif', 'system-ui'],
-            display: ['Sora', 'DM Sans', 'ui-sans-serif', 'system-ui']
-          },
-          colors: {
-            cream: '#FDFCF9',
-            linen: '#F7F3EE',
-            plum: '#2A2530',
-            copper: { DEFAULT: '#C07842', light: '#D49A68' },
-            driftwood: '#8E857E',
-            lavender: '#F3F0F6',
-          },
-          boxShadow: {
-            'card': '0 4px 20px -2px rgba(42, 37, 48, 0.05), 0 0 3px rgba(42, 37, 48, 0.02)',
-            'card-hover': '0 12px 30px -4px rgba(42, 37, 48, 0.08), 0 0 4px rgba(42, 37, 48, 0.03)',
-          },
-        }
-      }
-    }
-  </script>
-  <style>
-    html { font-size: 100%; }
-    @media (min-width: 640px) { html { font-size: 112.5%; } }
+/* call flow sample */
+.callflow{background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:22px 22px 16px}
+.flow{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+.flow li{display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start}
+.flow .num{width:32px;height:32px;border-radius:50%;border:2px solid var(--copper);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:14px;background:var(--cream)}
+.flow .step-title{font-family:var(--display);font-weight:700;font-size:16px;line-height:1.35;margin:5px 0 8px;color:var(--plum)}
+.callflow .flow .quote{margin:0;font-style:italic;color:var(--ink);font-size:16px;background:var(--linen);border-radius:8px;padding:10px 14px}
+.fields{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;margin:0;font-size:15px;background:var(--linen);border-radius:8px;padding:10px 14px}
+.fields dt{font-family:var(--display);font-weight:700}
+.fields dd{margin:0;color:var(--ink)}
+.callflow .deal{margin:0;background:var(--plum);color:var(--cream);border-radius:8px;padding:10px 14px;font-family:var(--display);font-weight:600;font-size:15px}
+.callflow .deal span{color:var(--copper-light)}
+.callflow figcaption{margin-top:14px}
+.links{display:flex;flex-wrap:wrap;gap:10px 22px}
 
-    .section-wrap {
-      border-radius: 1.5rem;
-      padding: 1.5rem;
-      border: 1px solid rgba(247, 243, 238, 0.8);
-    }
-    @media (min-width: 640px) {
-      .section-wrap { padding: 2.5rem; }
-    }
+figure{margin:0}
+.shot{border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--cream)}
+figcaption{font-size:15px;color:var(--ink);margin-top:10px}
+.work{display:grid;grid-template-columns:repeat(6,1fr);gap:28px}
+.work .w{grid-column:span 3}
+.work .w.wide{grid-column:span 6;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
+.work h3{margin-top:16px}
+.work .w.wide h3{margin-top:0;font-size:24px}
+.work p{color:var(--ink);margin:6px 0 10px;font-size:16px}
+.work .w.wide p{font-size:17px}
+.films3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.sheets{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 
-    .lift-card {
-      transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .lift-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px -4px rgba(42, 37, 48, 0.08), 0 0 4px rgba(42, 37, 48, 0.03);
-    }
+.steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;counter-reset:s}
+.steps li{counter-increment:s;background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:24px}
+.alt .steps li{background:var(--cream)}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:36px;height:36px;border-radius:50%;border:2px solid var(--copper);font-family:var(--display);font-weight:800;font-size:15px;margin-bottom:14px}
+.steps h3{font-size:19px;margin-bottom:6px}
+.steps p{margin:0;color:var(--ink);font-size:16px}
+.who{margin-top:36px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.who span.k{font-family:var(--display);font-weight:700;font-size:15px;margin-right:6px}
+.who span.c{font-size:15px;font-weight:500;background:var(--lavender);border-radius:999px;padding:5px 12px}
 
-    .reveal-item {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 600ms ease, transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: opacity, transform;
-    }
-    .reveal-item.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+.about{display:grid;grid-template-columns:280px 1fr;gap:48px;align-items:start}
+.about img{border-radius:14px;border:1px solid var(--line)}
 
-    /* Copper accent line used sparingly */
-    .copper-rule { width: 48px; height: 3px; background: #C07842; border-radius: 2px; }
-  </style>
+.contact{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start}
+form{background:var(--linen);border:1px solid var(--line);border-radius:14px;padding:26px}
+.field{margin-bottom:16px}
+label{display:block;font-family:var(--display);font-weight:700;font-size:15px;margin-bottom:6px}
+label .opt{font-weight:400;color:var(--ink)}
+input,textarea{width:100%;font:inherit;font-size:16px;color:var(--plum);background:var(--cream);border:1.5px solid var(--driftwood);border-radius:8px;padding:12px 14px}
+input:focus,textarea:focus{outline:none;border-color:var(--copper);box-shadow:0 0 0 3px rgba(192,120,66,.25)}
+input[aria-invalid="true"],textarea[aria-invalid="true"]{border-color:#9B2C2C}
+textarea{min-height:130px;resize:vertical}
+.status{margin-top:14px;font-weight:500;display:none}
+.status.show{display:block}
+.status.error{color:#9B2C2C}
+.status a{color:#9B2C2C;font-weight:700}
+.sent{display:none;background:var(--lavender);border-radius:14px;padding:28px}
+.sent.show{display:block}
+.sent h3{margin-bottom:6px}
+.direct{margin-top:26px;font-size:17px;color:var(--ink)}
+.direct a{font-weight:700;color:var(--plum)}
+
+.foot{background:var(--plum);color:#D9D2DE;padding:56px 0 40px}
+.foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:flex-start}
+.foot .brand{margin-bottom:10px}
+.foot .tag{font-family:var(--display);font-weight:600;color:var(--copper-light);font-size:15px;max-width:38ch;margin:0}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:16px}
+.foot a{color:#EDE8F0;text-decoration:none}
+.foot a:hover{color:var(--copper-light)}
+.fine{margin-top:40px;padding-top:20px;border-top:1px solid #443D4B;font-size:15px;color:#C9C1CE}
+
+@media (max-width:980px){
+  .nav ul li.hide-md{display:none}
+  .hero-grid,.contact,.work .w.wide{grid-template-columns:1fr}
+  .problems,.steps{grid-template-columns:1fr}
+  .about{grid-template-columns:200px 1fr}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .wordmark{letter-spacing:.2em;font-size:12px}
+  .nav ul li.hide-sm{display:none}
+  .hero{padding:44px 0 56px}
+  section{padding:64px 0}
+  .buyers{grid-template-columns:1fr}
+  .buyer{padding:22px 20px 6px}
+  .work{grid-template-columns:1fr}
+  .work .w,.work .w.wide{grid-column:auto}
+  .about{grid-template-columns:1fr}
+  .about img{max-width:220px}
+  .agenda{padding:20px 18px 14px}
+  .lede{font-size:17px}
+}
+@media (max-width:420px){
+  .nav .brand .wordmark{display:none}
+}
+.nw{white-space:nowrap}
+@media (max-width:980px){.work .w.wide.text-first > div{order:-1}}
+</style>
 </head>
-
-<body class="h-full bg-cream text-base leading-[1.75] text-driftwood font-sans antialiased selection:bg-copper/10 selection:text-plum">
-
-  <!-- ========== HEADER ========== -->
-  <header class="sticky top-0 z-40 border-b border-linen bg-cream/90 backdrop-blur-sm">
-    <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-      <div class="flex items-center gap-2.5">
-        <div class="h-8 w-8 rounded-full bg-plum flex items-center justify-center shrink-0" style="box-shadow: inset 0 0 0 1.5px #C07842;">
-          <span class="font-display font-[800] text-cream text-xs leading-none">B</span>
-        </div>
-        <div class="leading-tight">
-          <div class="text-xs sm:text-sm font-display font-bold tracking-[0.18em] uppercase text-plum">Bassin Consulting</div>
-          <div class="text-xs sm:text-sm font-semibold text-copper italic">AI Solutions for Small Business</div>
-        </div>
-      </div>
-
-      <div class="hidden items-center gap-6 sm:flex">
-        <a href="#problem" class="text-sm font-semibold text-driftwood hover:text-copper transition-colors">The Problem</a>
-        <a href="#how-it-works" class="text-sm font-semibold text-driftwood hover:text-copper transition-colors">How It Works</a>
-        <a href="./services.html" class="text-sm font-semibold text-driftwood hover:text-copper transition-colors">Services</a>
-        <a href="#work" class="text-sm font-semibold text-driftwood hover:text-copper transition-colors">Work</a>
-        <a href="#about" class="text-sm font-semibold text-driftwood hover:text-copper transition-colors">About</a>
-        <a href="./scorecard.html" class="inline-flex items-center gap-2 rounded-lg border border-copper/30 bg-cream px-5 py-2.5 text-sm font-semibold text-copper shadow-sm hover:bg-copper hover:text-white transition-all hover:-translate-y-0.5">
-          Free AI Scorecard
-        </a>
-        <a href="https://calendly.com/davidbassin12/30min?hide_gdpr_banner=1&utm_source=website&utm_content=nav_desktop" target="_blank" rel="noopener" onclick="return openCalendly('nav_desktop')" class="inline-flex items-center gap-2 rounded-lg bg-copper px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-copper-light transition-all hover:-translate-y-0.5">
-          Book a Free Call
-        </a>
-      </div>
-
-      <button id="mobileMenuBtn" class="sm:hidden inline-flex items-center justify-center rounded-lg p-2 text-driftwood bg-linen border border-linen" aria-label="Open menu">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Bassin Consulting, home"><span class="mark" aria-hidden="true"><span>B</span></span><span class="wordmark">BASSIN CONSULTING</span></a>
+    <nav aria-label="Main">
+      <ul>
+        <li class="hide-md"><a href="#services">What I offer</a></li>
+        <li class="hide-md"><a href="#work">Work</a></li>
+        <li class="hide-sm"><a href="#contact">Contact</a></li>
+        <li><a class="navbtn" href="https://calendly.com/davidbassin12/30min?hide_gdpr_banner=1&amp;utm_source=website&amp;utm_content=nav">Book a call</a></li>
+      </ul>
     </nav>
+  </div>
+</header>
 
-    <div id="mobileMenu" class="sm:hidden hidden border-t border-linen bg-cream absolute w-full shadow-xl">
-      <div class="mx-auto px-4 py-4 flex flex-col gap-2">
-        <a href="#problem" class="rounded-lg px-4 py-3 text-sm font-semibold text-plum bg-linen">The Problem</a>
-        <a href="#how-it-works" class="rounded-lg px-4 py-3 text-sm font-semibold text-plum bg-linen">How It Works</a>
-        <a href="./services.html" class="rounded-lg px-4 py-3 text-sm font-semibold text-plum bg-linen">Services</a>
-        <a href="#work" class="rounded-lg px-4 py-3 text-sm font-semibold text-plum bg-linen">Work</a>
-        <a href="#about" class="rounded-lg px-4 py-3 text-sm font-semibold text-plum bg-linen">About</a>
-        <a href="./scorecard.html" class="rounded-lg px-4 py-3 text-sm font-semibold text-copper bg-linen text-center mt-2 border border-copper/30">Free AI Scorecard</a>
-        <a href="https://calendly.com/davidbassin12/30min?hide_gdpr_banner=1&utm_source=website&utm_content=nav_mobile" target="_blank" rel="noopener" onclick="return openCalendly('nav_mobile')" class="rounded-lg px-4 py-3 text-sm font-semibold text-white bg-copper text-center">Book a Free Call</a>
+<main id="main">
+<div class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="label">AI for schools and <span class="nw">ed-tech</span></p>
+      <h1>AI that works in a real classroom.</h1>
+      <p class="lede">I'm David Bassin. I build AI tools that real people use, and I teach high school history and economics. For schools, I offer teacher training and classroom tools. For <span class="nw">ed-tech</span> teams, I offer a working teacher's eye on your product.</p>
+      <p class="tagline">The deliverable is not just the tool. It is the understanding.</p>
+      <div class="btns">
+        <a class="btn btn-primary" href="https://calendly.com/davidbassin12/30min?hide_gdpr_banner=1&amp;utm_source=website&amp;utm_content=hero">Book a free call</a>
+        <a class="btn btn-ghost" href="#work">See the work</a>
       </div>
     </div>
-  </header>
-
-  <main>
-
-    <!-- ========== HERO ========== -->
-    <section data-reveal class="section-wrap bg-linen mx-auto mt-6 sm:mt-10 max-w-6xl">
-      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-        <div class="w-full lg:flex-[0.65]">
-          <div class="inline-flex items-center gap-2 rounded-full border border-cream bg-cream px-3 py-1.5 text-sm font-semibold text-plum shadow-sm">
-            <span class="relative flex h-2 w-2">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-copper opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2 w-2 bg-copper"></span>
-            </span>
-            Accepting New Clients
-          </div>
-
-          <div class="flex items-center gap-4 mt-6 sm:hidden">
-            <img src="./headshot.png" alt="David Bassin" class="h-16 w-16 rounded-full object-cover border-4 border-cream shadow-md shrink-0" loading="lazy" />
-            <div>
-              <div class="font-display text-lg font-bold text-plum">David Bassin</div>
-              <div class="text-xs font-semibold text-copper uppercase tracking-wide">Founder & Principal Consultant</div>
-            </div>
-          </div>
-
-          <h1 class="mt-6 font-display text-4xl font-bold tracking-tight text-plum sm:text-5xl md:text-6xl leading-[1.1]">
-            AI solutions for your <br/><span class="text-copper">small business.</span>
-          </h1>
-
-          <p class="mt-4 text-lg font-medium text-plum sm:mt-6 sm:text-xl md:text-2xl leading-snug">
-            I help small business owners figure out where AI can save them time and money, build the solution with them, and train them to run it on their own.
-          </p>
-
-          <p class="mt-4 text-base text-driftwood italic">
-            "The deliverable is not just a tool. It is the understanding."
-          </p>
-
-          <div class="mt-6 flex flex-wrap items-center gap-3">
-            <a href="https://calendly.com/davidbassin12/30min?hide_gdpr_banner=1&utm_source=website&utm_content=hero" target="_blank" rel="noopener" onclick="return openCalendly('hero')" class="inline-flex h-12 items-center justify-center rounded-lg bg-copper px-6 text-base font-semibold text-white shadow-md hover:bg-copper-light transition-all hover:-translate-y-0.5">
-              Book a Free Call
-            </a>
-            <a href="./scorecard.html" class="inline-flex h-12 items-center justify-center rounded-lg border border-copper/30 bg-cream px-6 text-base font-semibold text-copper shadow-sm hover:bg-copper hover:text-white transition-all hover:-translate-y-0.5">
-              Free AI Readiness Scorecard
-            </a>
-            <a href="#how-it-works" class="inline-flex h-12 items-center justify-center rounded-lg border border-plum/20 bg-cream px-6 text-base font-semibold text-plum shadow-sm hover:bg-white transition-all">
-              See How It Works
-            </a>
-          </div>
-        </div>
-
-        <div class="hidden lg:flex w-full lg:flex-[0.35] flex-col gap-5">
-          <div class="rounded-2xl border border-cream bg-cream p-3 shadow-card">
-            <img src="./headshot.png" alt="David Bassin" class="w-full rounded-xl object-cover aspect-[4/5] object-top" loading="lazy" />
-            <div class="p-3 text-center">
-              <div class="font-display font-bold text-lg text-plum">David Bassin</div>
-              <div class="text-sm font-semibold text-copper uppercase tracking-wide mt-0.5">Founder & Principal Consultant</div>
-            </div>
-          </div>
-          <div class="rounded-2xl border border-cream bg-cream p-5 shadow-card">
-            <div class="space-y-3">
-              <div class="flex items-center gap-3">
-                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-copper/10 text-copper font-display font-bold text-lg">1</div>
-                <div>
-                  <div class="font-bold text-plum text-base">Free Discovery Call</div>
-                  <div class="text-sm text-driftwood">15-20 min — understand your pain</div>
-                </div>
-              </div>
-              <div class="border-l-2 border-dashed border-copper/20 ml-5 h-3"></div>
-              <div class="flex items-center gap-3">
-                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-copper/10 text-copper font-display font-bold text-lg">2</div>
-                <div>
-                  <div class="font-bold text-plum text-base">AI Quick Assessment</div>
-                  <div class="text-sm text-driftwood">Prioritized opportunities + ROI</div>
-                </div>
-              </div>
-              <div class="border-l-2 border-dashed border-copper/20 ml-5 h-3"></div>
-              <div class="flex items-center gap-3">
-                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-copper/10 text-copper font-display font-bold text-lg">3</div>
-                <div>
-                  <div class="font-bold text-plum text-base">Build + Handoff</div>
-                  <div class="text-sm text-driftwood">You own the solution</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <aside class="agenda" aria-labelledby="agenda-title">
+      <div class="agenda-head">
+        <h2 id="agenda-title">A sample workshop</h2>
+        <p>One hour, laptops open, your own curriculum</p>
       </div>
-    </section>
+      <ol>
+        <li><span>Make a short video or review game from a unit you teach</span><span class="time">20 min</span></li>
+        <li><span>Turn one worksheet into an IEP version</span><span class="time">10 min</span></li>
+        <li><span>Check the AI's work like a grader</span><span class="time">15 min</span></li>
+        <li><span>Write the AI rules for your own class</span><span class="time">10 min</span></li>
+        <li><span>Exit ticket: what will you use Monday?</span><span class="time exit">5 min</span></li>
+      </ol>
+      <p class="agenda-note">The goal: every teacher leaves with something they made and checked.</p>
+    </aside>
+  </div>
+</div>
 
-    <!-- ========== THE PROBLEM (Lavender moment) ========== -->
-    <section id="problem" data-reveal class="section-wrap bg-lavender mx-auto mt-8 sm:mt-12 max-w-6xl">
-      <div>
-        <div class="text-xs font-display font-700 uppercase tracking-[0.2em] text-copper mb-2">The Problem</div>
-        <h2 class="font-display text-3xl font-bold tracking-tight text-plum sm:text-4xl">Small businesses are caught in an AI adoption gap.</h2>
-        <div class="copper-rule mt-4"></div>
+<section class="alt" id="problem" aria-labelledby="problem-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="problem-title">Many teachers have AI tools and little training.</h2>
+    </div>
+    <div class="problems">
+      <div><h3>No real training</h3><p>A login does not show a teacher what AI is good for, or where it goes wrong.</p></div>
+      <div><h3>Students are already using it</h3><p>School rules written before AI do not cover it. Students need clear rules, and so do teachers.</p></div>
+      <div><h3>Built far from the classroom</h3><p>Class periods are short, Chromebooks are shared, some students have IEPs, and the printer is black and white. A lot of AI training and AI products miss that.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="services" aria-labelledby="services-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="services-title">What I offer</h2>
+      <p class="lede">Everything is made by a working teacher who builds real tools, and handed off so your team can keep it going.</p>
+    </div>
+    <div class="buyers">
+      <div class="buyer">
+        <p class="label">For schools</p>
+        <h3 class="buyer-h">Help your teachers use AI well.</h3>
+        <ul class="olist">
+          <li><h4>Teacher workshops and coaching</h4><p>Hands-on sessions where every teacher makes something they will use next week, then checks it before it reaches a student.</p></li>
+          <li><h4>Custom classroom tools</h4><p>Short history videos, review games, and worksheets built around your curriculum, your calendar, and your devices.</p></li>
+          <li><h4>AI guidelines for your school</h4><p>Clear rules for staff and students, written with your team, with a one-page version teachers can use in class.</p></li>
+          <li><h4>Less paperwork</h4><p>Pacing calendars that absorb sick days, first drafts of weekly updates, and fewer things typed twice.</p></li>
+        </ul>
       </div>
-
-      <div class="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-3">
-        <div class="lift-card rounded-2xl border border-white bg-cream p-6 shadow-card text-center">
-          <div class="font-display text-4xl font-bold text-copper">58%</div>
-          <p class="mt-2 text-base text-driftwood">of small businesses now use generative AI — but <strong class="text-plum">51% are just experimenting</strong> without a clear path to real implementation.</p>
-        </div>
-        <div class="lift-card rounded-2xl border border-white bg-cream p-6 shadow-card text-center">
-          <div class="font-display text-4xl font-bold text-copper">62%</div>
-          <p class="mt-2 text-base text-driftwood">of non-adopters cite <strong class="text-plum">lack of understanding</strong> as their primary barrier to using AI in their business.</p>
-        </div>
-        <div class="lift-card rounded-2xl border border-white bg-cream p-6 shadow-card text-center">
-          <div class="font-display text-4xl font-bold text-copper">82%</div>
-          <p class="mt-2 text-base text-driftwood">of the smallest businesses (under 5 employees) believe <strong class="text-plum">AI simply doesn't apply to them.</strong></p>
-        </div>
+      <div class="buyer dark">
+        <p class="label">For <span class="nw">ed-tech</span> teams</p>
+        <h3 class="buyer-h">Make tools teachers will actually use.</h3>
+        <ul class="olist">
+          <li><h4>A teacher's eye on your product</h4><p>I use your tool with a real unit and a 38-minute period, and tell you plainly where teachers will use it and where they will drop it.</p></li>
+          <li><h4>Lessons and demos</h4><p>Sample lessons and short videos that show your tool inside a real class, made the way I make my own.</p></li>
+          <li><h4>Teacher training for your tool</h4><p>Workshops and short guides that help teachers start using your product well.</p></li>
+          <li><h4>Classroom-ready checks</h4><p>Does it work on a shared Chromebook and on a phone? For students with IEPs? On a black-and-white printer? I check before your users find out.</p></li>
+        </ul>
       </div>
+    </div>
+    <p class="note-line">On my school's AI Task Force, I coach teachers and helped write our AI guidelines.</p>
+  </div>
+</section>
 
-      <div class="mt-6 rounded-2xl border border-white bg-cream p-6 shadow-card">
-        <p class="text-base text-driftwood leading-relaxed">
-          The problem isn't a shortage of AI tools. It's a shortage of people who can <strong class="text-plum">explain</strong> those tools, <strong class="text-plum">implement</strong> them for a specific business context, and <strong class="text-plum">train</strong> the owner to maintain the result. Only 13% of AI projects make it from proof-of-concept to production. That gap is an education and implementation problem — and that's exactly what I solve.
-        </p>
-      </div>
-    </section>
-
-    <!-- ========== HOW IT WORKS ========== -->
-    <section id="how-it-works" data-reveal class="section-wrap bg-linen mx-auto mt-8 sm:mt-12 max-w-6xl">
-      <div>
-        <div class="text-xs font-display font-700 uppercase tracking-[0.2em] text-copper mb-2">How It Works</div>
-        <h2 class="font-display text-3xl font-bold tracking-tight text-plum sm:text-4xl">Three phases, from confusion to capability.</h2>
-        <div class="copper-rule mt-4"></div>
-      </div>
-
-      <div class="mt-6 grid grid-cols-1 gap-5 md:grid-cols-3">
-        <div class="lift-card rounded-2xl border border-cream bg-cream p-6 shadow-card">
-          <div class="flex h-12 w-12 items-center justify-center rounded-full bg-copper/10 text-copper font-display font-bold text-xl mb-4">1</div>
-          <div class="text-lg font-bold text-plum">Diagnosis</div>
-          <p class="mt-2 text-base leading-relaxed text-driftwood">A free 15-20 minute call to understand your business problem, assess whether AI is the right tool, and determine fit. This isn't a sales call — it's a teacher sitting down and asking, "Show me what's eating your time."</p>
-        </div>
-        <div class="lift-card rounded-2xl border border-cream bg-cream p-6 shadow-card">
-          <div class="flex h-12 w-12 items-center justify-center rounded-full bg-copper/10 text-copper font-display font-bold text-xl mb-4">2</div>
-          <div class="text-lg font-bold text-plum">Build</div>
-          <p class="mt-2 text-base leading-relaxed text-driftwood">We build the AI-powered solution together. You provide the domain expertise, I handle design and implementation. The iterative loop — you describe, I build, you test, I adjust — ensures the output actually fits your business.</p>
-        </div>
-        <div class="lift-card rounded-2xl border border-cream bg-cream p-6 shadow-card">
-          <div class="flex h-12 w-12 items-center justify-center rounded-full bg-copper/10 text-copper font-display font-bold text-xl mb-4">3</div>
-          <div class="text-lg font-bold text-plum">Handoff</div>
-          <p class="mt-2 text-base leading-relaxed text-driftwood">Training and documentation so you can maintain, adjust, and extend the tool independently. The goal is capability transfer, not recurring dependency. Every engagement ends with you understanding what was built and how to keep it running.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== WHAT WE BUILD (3-pillar flywheel) ========== -->
-    <section id="what-we-build" data-reveal class="section-wrap bg-lavender mx-auto mt-8 sm:mt-12 max-w-6xl">
-      <div>
-        <div class="text-xs font-display font-700 uppercase tracking-[0.2em] text-copper mb-2">What We Build</div>
-        <h2 class="font-display text-3xl font-bold tracking-tight text-plum sm:text-4xl">Three places automation pays for itself in 90 days.</h2>
-        <div class="copper-rule mt-4"></div>
-        <p class="mt-3 text-lg text-driftwood">Find new customers. Catch every inbound. Keep the ones you already won.</p>
-      </div>
-
-      <div class="mt-6 grid grid-cols-1 gap-5 md:grid-cols-3">
-        <a href="./services.html#find" class="lift-card group rounded-2xl border border-white bg-cream shadow-card overflow-hidden flex flex-col">
-          <div class="overflow-hidden">
-            <img src="./leadgen-screenshot.webp" alt="Lead-gen pipeline showing scored prospects by industry and town with deep-dive profiles" class="w-full h-48 sm:h-56 object-cover object-top" loading="lazy" />
+<section class="alt" id="work" aria-labelledby="work-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="work-title">Built for real people</h2>
+      <p class="lede">Most of these I made for my own students, and the live ones are free to try. Two are for offices and businesses outside school.</p>
+    </div>
+    <div class="work">
+      <div class="w wide">
+        <figure>
+          <div class="films3">
+            <div class="shot"><img src="img/road-to-1789.webp" width="1280" height="720" alt="Title card: The Road to 1789" loading="lazy"></div>
+            <div class="shot"><img src="img/bastille.webp" width="1280" height="720" alt="Title card: The Storming of the Bastille" loading="lazy"></div>
+            <div class="shot"><img src="img/reign-of-terror.webp" width="960" height="540" alt="Title card: The Reign of Terror" loading="lazy"></div>
           </div>
-          <div class="p-6 flex flex-col flex-1">
-            <div class="text-xs font-display font-700 uppercase tracking-[0.2em] text-copper mb-2">Find</div>
-            <div class="text-xl font-bold text-plum">Stop hunting for prospects.</div>
-            <p class="mt-3 text-base text-driftwood leading-relaxed flex-1">A self-running pipeline that finds local businesses matching your ideal customer, scores them, drafts the first outreach, and lands them in your queue every Monday morning. Built and used to fill our own pipeline &mdash; 60+ qualified Five Towns leads in 30 days.</p>
-            <div class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-copper">
-              Learn more <span class="transition-transform group-hover:translate-x-1" aria-hidden="true">&rarr;</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="./services.html#catch" class="lift-card group rounded-2xl border border-white bg-cream shadow-card overflow-hidden flex flex-col">
-          <div class="overflow-hidden">
-            <img src="./voice-to-crm-screenshot.webp" alt="Voice-to-CRM dashboard with live call transcript flowing into a structured Pipedrive deal" class="w-full h-48 sm:h-56 object-cover object-top" loading="lazy" />
-          </div>
-          <div class="p-6 flex flex-col flex-1">
-            <div class="text-xs font-display font-700 uppercase tracking-[0.2em] text-copper mb-2">Catch</div>
-            <div class="text-xl font-bold text-plum">Never lose another inbound.</div>
-            <p class="mt-3 text-base text-driftwood leading-relaxed flex-1">Every call, voicemail, and missed text becomes a structured CRM record automatically &mdash; with the address, the job type, the price, and the follow-up time already captured. One contractor on this stack sees deals appear in his CRM 9 seconds after he hangs up.</p>
-            <div class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-copper">
-              Learn more <span class="transition-transform group-hover:translate-x-1" aria-hidden="true">&rarr;</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="./services.html#keep" class="lift-card group rounded-2xl border border-white bg-cream shadow-card overflow-hidden flex flex-col">
-          <div class="h-48 sm:h-56 bg-linen flex items-center justify-center px-6 border-b border-white">
-            <div class="w-full">
-              <div class="flex items-center justify-between gap-2">
-                <div class="flex flex-col items-center gap-1.5 flex-1">
-                  <div class="h-12 w-12 rounded-full bg-copper/10 text-copper font-display font-bold text-sm flex items-center justify-center">60d</div>
-                  <div class="text-[10px] font-semibold uppercase tracking-wider text-driftwood">Quiet</div>
-                </div>
-                <div class="copper-rule flex-1 max-w-[28px]"></div>
-                <div class="flex flex-col items-center gap-1.5 flex-1">
-                  <div class="h-12 w-12 rounded-full bg-copper/10 text-copper font-display font-bold text-sm flex items-center justify-center">90d</div>
-                  <div class="text-[10px] font-semibold uppercase tracking-wider text-driftwood">Quiet</div>
-                </div>
-                <div class="copper-rule flex-1 max-w-[28px]"></div>
-                <div class="flex flex-col items-center gap-1.5 flex-1">
-                  <div class="h-12 w-12 rounded-full bg-copper/10 text-copper font-display font-bold text-sm flex items-center justify-center">180d</div>
-                  <div class="text-[10px] font-semibold uppercase tracking-wider text-driftwood">Quiet</div>
-                </div>
-              </div>
-              <div class="mt-4 flex items-center justify-center gap-2 flex-wrap">
-                <div class="px-3 py-1.5 rounded-full bg-copper text-white text-xs font-semibold">Right offer, right time</div>
-                <span class="text-copper font-bold" aria-hidden="true">&rarr;</span>
-                <div class="px-3 py-1.5 rounded-full bg-plum text-cream text-xs font-semibold">Revenue</div>
-              </div>
-            </div>
-          </div>
-          <div class="p-6 flex flex-col flex-1">
-            <div class="text-xs font-display font-700 uppercase tracking-[0.2em] text-copper mb-2">Keep</div>
-            <div class="text-xl font-bold text-plum">Turn old customers into next month's revenue.</div>
-            <p class="mt-3 text-base text-driftwood leading-relaxed flex-1">Lapsed customers (60/90/180 days quiet) get the right offer at the right time, automatically. A 5% reactivation rate on a few hundred dormant customers is a meaningful month &mdash; and you don't have to remember anyone's name.</p>
-            <div class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-copper">
-              Learn more <span class="transition-transform group-hover:translate-x-1" aria-hidden="true">&rarr;</span>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="mt-8 flex items-center justify-center gap-3 flex-wrap">
-        <span class="px-5 py-2 rounded-full bg-plum text-cream text-sm font-display font-semibold tracking-wide uppercase">Find</span>
-        <span class="copper-rule"></span>
-        <span class="px-5 py-2 rounded-full bg-plum text-cream text-sm font-display font-semibold tracking-wide uppercase">Catch</span>
-        <span class="copper-rule"></span>
-        <span class="px-5 py-2 rounded-full bg-plum text-cream text-sm font-display font-semibold tracking-wide uppercase">Keep</span>
-        <span class="text-xs font-semibold uppercase tracking-[0.18em] text-driftwood ml-2 italic">flywheel</span>
-      </div>
-
-      <div class="mt-8 text-center">
-        <a href="./services.html" class="inline-flex items-center gap-2 text-sm font-semibold text-copper hover:text-plum transition-colors">
-          See all 20 ways we automate <span aria-hidden="true">&rarr;</span>
-        </a>
-      </div>
-    </section>
-
-    <!-- ========== CASE STUDIES ========== -->
-    <section id="work" data-reveal class="section-wrap bg-cream mx-auto mt-8 sm:mt-12 max-w-6xl">
-      <div>
-        <div class="text-xs font-display font-700 uppercase tracking-[0.2em] text-copper mb-2">Case Studies</div>
-        <h2 class="font-display text-3xl font-bold tracking-tight text-plum sm:text-4xl">Real Work, Real Results</h2>
-        <div class="copper-rule mt-4"></div>
-        <p class="mt-3 text-lg text-driftwood">Three industries, three different end users, same throughline: understand the problem, build the solution, transfer the capability.</p>
-      </div>
-
-      <div class="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-        <div class="lift-card rounded-2xl border border-linen bg-linen shadow-card overflow-hidden">
-          <div class="overflow-hidden">
-            <img src="./pergolaflow-screenshot.png" alt="PergolaFlow CRM Dashboard showing customer stats, active jobs, and voice recording interface" class="w-full h-48 sm:h-56 object-cover object-top" loading="lazy" />
-          </div>
-          <div class="p-6">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-copper/10 text-copper">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
-              </div>
-              <div>
-                <div class="font-bold text-lg text-plum">PergolaFlow</div>
-                <div class="text-sm text-driftwood">Voice-to-CRM for Construction</div>
-              </div>
-            </div>
-            <p class="text-base text-driftwood leading-relaxed">A pergola construction business owner was tracking leads on paper and in his head. I built a voice-to-CRM system where he speaks into his phone, AI transcribes and extracts structured data, matches it against existing customers, and saves it to a database.</p>
-            <div class="mt-4 flex flex-wrap gap-2">
-              <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Next.js</span>
-              <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Whisper</span>
-              <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Gemini</span>
-              <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">PocketBase</span>
-            </div>
-            <p class="mt-4 text-sm font-semibold text-driftwood italic">"He talks into his phone and the AI handles the rest."</p>
-          </div>
-        </div>
-
-        <div class="lift-card rounded-2xl border border-linen bg-linen shadow-card overflow-hidden">
-          <div class="overflow-hidden relative">
-            <img src="./finaid-screenshot.png" alt="FinAid Decision Support Dashboard showing student metrics, aid calculations, and cost-of-living adjustments" class="w-full h-48 sm:h-56 object-cover object-top" loading="lazy" />
-            <div class="bg-plum/80 backdrop-blur-sm text-cream text-xs font-medium px-3 py-1.5 absolute bottom-0 left-0 right-0 text-center">All names shown are simulated demo data — no real student records.</div>
-          </div>
-          <div class="p-6">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-copper/10 text-copper">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-              </div>
-              <div>
-                <div class="font-bold text-lg text-plum">FinAid Dashboard</div>
-                <div class="text-sm text-driftwood">Higher Ed Decision Support</div>
-              </div>
-            </div>
-            <p class="text-base text-driftwood leading-relaxed">A financial aid counselor needed a tool to account for regional cost-of-living differences and K-12 tuition burden — blind spots in the federal FAFSA formula. I built a full-stack decision-support dashboard that adjusts the Student Aid Index using real economic data.</p>
-            <div class="mt-4 flex flex-wrap gap-2">
-              <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Next.js</span>
-              <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">TypeScript</span>
-              <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Tailwind</span>
-              <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Cloudflare</span>
-            </div>
-            <p class="mt-4 text-sm font-semibold text-driftwood italic">"Understand the problem, build the solution, transfer the capability."</p>
-          </div>
-        </div>
-
-        <div class="lift-card rounded-2xl border border-linen bg-linen shadow-card overflow-hidden">
-          <div class="overflow-hidden">
-            <img src="./voice-to-crm-screenshot.webp" alt="Voice-to-CRM dashboard with live call transcript flowing into a structured Pipedrive deal" class="w-full h-48 sm:h-56 object-cover object-top" loading="lazy" />
-          </div>
-          <div class="p-6">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-copper/10 text-copper">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-              </div>
-              <div>
-                <div class="font-bold text-lg text-plum">VoiceToCrm Pipeline</div>
-                <div class="text-sm text-driftwood">Plumbing &middot; 9-sec hangup-to-deal</div>
-              </div>
-            </div>
-            <p class="text-base text-driftwood leading-relaxed">A residential plumbing contractor was losing jobs to data-entry friction. Every inbound call now becomes a structured Pipedrive deal automatically &mdash; address, job type, urgency, quoted price, and follow-up time &mdash; in about 9 seconds. He didn&rsquo;t change his number, his CRM, or his workflow.</p>
-            <div class="mt-4 flex flex-wrap gap-2">
-              <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Twilio</span>
-              <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Whisper</span>
-              <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">gpt-5.4-nano</span>
-              <span class="text-xs font-semibold bg-linen text-plum px-2.5 py-1 rounded-full border border-cream">Pipedrive</span>
-            </div>
-            <p class="mt-4 text-sm font-semibold text-driftwood italic">"By the time he hangs up, the deal's already in his CRM."</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== SERVICES & PRICING ========== -->
-    <section id="services" data-reveal class="section-wrap bg-linen mx-auto mt-8 sm:mt-12 max-w-6xl">
-      <div>
-        <div class="text-xs font-display font-700 uppercase tracking-[0.2em] text-copper mb-2">Services</div>
-        <h2 class="font-display text-3xl font-bold tracking-tight text-plum sm:text-4xl">Accessible pricing for small businesses.</h2>
-        <div class="copper-rule mt-4"></div>
-      </div>
-
-      <div class="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        <div class="lift-card rounded-2xl border border-cream bg-cream p-6 shadow-card">
-          <div class="text-xs font-display font-700 uppercase tracking-[0.15em] text-copper mb-2">Start Here</div>
-          <div class="text-xl font-bold text-plum">Qualifying Call</div>
-          <div class="mt-2 font-display text-3xl font-bold text-plum">Free</div>
-          <div class="text-sm text-driftwood mt-1">15-20 minutes</div>
-          <hr class="my-4 border-cream">
-          <ul class="space-y-2 text-sm text-driftwood">
-            <li class="flex gap-2"><span class="text-copper font-bold">&#10003;</span> Assess fit</li>
-            <li class="flex gap-2"><span class="text-copper font-bold">&#10003;</span> Understand your pain</li>
-            <li class="flex gap-2"><span class="text-copper font-bold">&#10003;</span> Determine if AI can help</li>
-          </ul>
-        </div>
-
-        <div class="lift-card rounded-2xl border-2 border-copper p-6 shadow-card relative bg-cream">
-          <div class="absolute -top-3 right-4 bg-copper text-white text-xs font-display font-bold px-3 py-1 rounded-full uppercase tracking-wider">Most Popular</div>
-          <div class="text-xs font-display font-700 uppercase tracking-[0.15em] text-copper mb-2">Gateway</div>
-          <div class="text-xl font-bold text-plum">AI Quick Assessment</div>
-          <div class="mt-2 font-display text-3xl font-bold text-plum">$300&ndash;$500</div>
-          <div class="text-sm text-driftwood mt-1">3-5 hour deep-dive</div>
-          <hr class="my-4 border-linen">
-          <ul class="space-y-2 text-sm text-driftwood">
-            <li class="flex gap-2"><span class="text-copper font-bold">&#10003;</span> Workflow audit</li>
-            <li class="flex gap-2"><span class="text-copper font-bold">&#10003;</span> Top 3-5 AI opportunities</li>
-            <li class="flex gap-2"><span class="text-copper font-bold">&#10003;</span> Prioritized action plan</li>
-            <li class="flex gap-2"><span class="text-copper font-bold">&#10003;</span> ROI estimates for each</li>
-          </ul>
-        </div>
-
-        <div class="lift-card rounded-2xl border border-cream bg-cream p-6 shadow-card">
-          <div class="text-xs font-display font-700 uppercase tracking-[0.15em] text-copper mb-2">Full Build</div>
-          <div class="text-xl font-bold text-plum">Implementation</div>
-          <div class="mt-2 font-display text-3xl font-bold text-plum">$1K&ndash;$5K</div>
-          <div class="text-sm text-driftwood mt-1">Project-based</div>
-          <hr class="my-4 border-cream">
-          <ul class="space-y-2 text-sm text-driftwood">
-            <li class="flex gap-2"><span class="text-copper font-bold">&#10003;</span> Custom AI solution</li>
-            <li class="flex gap-2"><span class="text-copper font-bold">&#10003;</span> Built collaboratively</li>
-            <li class="flex gap-2"><span class="text-copper font-bold">&#10003;</span> Full training &amp; docs</li>
-            <li class="flex gap-2"><span class="text-copper font-bold">&#10003;</span> You own everything</li>
-          </ul>
-        </div>
-
-        <div class="lift-card rounded-2xl border border-cream bg-cream p-6 shadow-card">
-          <div class="text-xs font-display font-700 uppercase tracking-[0.15em] text-copper mb-2">Ongoing</div>
-          <div class="text-xl font-bold text-plum">Retainer</div>
-          <div class="mt-2 font-display text-3xl font-bold text-plum">$500&ndash;$1,500</div>
-          <div class="text-sm text-driftwood mt-1">per month</div>
-          <hr class="my-4 border-cream">
-          <ul class="space-y-2 text-sm text-driftwood">
-            <li class="flex gap-2"><span class="text-copper font-bold">&#10003;</span> Ongoing optimization</li>
-            <li class="flex gap-2"><span class="text-copper font-bold">&#10003;</span> New use cases</li>
-            <li class="flex gap-2"><span class="text-copper font-bold">&#10003;</span> Training refreshers</li>
-            <li class="flex gap-2"><span class="text-copper font-bold">&#10003;</span> Priority support</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== TESTIMONIALS (Lavender moment) ========== -->
-    <section id="testimonials" data-reveal class="section-wrap bg-lavender mx-auto mt-8 sm:mt-12 max-w-6xl">
-      <div>
-        <div class="text-xs font-display font-700 uppercase tracking-[0.2em] text-copper mb-2">Testimonials</div>
-        <h2 class="font-display text-3xl font-bold tracking-tight text-plum sm:text-4xl">What Clients Say</h2>
-        <div class="copper-rule mt-4"></div>
-      </div>
-
-      <div class="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2">
-        <div class="lift-card rounded-2xl border border-white bg-cream p-6 shadow-card">
-          <div class="flex items-center gap-1 mb-4 text-copper">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <p class="text-lg text-driftwood leading-relaxed italic">"I was spending hours every week just organizing new client information — pulling details out of emails, phone notes, and intake forms into our case management system. David built us an AI workflow that handles the extraction automatically. What used to take my paralegal half a day now takes minutes. But the best part is he actually showed us how it works so we're not dependent on him."</p>
-          <div class="mt-5 flex items-center gap-3">
-            <div class="h-10 w-10 rounded-full bg-linen flex items-center justify-center font-display font-bold text-plum text-sm">EL</div>
-            <div>
-              <div class="font-bold text-plum">Eli Lekht</div>
-              <div class="text-sm text-driftwood">Attorney, Solo Practice</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="lift-card rounded-2xl border border-white bg-cream p-6 shadow-card">
-          <div class="flex items-center gap-1 mb-4 text-copper">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <p class="text-lg text-driftwood leading-relaxed italic">"I was keeping track of everything in my head — customer calls, job estimates, follow-ups. David built me a system where I just talk into my phone after a call and it does the rest. Names, addresses, job details — it all goes straight into the database. I'm not a tech guy at all, but he walked me through everything so I actually understand how it works."</p>
-          <div class="mt-5 flex items-center gap-3">
-            <div class="h-10 w-10 rounded-full bg-linen flex items-center justify-center font-display font-bold text-plum text-sm">IL</div>
-            <div>
-              <div class="font-bold text-plum">Ilya Lurye</div>
-              <div class="text-sm text-driftwood">Owner, Pergola Construction</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== SCORECARD CTA ========== -->
-    <section id="scorecard" data-reveal class="section-wrap bg-plum mx-auto mt-8 sm:mt-12 max-w-6xl">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        </figure>
         <div>
-          <div class="text-xs font-display font-700 uppercase tracking-[0.2em] text-copper mb-2">Free Resource</div>
-          <h2 class="font-display text-3xl font-bold tracking-tight text-cream sm:text-4xl">Not sure where to start with AI?</h2>
-          <div class="copper-rule mt-4"></div>
-          <p class="mt-4 text-lg text-cream/70 leading-relaxed">
-            Most small businesses know AI could help — they just don't know <strong class="text-cream">where</strong> or <strong class="text-cream">how much</strong>. Take the free AI Readiness Scorecard to find out where you stand across four key areas in under 2 minutes.
-          </p>
-          <div class="mt-6">
-            <a href="./scorecard.html" class="inline-flex h-12 items-center justify-center rounded-lg bg-copper px-8 text-base font-semibold text-white shadow-md hover:bg-copper-light transition-all hover:-translate-y-0.5">
-              Take the Free Scorecard
-            </a>
-          </div>
-        </div>
-
-        <div class="space-y-4">
-          <div class="rounded-2xl bg-cream/5 border border-cream/10 p-5">
-            <div class="flex items-start gap-4">
-              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-copper/15 text-copper font-display font-bold text-lg shrink-0">1</div>
-              <div>
-                <div class="font-bold text-cream">Strategy & Vision</div>
-                <div class="text-sm text-cream/50 mt-1">Does your team have a clear AI strategy tied to business goals?</div>
-              </div>
-            </div>
-          </div>
-          <div class="rounded-2xl bg-cream/5 border border-cream/10 p-5">
-            <div class="flex items-start gap-4">
-              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-copper/15 text-copper font-display font-bold text-lg shrink-0">2</div>
-              <div>
-                <div class="font-bold text-cream">Data & Infrastructure</div>
-                <div class="text-sm text-cream/50 mt-1">Is your data organized and accessible for AI tools to work with?</div>
-              </div>
-            </div>
-          </div>
-          <div class="rounded-2xl bg-cream/5 border border-cream/10 p-5">
-            <div class="flex items-start gap-4">
-              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-copper/15 text-copper font-display font-bold text-lg shrink-0">3</div>
-              <div>
-                <div class="font-bold text-cream">People & Culture</div>
-                <div class="text-sm text-cream/50 mt-1">How comfortable is your team with experimenting with AI?</div>
-              </div>
-            </div>
-          </div>
-          <div class="rounded-2xl bg-cream/5 border border-cream/10 p-5">
-            <div class="flex items-start gap-4">
-              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-copper/15 text-copper font-display font-bold text-lg shrink-0">4</div>
-              <div>
-                <div class="font-bold text-cream">Operations & Governance</div>
-                <div class="text-sm text-cream/50 mt-1">Do you have a process for evaluating and scaling AI responsibly?</div>
-              </div>
-            </div>
-          </div>
+          <h3>AI videos that teach the French Revolution</h3>
+          <p>A series of short narrated videos for my history class, made from real paintings and prints, with captions on screen and a question at the end for discussion.</p>
+          <div class="links"><a class="textlink" href="https://dbassin12.github.io/history-videos/road-to-1789/">Watch The Road to 1789</a><a class="textlink" href="https://dbassin12.github.io/history-videos/">See all four videos</a></div>
         </div>
       </div>
-
-      <div class="mt-8 pt-6 border-t border-cream/10 flex flex-wrap items-center justify-center gap-6 text-sm text-cream/50">
-        <span class="flex items-center gap-2"><span class="text-copper font-bold">&#10003;</span> 8 questions</span>
-        <span class="flex items-center gap-2"><span class="text-copper font-bold">&#10003;</span> Under 2 minutes</span>
-        <span class="flex items-center gap-2"><span class="text-copper font-bold">&#10003;</span> Instant score & breakdown</span>
-        <span class="flex items-center gap-2"><span class="text-copper font-bold">&#10003;</span> No email required to see results</span>
+      <div class="w">
+        <figure><div class="shot"><img src="img/road-to-revolution.webp" width="1400" height="875" alt="Road to Revolution: a 3D town square with a crowd and a stone arch at the end of a brick road" loading="lazy"></div></figure>
+        <h3>Road to Revolution</h3>
+        <p>A 3D review game for the Enlightenment and the French Revolution. Hobbes, Locke and Rousseau teach inside the world, all 213 lines are spoken, and it runs on a phone.</p>
+        <a class="textlink" href="https://road-to-revolution.vercel.app">Play Road to Revolution</a>
       </div>
-    </section>
+      <div class="w">
+        <figure><div class="shot"><img src="img/arcade-screens.webp" width="1400" height="875" alt="Two phone screens from an AP Macro game arcade: the game list, and Fed Chair asking you to pick a crisis" loading="lazy"></div></figure>
+        <h3>AP Macro games</h3>
+        <p>Seven arcade games for the skills the AP exam grades: shift the curve a headline moves, run the Fed through a real crisis, find the mistakes on a graph.</p>
+        <a class="textlink" href="https://dbassin12.github.io/drs-econ-arcade/">Open the DRS Econ Arcade</a>
+      </div>
+      <div class="w">
+        <figure>
+          <div class="sheets">
+            <div class="shot"><img src="img/worksheet-regular.webp" width="855" height="696" alt="Regular worksheet with the original source beside a modified version" loading="lazy"></div>
+            <div class="shot"><img src="img/worksheet-iep.webp" width="855" height="706" alt="IEP version of the same lesson in short boxed parts, each with Locke's original words and a stop-and-check question" loading="lazy"></div>
+          </div>
+        </figure>
+        <h3>An IEP version of every worksheet</h3>
+        <p>History lessons with primary sources and an IEP version that keeps the same thinking: bigger type, more space, and shorter chunks.</p>
+      </div>
+      <div class="w">
+        <figure><div class="shot"><img src="img/finaid.webp" width="1280" height="800" alt="FinAid Dashboard showing a list of students with aid figures, labeled sample data, not real students" loading="lazy"></div></figure>
+        <h3>FinAid Dashboard</h3>
+        <p>Built with a university financial aid counselor. It adjusts the federal aid formula for regional cost of living and K-12 tuition, and shows each step of the math. The demo uses made-up students.</p>
+      </div>
+      <div class="w wide text-first">
+        <figure class="callflow" aria-labelledby="flow-cap">
+          <ol class="flow">
+            <li><span class="num" aria-hidden="true">1</span><div><p class="step-title">A customer calls</p><p class="quote">"Hi, I have a big leak in my bathroom. I'm at 12 Oak Lane. Can someone come today?"</p></div></li>
+            <li><span class="num" aria-hidden="true">2</span><div><p class="step-title">AI writes it down and pulls out the job</p>
+              <dl class="fields"><dt>Job</dt><dd>Leak repair</dd><dt>Urgency</dt><dd>Emergency</dd><dt>Address</dt><dd>12 Oak Lane</dd><dt>Price quoted</dt><dd>$150</dd><dt>Next step</dt><dd>Tech on site in about an hour</dd></dl></div></li>
+            <li><span class="num" aria-hidden="true">3</span><div><p class="step-title">A new deal is waiting in the CRM</p><p class="deal">Leak repair, 12 Oak Lane <span>&middot; $150 &middot; Emergency</span></p></div></li>
+          </ol>
+          <figcaption id="flow-cap">A made-up sample call, to show how it works.</figcaption>
+        </figure>
+        <div>
+          <h3>A call system for a plumbing company</h3>
+          <p>When a call ends, AI writes down what was said and pulls out the address, the job, how urgent it is, the price quoted, and the next step. A new deal shows up in the CRM in under a minute. It is designed to work with the phone number and CRM a business already has. Built with Twilio, Whisper, an LLM, and Pipedrive.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ========== ABOUT ========== -->
-    <section id="about" data-reveal class="section-wrap bg-linen mx-auto mt-8 sm:mt-12 max-w-6xl">
+<section id="how" aria-labelledby="how-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="how-title">How it works</h2>
+    </div>
+    <ol class="steps">
+      <li><h3>A free 30-minute call</h3><p>We talk about your school or your product, and what you want to fix. If AI is not the answer, I will tell you.</p></li>
+      <li><h3>A small pilot</h3><p>One workshop, one department, or one feature tried in a real unit. Something you can see working within a few weeks.</p></li>
+      <li><h3>Hand it off</h3><p>Your team learns to make and check their own. You keep everything we build.</p></li>
+    </ol>
+    <div class="who">
+      <span class="k">Good fit for:</span>
+      <span class="c">Day schools and yeshivas</span><span class="c">Private and charter schools</span><span class="c">Departments</span><span class="c"><span class="nw">Ed-tech</span> startups</span><span class="c">Product and content teams</span>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="about" aria-labelledby="about-title">
+  <div class="wrap about">
+    <img src="img/headshot.webp" width="640" height="640" alt="David Bassin" loading="lazy">
+    <div>
+      <h2 id="about-title">A teacher who builds, not an engineer who presents.</h2>
+      <p class="lede" style="margin-top:16px">I build AI tools. My students use the history videos and review games I make for class, and outside school I've built a call system for a plumbing company and a financial aid dashboard with a university counselor. I teach AP Macroeconomics and Global History at a high school on Long Island, and I have worked in schools since 2016.</p>
+      <p class="muted">Before teaching, I worked in IT support. On my school's AI Task Force, I coach teachers and helped write our AI guidelines. I check everything AI makes before anyone else sees it. I hold an M.S. in Education from Pace University.</p>
+      <a class="textlink" href="https://dbassin12.github.io/">See more of my work</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" aria-labelledby="contact-title">
+  <div class="wrap contact">
+    <div>
+      <h2 id="contact-title">Tell me about your school or your product.</h2>
+      <p class="lede" style="margin-top:16px">A few lines is plenty: who you are, what you teach, run, or build, and what you would like AI to help with. I answer every message myself.</p>
+      <p class="direct">Rather talk? <a href="https://calendly.com/davidbassin12/30min?hide_gdpr_banner=1&amp;utm_source=website&amp;utm_content=contact">Book a free 30-minute call</a>, or email <a href="mailto:david@bassinconsulting.com">david@bassinconsulting.com</a>.</p>
+    </div>
+    <div>
+      <form id="contactForm" novalidate>
+        <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="f-company">School or company <span class="opt">(optional)</span></label><input id="f-company" name="company" autocomplete="organization"></div>
+        <div class="field"><label for="f-message">Message</label><textarea id="f-message" name="message" required></textarea></div>
+        <button class="btn btn-primary" type="submit" id="contactSubmitBtn">Send message</button>
+        <p class="status" id="formStatus" role="status" aria-live="polite" tabindex="-1"></p>
+      </form>
+      <div class="sent" id="contactSuccess" role="status" tabindex="-1">
+        <h3>Message sent.</h3>
+        <p class="muted" style="margin:0">Thanks. I'll write back within a few days.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
       <div>
-        <div class="text-xs font-display font-700 uppercase tracking-[0.2em] text-copper mb-2">About</div>
-        <h2 class="font-display text-3xl font-bold tracking-tight text-plum sm:text-4xl">A teacher who builds, not an engineer who presents.</h2>
-        <div class="copper-rule mt-4"></div>
+        <a class="brand" href="#top"><span class="mark" aria-hidden="true"><span>B</span></span><span class="wordmark">BASSIN CONSULTING</span></a>
+        <p class="tag">AI training and tools for schools and <span class="nw">ed-tech</span> teams.</p>
       </div>
-
-      <div class="mt-6 grid grid-cols-1 gap-5 md:grid-cols-3">
-        <div class="lift-card rounded-2xl border border-linen bg-linen p-4 shadow-card flex flex-col items-center justify-center text-center">
-          <img src="./headshot.png" alt="David Bassin" class="w-36 h-36 rounded-2xl object-cover object-top border-4 border-cream shadow-lg" loading="lazy" />
-          <div class="mt-4 font-display font-bold text-xl text-plum">David Bassin</div>
-          <div class="text-sm font-semibold text-copper uppercase tracking-wide mt-1">Founder & Principal Consultant</div>
-          <div class="mt-3 text-sm text-driftwood">M.S. Education, Pace University<br>B.A. History, Baruch College</div>
-        </div>
-        <div class="lift-card rounded-2xl border border-linen bg-linen p-6 shadow-card">
-          <div class="text-xs font-display font-700 uppercase tracking-[0.15em] text-copper mb-3">The Background</div>
-          <p class="text-base text-driftwood leading-relaxed">
-            Eight years teaching World History and AP Economics. Three years in IT at a media publishing company. A Master's in Education from Pace University.
-          </p>
-          <p class="mt-3 text-base text-driftwood leading-relaxed">
-            The teaching background isn't incidental to the consulting practice — <strong class="text-plum">it is the practice.</strong> The core professional skill is making complex, intimidating ideas accessible to people who don't yet understand them. Same skill whether the audience is a classroom of students or a small business owner trying to understand what AI can do.
-          </p>
-        </div>
-
-        <div class="lift-card rounded-2xl border border-linen bg-linen p-6 shadow-card">
-          <div class="text-xs font-display font-700 uppercase tracking-[0.15em] text-copper mb-3">The Differentiator</div>
-          <p class="text-base text-driftwood leading-relaxed mb-4">
-            Most AI consultants come from engineering or data science backgrounds and struggle to communicate with non-technical business owners. I come from the opposite direction: I start with understanding your problem, then apply the technology.
-          </p>
-          <div class="space-y-3">
-            <div class="flex items-center gap-3">
-              <span class="text-copper font-bold">&#10003;</span>
-              <span class="text-sm text-driftwood">Teaching over selling — every interaction creates understanding</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="text-copper font-bold">&#10003;</span>
-              <span class="text-sm text-driftwood">Build with you, not just for you</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="text-copper font-bold">&#10003;</span>
-              <span class="text-sm text-driftwood">No black boxes, no jargon, no mystification</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="text-copper font-bold">&#10003;</span>
-              <span class="text-sm text-driftwood">If AI isn't the right answer, I'll tell you</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== CONTACT FORM (Dark Plum section) ========== -->
-    <section id="contact" data-reveal class="section-wrap bg-plum mx-auto mt-8 sm:mt-12 max-w-6xl mb-12">
-      <div class="max-w-2xl mx-auto">
-        <div class="text-center">
-          <div class="text-xs font-display font-bold tracking-[0.15em] uppercase text-copper mb-3">Get In Touch</div>
-          <h2 class="font-display text-3xl font-bold tracking-tight text-cream sm:text-4xl">Ready to see what AI can do for your business?</h2>
-          <p class="mt-4 text-lg text-cream/70">
-            Send a message or start with the free AI Readiness Scorecard. No sales pitch — just an honest conversation.
-          </p>
-          <div class="mt-4 mb-8">
-            <a href="./scorecard.html" class="inline-flex h-12 items-center justify-center rounded-lg border border-copper/50 px-8 text-base font-semibold text-copper shadow-sm hover:bg-copper hover:text-white transition-all hover:-translate-y-0.5">
-              Take the AI Readiness Scorecard
-            </a>
-          </div>
-        </div>
-
-        <form id="contactForm" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div class="flex flex-col">
-            <label class="font-display font-semibold text-xs tracking-wider uppercase text-copper-light mb-1.5">Name *</label>
-            <input type="text" name="name" placeholder="Jane Doe" required
-              class="bg-white/[0.06] border border-white/[0.12] rounded-lg px-3.5 py-3 text-cream text-[15px] font-sans outline-none focus:border-copper transition-colors placeholder:text-white/30">
-          </div>
-          <div class="flex flex-col">
-            <label class="font-display font-semibold text-xs tracking-wider uppercase text-copper-light mb-1.5">Email *</label>
-            <input type="email" name="email" placeholder="jane@company.com" required
-              class="bg-white/[0.06] border border-white/[0.12] rounded-lg px-3.5 py-3 text-cream text-[15px] font-sans outline-none focus:border-copper transition-colors placeholder:text-white/30">
-          </div>
-          <div class="flex flex-col sm:col-span-2">
-            <label class="font-display font-semibold text-xs tracking-wider uppercase text-copper-light mb-1.5">Company</label>
-            <input type="text" name="company" placeholder="Acme Corp"
-              class="bg-white/[0.06] border border-white/[0.12] rounded-lg px-3.5 py-3 text-cream text-[15px] font-sans outline-none focus:border-copper transition-colors placeholder:text-white/30">
-          </div>
-          <div class="flex flex-col sm:col-span-2">
-            <label class="font-display font-semibold text-xs tracking-wider uppercase text-copper-light mb-1.5">Message *</label>
-            <textarea name="message" rows="4" placeholder="Tell me about your business and what you're looking to solve..." required
-              class="bg-white/[0.06] border border-white/[0.12] rounded-lg px-3.5 py-3 text-cream text-[15px] font-sans outline-none focus:border-copper transition-colors placeholder:text-white/30 resize-vertical"></textarea>
-          </div>
-          <div class="sm:col-span-2">
-            <button type="submit" id="contactSubmitBtn"
-              class="w-full py-3.5 bg-copper text-white font-display font-bold text-[15px] tracking-wider rounded-lg hover:bg-copper-light transition-all hover:-translate-y-0.5 shadow-md">
-              Send Message
-            </button>
-          </div>
-        </form>
-
-        <div id="contactSuccess" class="text-center py-10 hidden">
-          <div class="w-16 h-16 rounded-full bg-copper/15 flex items-center justify-center mx-auto mb-4 text-copper text-3xl">&#10003;</div>
-          <h3 class="font-display font-bold text-xl text-cream mb-2">Message Sent</h3>
-          <p class="text-cream/60">Thanks for reaching out! I'll get back to you within 24 hours.</p>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ========== FOOTER ========== -->
-  <footer class="bg-plum text-cream/60 py-12 mt-12 border-t border-cream/10">
-    <div class="mx-auto max-w-6xl px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-      <div class="text-center md:text-left">
-        <div class="text-sm font-display font-800 tracking-[0.2em] uppercase text-copper">Bassin Consulting</div>
-        <div class="text-cream/40 text-sm mt-1 italic">AI Solutions for Small Business</div>
-      </div>
-
-      <div class="flex items-center gap-6 text-sm font-semibold">
-        <a href="mailto:david@bassinconsulting.com" class="hover:text-copper transition-colors">Email</a>
-        <a href="https://www.linkedin.com/in/dbassin/" target="_blank" class="hover:text-copper transition-colors">LinkedIn</a>
-      </div>
+      <ul>
+        <li><a href="mailto:david@bassinconsulting.com">david@bassinconsulting.com</a></li>
+        <li><a href="https://www.linkedin.com/in/dbassin/">LinkedIn</a></li>
+        <li><a href="https://dbassin12.github.io/">David's work</a></li>
+      </ul>
     </div>
-    <div class="mx-auto max-w-6xl px-6 mt-6 pt-6 border-t border-cream/10 text-center text-xs text-cream/30">
-      &copy; 2026 Bassin Consulting. Woodmere, NY (Nassau County). All rights reserved.
-    </div>
-  </footer>
+    <p class="fine">Woodmere, NY (Nassau County). &copy; 2026 Bassin Consulting.</p>
+  </div>
+</footer>
 
-  <!-- ========== SCRIPTS ========== -->
-  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-  <script>
-    // Calendly booking helper — opens popup with branded colors + UTM tracking.
-    // Fallback to default link navigation if Calendly hasn't loaded yet.
-    function openCalendly(source) {
-      if (window.Calendly) {
-        Calendly.initPopupWidget({
-          url: 'https://calendly.com/davidbassin12/30min?hide_gdpr_banner=1&primary_color=C07842&background_color=FDFCF9&text_color=2A2530&utm_source=website&utm_content=' + encodeURIComponent(source || 'button')
-        });
-        return false;
-      }
-      return true;
+<script>
+(function(){
+  var form=document.getElementById('contactForm');
+  if(!form) return;
+  var btn=document.getElementById('contactSubmitBtn');
+  var status=document.getElementById('formStatus');
+  var fields={name:form.name,email:form.email,message:form.message};
+  function clearInvalid(){Object.keys(fields).forEach(function(k){fields[k].removeAttribute('aria-invalid');});}
+  function show(html,focusEl){status.innerHTML=html;status.className='status show error';if(focusEl){focusEl.focus();}else{status.focus();}}
+  form.addEventListener('submit',async function(e){
+    e.preventDefault(); clearInvalid();
+    var name=fields.name.value.trim(), email=fields.email.value.trim(), message=fields.message.value.trim();
+    var missing=[]; if(!name) missing.push(fields.name); if(!email) missing.push(fields.email); if(!message) missing.push(fields.message);
+    if(missing.length){missing.forEach(function(f){f.setAttribute('aria-invalid','true');}); show('Please add your name, email, and a message.',missing[0]); return;}
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){fields.email.setAttribute('aria-invalid','true'); show('That email address looks incomplete.',fields.email); return;}
+    btn.disabled=true; btn.textContent='Sending...'; status.className='status';
+    try{
+      var res=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:name,email:email,company:form.company.value.trim(),message:message})});
+      if(!res.ok) throw new Error('Failed');
+      form.style.display='none';
+      var sent=document.getElementById('contactSuccess'); sent.classList.add('show'); sent.focus();
+    }catch(err){
+      btn.disabled=false; btn.textContent='Send message';
+      show('That didn\'t go through. Please email <a href="mailto:david@bassinconsulting.com">david@bassinconsulting.com</a> instead.');
     }
-
-    // Mobile menu toggle
-    const btn = document.getElementById('mobileMenuBtn');
-    const menu = document.getElementById('mobileMenu');
-    btn.addEventListener('click', () => menu.classList.toggle('hidden'));
-    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.add('hidden')));
-
-    // Scroll reveal
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.querySelectorAll('.reveal-item').forEach((el, i) => {
-            setTimeout(() => el.classList.add('is-visible'), i * 100);
-          });
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('[data-reveal]').forEach(section => {
-      section.classList.add('reveal-item');
-      observer.observe(section);
-    });
-
-    // Contact form handler
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-      contactForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const btn = document.getElementById('contactSubmitBtn');
-        btn.disabled = true;
-        btn.textContent = 'Sending...';
-
-        const payload = {
-          name: contactForm.querySelector('[name="name"]').value,
-          email: contactForm.querySelector('[name="email"]').value,
-          company: contactForm.querySelector('[name="company"]').value,
-          message: contactForm.querySelector('[name="message"]').value
-        };
-
-        try {
-          const res = await fetch('/api/contact', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-          });
-          if (!res.ok) throw new Error('Failed');
-
-          contactForm.style.display = 'none';
-          document.getElementById('contactSuccess').classList.remove('hidden');
-        } catch (err) {
-          btn.disabled = false;
-          btn.textContent = 'Send Message';
-          alert('Something went wrong — please try again or email david@bassinconsulting.com directly.');
-        }
-      });
-    }
-  </script>
-  <script defer src="/_vercel/insights/script.js"></script>
+  });
+})();
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

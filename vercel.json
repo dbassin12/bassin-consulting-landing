@@ -4,5 +4,13 @@
       "memory": 256,
       "maxDuration": 10
     }
-  }
+  },
+  "redirects": [
+    { "source": "/services", "destination": "/", "permanent": true },
+    { "source": "/services.html", "destination": "/", "permanent": true },
+    { "source": "/scorecard", "destination": "/", "permanent": true },
+    { "source": "/scorecard.html", "destination": "/", "permanent": true },
+    { "source": "/book", "destination": "/#contact", "permanent": true },
+    { "source": "/book.html", "destination": "/#contact", "permanent": true }
+  ]
 }

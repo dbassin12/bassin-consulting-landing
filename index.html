@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bassin Consulting | AI training and tools for schools and ed-tech teams</title>
-<meta name="description" content="Hands-on AI training for teachers, help with AI guidelines, classroom tools built to order, and a working teacher's review for ed-tech teams. From David Bassin, a high school teacher who builds the learning tools his students use.">
+<title>Bassin Consulting | Practical AI help for schools, ed-tech teams, and small businesses</title>
+<meta name="description" content="Hands-on AI workshops and coaching for teachers, custom AI tools, and ongoing help, from a high school teacher who builds with AI. Free 30-minute call. Workshops from $500.">
 <meta name="author" content="David Bassin">
 <link rel="canonical" href="https://www.bassinconsulting.com/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.bassinconsulting.com/">
-<meta property="og:title" content="Bassin Consulting | A teacher who builds, not an engineer who explains">
-<meta property="og:description" content="AI training and tools for schools. A working teacher's review for ed-tech teams.">
+<meta property="og:title" content="Bassin Consulting | Practical AI help for schools, ed-tech teams, and small businesses">
+<meta property="og:description" content="AI workshops and coaching for teachers, custom AI tools, and ongoing help. Free 30-minute call.">
 <meta property="og:image" content="https://www.bassinconsulting.com/img/social-card.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#FDFCF9">
@@ -19,12 +19,13 @@
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Bassin Consulting",
-  "description": "AI training and tools for schools, and a working teacher's review for ed-tech teams: teacher AI workshops, AI guidelines and student privacy, classroom tools built to order, AI content checks, and learning design.",
+  "description": "Practical AI help for schools, ed-tech teams, and small businesses: hands-on AI workshops and coaching for teachers, custom AI tools, and ongoing help.",
   "url": "https://www.bassinconsulting.com/",
   "founder": { "@type": "Person", "name": "David Bassin", "url": "https://dbassin12.github.io/" },
   "areaServed": "United States",
   "address": { "@type": "PostalAddress", "addressLocality": "Woodmere", "addressRegion": "NY", "addressCountry": "US" },
   "email": "david@bassinconsulting.com",
+  "priceRange": "$500 and up",
   "sameAs": ["https://www.linkedin.com/in/dbassin/", "https://dbassin12.github.io/"]
 }
 </script>
@@ -34,11 +35,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 <style>
+@font-face{font-family:"Sora Fallback";src:local("Arial Bold"),local("Arial-BoldMT"),local("Liberation Sans Bold");font-weight:600 800;size-adjust:106.3%;ascent-override:91.3%;descent-override:27.3%;line-gap-override:0%}
+@font-face{font-family:"DM Sans Fallback";src:local("Arial"),local("ArialMT"),local("Liberation Sans");font-weight:400 500;size-adjust:103.7%;ascent-override:95.5%;descent-override:29.9%;line-gap-override:0%}
 *,*::before,*::after{box-sizing:border-box}
 :root{
   --cream:#FDFCF9; --linen:#F7F3EE; --plum:#2A2530; --plum-2:#3A3342; --copper:#C07842; --copper-light:#D49A68; --copper-ink:#9C5B2C;
   --lavender:#F3F0F6; --ink:#4A4450; --muted:#6B636D; --line:rgba(42,37,48,.11); --line-soft:rgba(42,37,48,.06);
-  --display:'Sora','DM Sans',ui-sans-serif,system-ui,sans-serif; --body:'DM Sans',ui-sans-serif,system-ui,sans-serif;
+  --display:'Sora','Sora Fallback',ui-sans-serif,system-ui,sans-serif; --body:'DM Sans','DM Sans Fallback',ui-sans-serif,system-ui,sans-serif;
   --shadow:0 4px 20px -2px rgba(42,37,48,.06),0 0 3px rgba(42,37,48,.03);
   --shadow-lift:0 24px 46px -16px rgba(42,37,48,.22),0 0 4px rgba(42,37,48,.04);
   --ease:cubic-bezier(.16,1,.3,1); --page:1200px;
@@ -49,10 +52,12 @@ body{margin:0;background:var(--cream);color:var(--ink);font:400 17px/1.7 var(--b
 img{max-width:100%;height:auto;display:block}
 a{color:inherit}
 h1,h2,h3,h4{font-family:var(--display);color:var(--plum);margin:0;font-weight:700;letter-spacing:-.02em;line-height:1.15}
-p,ul,ol,figure,blockquote{margin:0}
+h1,h2{text-wrap:balance}
+p,ul,ol,figure,blockquote,dl{margin:0}
 ul,ol{padding:0;list-style:none}
 ::selection{background:rgba(192,120,66,.2);color:var(--plum)}
 :focus-visible{outline:2.5px solid var(--copper);outline-offset:3px;border-radius:6px}
+[hidden]{display:none!important}
 .vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
 .nw{white-space:nowrap}
 .skip{position:absolute;left:12px;top:-64px;z-index:100;background:var(--plum);color:var(--cream);padding:10px 16px;border-radius:10px;font:600 15px var(--display);text-decoration:none}
@@ -84,6 +89,8 @@ ul,ol{padding:0;list-style:none}
 .btn-primary:hover{background:#B26C38;transform:translateY(-2px);box-shadow:0 16px 28px -14px rgba(156,91,44,.9)}
 .btn-ghost{background:var(--cream);color:var(--plum);border-color:var(--line)}
 .btn-ghost:hover{border-color:var(--copper);color:var(--copper-ink);transform:translateY(-2px)}
+.btn-light{background:var(--cream);color:var(--plum)}
+.btn-light:hover{background:#fff;transform:translateY(-2px)}
 .links .btn{min-height:42px;font-size:15px;padding:0 18px;color:#fff}
 .tl{display:inline-flex;align-items:center;gap:8px;font:600 16px var(--display);color:var(--copper-ink);text-decoration:none;border-bottom:1.5px solid rgba(156,91,44,.35);padding-bottom:2px;transition:border-color .2s}
 .tl::after{content:"";width:14px;height:14px;flex:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%239C5B2C' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2.5 8h10M8.5 4l4 4-4 4'/%3E%3C/svg%3E") center/contain no-repeat;transition:transform .3s var(--ease)}
@@ -98,8 +105,10 @@ main{padding:clamp(10px,2vw,20px) clamp(10px,2vw,20px) 0}
 .panel.is-dark{background:var(--plum);border-color:var(--plum);color:#E6E0EA}
 .label{font:700 12.5px/1.4 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--copper-ink);margin-bottom:14px}
 .is-dark .label{color:var(--copper-light)}
+.is-dark h2,.is-dark h3{color:var(--cream)}
 h2{font-size:clamp(30px,4.2vw,46px);font-weight:800;letter-spacing:-.035em;line-height:1.08}
 .sub{font-size:clamp(17px,1.5vw,19.5px);line-height:1.6;color:var(--ink);max-width:40em}
+.is-dark .sub{color:#D8D1DD}
 .head{margin-bottom:clamp(30px,4vw,48px)}
 .head .sub{margin-top:18px}
 .head-2{display:grid;gap:18px;margin-bottom:clamp(30px,4vw,48px)}
@@ -108,14 +117,15 @@ h2{font-size:clamp(30px,4.2vw,46px);font-weight:800;letter-spacing:-.035em;line-
 /* hero */
 .hero{display:grid;gap:clamp(36px,5vw,56px);padding-top:clamp(36px,6vw,80px);padding-bottom:clamp(36px,6vw,80px);overflow:hidden}
 @media (min-width:960px){.hero{grid-template-columns:minmax(0,1.38fr) minmax(0,.86fr);align-items:center}}
-h1,h2,.aud h3{text-wrap:balance}
 .pill{display:inline-flex;align-items:center;gap:9px;background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:7px 14px 7px 12px;font:600 14.5px/1.35 var(--display);color:var(--plum)}
 .pill i{flex:none;width:8px;height:8px;border-radius:50%;background:var(--copper);box-shadow:0 0 0 4px rgba(192,120,66,.16)}
-.hero h1{margin-top:24px;font-size:clamp(40px,5.5vw,66px);font-weight:800;letter-spacing:-.045em;line-height:1.03}
+.hero h1{margin-top:24px;font-size:clamp(38px,5.2vw,62px);font-weight:800;letter-spacing:-.045em;line-height:1.04}
 .hero h1 .l2{display:block;color:var(--copper)}
 .hero .lede{margin-top:26px;font-size:clamp(18px,1.7vw,21px);line-height:1.6;color:var(--plum);max-width:33em}
-.motto{margin-top:18px;font:italic 500 17px/1.6 var(--body);color:var(--muted)}
 .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.price-note{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:22px;font:600 14.5px/1.4 var(--display);color:var(--muted)}
+.price-note span{display:inline-flex;align-items:center;gap:8px}
+.price-note span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--copper)}
 .hero-side{position:relative;display:grid;gap:16px;justify-items:center}
 .photo{width:min(100%,280px);background:var(--cream);border:1px solid var(--line);border-radius:24px;padding:12px 12px 16px;box-shadow:var(--shadow-lift);transform:rotate(-2deg)}
 .photo img{border-radius:16px;aspect-ratio:1/1;object-fit:cover;width:100%}
@@ -163,67 +173,64 @@ h1,h2,.aud h3{text-wrap:balance}
 .check .ex.static .ok span{opacity:1}
 @keyframes pen{to{stroke-dashoffset:0}}
 
-/* what I offer */
-.offer{display:grid;gap:16px}
-@media (min-width:900px){.offer{grid-template-columns:1fr 1fr}}
-.aud{border-radius:22px;padding:clamp(24px,3.4vw,40px);background:var(--linen);border:1px solid var(--line-soft)}
-.aud.is-dark{background:var(--plum);color:#E6E0EA;border-color:var(--plum)}
-.aud-label{font:700 12.5px/1.4 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--copper-ink)}
-.aud.is-dark .aud-label{color:var(--copper-light)}
-.aud h3{font-size:clamp(23px,2.4vw,28px);font-weight:700;letter-spacing:-.03em;margin-top:10px}
-.aud.is-dark h3,.aud.is-dark h4{color:var(--cream)}
-.svc{margin-top:22px;display:grid}
-.svc li{padding:20px 0;border-top:1px solid var(--line)}
-.aud.is-dark .svc li{border-top-color:rgba(253,252,249,.14)}
-.svc li:last-child{padding-bottom:0}
-.svc h4{font-size:19px;font-weight:700;letter-spacing:-.015em}
-.svc p{margin-top:6px;font-size:16.5px;line-height:1.65}
-.aud.is-dark .svc p{color:#D8D1DD}
-.svc .tl{margin-top:12px;font-size:15px}
-.aud.is-dark .tl{color:var(--copper-light);border-bottom-color:rgba(212,154,104,.4)}
-.aud.is-dark .tl::after{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23D49A68' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2.5 8h10M8.5 4l4 4-4 4'/%3E%3C/svg%3E")}
-.also{margin-top:16px;border:1.5px dashed rgba(156,91,44,.35);border-radius:18px;padding:18px 22px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;font-size:16.5px}
-.also strong{font-family:var(--display);color:var(--plum)}
-
-/* time back */
-.tb{display:grid;gap:14px}
-.tb-row{display:grid;gap:18px;background:var(--cream);border:1px solid var(--line-soft);border-radius:20px;padding:clamp(20px,3vw,30px);box-shadow:var(--shadow)}
-@media (min-width:900px){.tb-row{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr) auto;align-items:center;gap:36px}}
-.tb-row h3{font-size:20px;letter-spacing:-.02em}
-.tb-row p{margin-top:6px;font-size:16px;line-height:1.6}
-.tb-viz{display:grid;gap:10px}
-.tb-line{display:grid;grid-template-columns:132px 1fr;align-items:center;gap:12px;font:600 13px/1.3 var(--display);color:var(--muted)}
-.bar{height:14px;border-radius:999px;background:rgba(42,37,48,.12);transform-origin:left center}
+/* what I can show your teachers */
+.menu{display:grid;gap:16px}
+@media (min-width:900px){.menu{grid-template-columns:1fr 1fr}}
+.mcard{display:flex;flex-direction:column;background:var(--cream);border:1px solid var(--line-soft);border-radius:22px;overflow:hidden;box-shadow:var(--shadow);transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.mcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift)}
+.mvis{position:relative;height:230px;overflow:hidden;background:#EFE9E1}
+.mvis img{width:100%;height:100%;object-fit:cover;object-position:top left;transition:transform .8s var(--ease)}
+.mcard:hover .mvis img{transform:scale(1.035)}
+.mvis.pad{padding:18px 18px 0}
+.mvis.pad img{border-radius:12px 12px 0 0;box-shadow:0 -2px 18px rgba(42,37,48,.12)}
+.mvis.dark{background:var(--plum)}
+.mbody{display:flex;flex-direction:column;gap:10px;padding:24px 26px 26px;flex:1}
+.mbody h3{font-size:clamp(21px,2vw,24px);letter-spacing:-.03em}
+.mbody p{font-size:16.5px;line-height:1.65}
+.leave{margin-top:auto;padding-top:14px;border-top:1px dashed rgba(156,91,44,.35);font-size:15.5px;color:var(--plum)}
+.leave b{font:700 12px/1.4 var(--display);letter-spacing:.16em;text-transform:uppercase;color:var(--copper-ink);display:block;margin-bottom:2px}
+.bars{display:grid;align-content:center;gap:16px;height:100%;padding:24px 26px}
+.bars .row{display:grid;gap:7px}
+.bars .cap{display:flex;justify-content:space-between;gap:10px;font:600 13.5px/1.3 var(--display);color:var(--plum)}
+.bars .cap span{color:var(--copper-ink)}
+.bar{height:12px;border-radius:999px;background:rgba(42,37,48,.12);transform-origin:left center}
 .bar.after{background:var(--copper);transform:scaleX(var(--w))}
-.js .tb-row:not(.in) .bar.after{transform:scaleX(1)}
-.tb-row.in .bar.after{transition:transform 1.4s var(--ease) .25s}
-.tb-num{font-size:16px;color:var(--ink);white-space:nowrap}
-.tb-num strong{display:block;font:800 clamp(40px,4.4vw,54px)/1 var(--display);letter-spacing:-.04em;color:var(--plum)}
-.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
-.chips li{background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:9px 16px;font:600 14.5px/1.35 var(--display);color:var(--plum)}
+.js .bars:not(.in) .bar.after{transform:scaleX(1)}
+.bars.in .bar.after{transition:transform 1.4s var(--ease) .3s}
+.marks{display:grid;align-content:center;gap:12px;height:100%;padding:22px 26px;background:#FFFEFB;background-image:repeating-linear-gradient(to bottom,transparent 0 31px,rgba(42,37,48,.07) 31px 32px)}
+.marks p{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;font-size:16.5px;line-height:1.5;color:var(--plum)}
+.marks .k{font:700 11px/1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 8px;margin-right:2px}
+.marks s{text-decoration:line-through;text-decoration-color:var(--copper);text-decoration-thickness:2px;color:var(--muted)}
+.marks em{font-style:italic;font-weight:600;color:var(--copper-ink)}
 
-/* work bento */
-.bento{display:grid;gap:16px}
-@media (min-width:640px){.bento{grid-template-columns:repeat(2,minmax(0,1fr))}.span-4{grid-column:1/-1}}
-@media (min-width:1000px){.bento{grid-template-columns:repeat(6,minmax(0,1fr))}.span-2{grid-column:span 2}.span-3{grid-column:span 3}.span-4{grid-column:span 4}}
+/* services and prices */
+.prices{display:grid;gap:14px}
+@media (min-width:640px){.prices{grid-template-columns:1fr 1fr}}
+@media (min-width:1080px){.prices{grid-template-columns:repeat(4,1fr)}}
+.price{display:flex;flex-direction:column;gap:10px;background:var(--cream);border:1px solid var(--line-soft);border-radius:20px;padding:24px;box-shadow:var(--shadow)}
+.price.feature{border:1.5px solid var(--copper)}
+.price .for{font:700 12px/1.4 var(--display);letter-spacing:.16em;text-transform:uppercase;color:var(--copper-ink)}
+.price h3{font-size:20px;letter-spacing:-.025em}
+.amount{font:800 28px/1.1 var(--display);letter-spacing:-.03em;color:var(--plum)}
+.amount small{font:600 14px var(--display);letter-spacing:0;color:var(--muted)}
+.price p{font-size:16px;line-height:1.6}
+.price ul{display:grid;gap:6px;margin-top:4px}
+.price li{display:flex;gap:9px;align-items:baseline;font-size:15px;color:var(--plum)}
+.price li::before{content:"";flex:none;width:13px;height:9px;transform:translateY(1px);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 10' fill='none' stroke='%23C07842' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1.5 5.2 5 8.5l7.5-7'/%3E%3C/svg%3E") center/contain no-repeat}
+.freecall{margin-top:16px;display:grid;gap:18px;align-items:center;background:var(--plum);color:#E6E0EA;border-radius:22px;padding:clamp(24px,3.4vw,36px)}
+@media (min-width:900px){.freecall{grid-template-columns:1fr auto;gap:40px}}
+.freecall h3{color:var(--cream);font-size:clamp(21px,2.2vw,26px);letter-spacing:-.03em}
+.freecall p{margin-top:8px;font-size:17px;line-height:1.6;color:#D8D1DD}
+
+/* proof from my classroom */
+.proof{display:grid;gap:16px}
+@media (min-width:900px){.proof{grid-template-columns:1.25fr 1fr 1fr}}
 .card{display:flex;flex-direction:column;background:var(--cream);border:1px solid var(--line-soft);border-radius:22px;overflow:hidden;box-shadow:var(--shadow);transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
 .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift)}
 .shot{position:relative;overflow:hidden;background:var(--plum)}
 .shot img{width:100%;aspect-ratio:16/10;object-fit:cover;transition:transform .8s var(--ease)}
 .card:hover .shot img{transform:scale(1.035)}
 .shot.light{background:#EFE9E1}
-.shot.pad{padding:18px 18px 0}
-.shot.pad img{border-radius:12px 12px 0 0;box-shadow:0 -2px 18px rgba(42,37,48,.12)}
-.films{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:8px;padding:10px;background:#16131A}
-.card.fill .shot{flex:1 1 auto;min-height:200px}
-.card.fill .shot img{height:100%;aspect-ratio:auto}
-.card.fill .card-body{flex:0 0 auto}
-.films img{aspect-ratio:16/9;border-radius:6px}
-.films img:first-child{grid-row:1/3;height:100%;object-fit:cover}
-.sheets{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:18px 18px 0;background:#EFE9E1}
-.sheets figure{background:#fff;border-radius:8px 8px 0 0;overflow:hidden;box-shadow:0 2px 12px rgba(42,37,48,.12)}
-.sheets img{aspect-ratio:1/0.82;object-fit:cover;object-position:top}
-.sheets figcaption{font:700 11px/1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--copper-ink);padding:9px 10px;background:var(--cream);border-bottom:1px solid var(--line-soft)}
 .card-body{display:flex;flex-direction:column;gap:10px;padding:22px 24px 24px;flex:1}
 .kicker{font:700 12px/1.4 var(--display);letter-spacing:.18em;text-transform:uppercase;color:var(--copper-ink)}
 .card h3{font-size:21px;letter-spacing:-.025em}
@@ -232,38 +239,75 @@ h1,h2,.aud h3{text-wrap:balance}
 .facts li{font:600 13px/1 var(--display);color:var(--plum);background:var(--linen);border:1px solid var(--line-soft);border-radius:999px;padding:7px 11px}
 .card .links-row{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:auto;padding-top:8px}
 .card .tl{font-size:15px}
+.card.text-card{background:var(--plum);border-color:var(--plum)}
+.card.text-card h3{color:var(--cream)}
+.card.text-card p{color:#D8D1DD}
+.card.text-card .kicker{color:var(--copper-light)}
+.card.text-card .tl{color:var(--copper-light);border-bottom-color:rgba(212,154,104,.4)}
+.card.text-card .tl::after{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23D49A68' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2.5 8h10M8.5 4l4 4-4 4'/%3E%3C/svg%3E")}
+.did{display:grid;gap:10px;margin-top:6px}
+.did li{display:flex;gap:10px;align-items:baseline;font-size:16px;color:var(--cream)}
+.did li::before{content:"";flex:none;width:14px;height:10px;transform:translateY(1px);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 10' fill='none' stroke='%23D49A68' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1.5 5.2 5 8.5l7.5-7'/%3E%3C/svg%3E") center/contain no-repeat}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.stats li{background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:9px 16px;font:600 14.5px/1.35 var(--display);color:var(--plum)}
 
-/* how I use AI */
-.method{display:grid;gap:clamp(30px,5vw,64px)}
-@media (min-width:960px){.method{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);align-items:start}}
-.method h2{font-size:clamp(40px,5.4vw,66px);letter-spacing:-.045em;line-height:1}
-.method h2 span{display:block}
-.method h2 span+span{color:var(--copper)}
-.principles{display:grid;gap:14px}
-@media (min-width:640px){.principles{grid-template-columns:1fr 1fr}}
-.principles li{background:var(--linen);border-radius:18px;padding:22px 22px 24px;border:1px solid var(--line-soft)}
-.principles h3{font-size:19px;letter-spacing:-.02em}
-.principles p{margin-top:8px;font-size:16px;line-height:1.65}
-.mark-line{display:block;width:30px;height:12px;margin-bottom:10px;overflow:visible;fill:none;stroke:var(--copper);stroke-width:2.2;stroke-linecap:round}
-.tf{margin-top:30px;border-left:3px solid var(--copper);padding:2px 0 2px 18px}
-.tf p{font-size:17px;line-height:1.6;color:var(--plum)}
-.tf-links{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:14px}
+/* small businesses */
+.feat{display:grid;gap:clamp(22px,3.5vw,48px);align-items:center;padding:clamp(18px,2.4vw,28px) 0}
+.feat + .feat{border-top:1px solid var(--line)}
+@media (min-width:900px){.feat{grid-template-columns:1.1fr 1fr}.feat.flip > :first-child{order:2}}
+.feat h3{font-size:clamp(22px,2.2vw,27px);letter-spacing:-.03em;margin-top:6px}
+.feat p{margin-top:10px;font-size:17px;line-height:1.65}
+.feat .facts{margin-top:14px}
+.frame{border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-lift);background:var(--plum)}
+.frame img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top left}
+.callflow{display:block;background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:22px 18px 18px;box-shadow:var(--shadow-lift)}
+@media (min-width:768px){.callflow{padding:26px 26px 20px}}
+.flow{display:grid;gap:16px}
+.flow li{display:grid;grid-template-columns:32px 1fr;gap:14px;align-items:start}
+.flow .num{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--copper);display:grid;place-items:center;font:700 14px/1 var(--display);background:var(--cream);color:var(--plum);transition:border-color .3s var(--ease),color .3s var(--ease)}
+.flow .step-title{display:flex;align-items:center;min-height:32px;font:700 16px/1.35 var(--display);margin:0 0 8px;color:var(--plum)}
+.flow .quote{font-style:italic;color:var(--ink);font-size:15.5px;line-height:1.6;background:var(--linen);border-radius:10px;padding:12px 16px}
+.flow .quote .line{display:block}
+.flow .quote .line+.line{margin-top:8px}
+.flow .quote b{font-style:normal;font:600 14px var(--display);color:var(--plum);margin-right:2px}
+.fields{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;font-size:15.5px;line-height:1.5;background:var(--linen);border-radius:10px;padding:12px 16px}
+.fields dt{font:600 14.5px var(--display);color:var(--plum)}
+.fields dd{margin:0;color:var(--ink)}
+.deal{background:var(--plum);color:var(--cream);border-radius:10px;padding:12px 16px;font:600 15.5px/1.45 var(--display)}
+.deal span{color:var(--copper-light)}
+.callflow figcaption{margin-top:14px;font-size:14.5px;color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){
+  .js .callflow.seq:not(.play) :is(.quote,.fields > *,.deal){opacity:0;transform:translateY(6px)}
+  .js .callflow.seq:not(.play) .num{border-color:rgba(42,37,48,.18);color:var(--muted)}
+  .js .callflow.seq.play :is(.quote,.fields > *,.deal){transition:opacity .45s var(--ease),transform .45s var(--ease)}
+  .js .callflow.seq.play .quote{transition-delay:150ms}
+  .js .callflow.seq.play li:nth-child(2) .num{transition-delay:600ms}
+  .js .callflow.seq.play .fields > :nth-child(-n+2){transition-delay:700ms}
+  .js .callflow.seq.play .fields > :nth-child(n+3):nth-child(-n+4){transition-delay:780ms}
+  .js .callflow.seq.play .fields > :nth-child(n+5):nth-child(-n+6){transition-delay:860ms}
+  .js .callflow.seq.play .fields > :nth-child(n+7):nth-child(-n+8){transition-delay:940ms}
+  .js .callflow.seq.play .fields > :nth-child(n+9){transition-delay:1020ms}
+  .js .callflow.seq.play li:nth-child(3) .num{transition-delay:1220ms}
+  .js .callflow.seq.play .deal{transition-delay:1320ms;transition-duration:.55s}
+}
+.law{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:26px 28px;box-shadow:var(--shadow-lift)}
+.law ol{display:grid;gap:12px;counter-reset:l}
+.law li{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:baseline;font-size:16px;line-height:1.55;color:var(--plum);counter-increment:l}
+.law li::before{content:counter(l);display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:rgba(192,120,66,.13);font:700 13px var(--display);color:var(--copper-ink)}
+.law .src{font:700 11.5px/1.4 var(--display);letter-spacing:.16em;text-transform:uppercase;color:var(--copper-ink);margin-bottom:14px}
 
 /* in their words */
-.quotes{display:grid;gap:16px}
+.quotes{display:grid;gap:16px;margin-top:clamp(26px,3vw,40px)}
 @media (min-width:900px){.quotes{grid-template-columns:1fr 1fr}}
-.quote{display:flex;flex-direction:column;justify-content:space-between;gap:24px;background:var(--cream);border-radius:22px;padding:clamp(24px,3vw,36px);box-shadow:var(--shadow);border:1px solid var(--line-soft)}
-.quote blockquote p{font-size:18px;line-height:1.7;color:var(--plum)}
-.quote figcaption{display:flex;align-items:center;gap:14px}
+.quote-card{display:flex;flex-direction:column;justify-content:space-between;gap:24px;background:var(--cream);border-radius:22px;padding:clamp(24px,3vw,36px);box-shadow:var(--shadow);border:1px solid var(--line-soft)}
+.quote-card blockquote p{font-size:18px;line-height:1.7;color:var(--plum)}
+.quote-card figcaption{display:flex;align-items:center;gap:14px}
 .ini{width:46px;height:46px;border-radius:50%;background:var(--linen);border:1px solid var(--line);display:grid;place-items:center;font:700 14px var(--display);color:var(--plum);flex:none}
-.quote strong{display:block;font:700 17px var(--display);color:var(--plum)}
-.quote figcaption span span{display:block;font-size:15px;color:var(--muted)}
-.built{display:grid;gap:12px;margin-top:16px}
-@media (min-width:640px){.built{grid-template-columns:1fr 1fr}}
-@media (min-width:1000px){.built{grid-template-columns:repeat(4,1fr)}}
-.built li{background:rgba(253,252,249,.6);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
-.built h3{font-size:16.5px;letter-spacing:-.015em}
-.built p{margin-top:6px;font-size:15px;line-height:1.6}
+.quote-card strong{display:block;font:700 17px var(--display);color:var(--plum)}
+.quote-card figcaption span span{display:block;font-size:15px;color:var(--muted)}
+.words-label{display:flex;align-items:center;gap:14px;margin-top:clamp(30px,4vw,48px)}
+.words-label h3{font:700 12.5px/1.4 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--copper-ink)}
+.words-label p{font-size:16px;color:var(--muted)}
 
 /* steps */
 .steps{display:grid;gap:14px}
@@ -275,7 +319,6 @@ h1,h2,.aud h3{text-wrap:balance}
 .fit{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:24px}
 .fit strong{font:700 15px var(--display);color:var(--plum);margin-right:4px}
 .fit span{background:var(--lavender);border-radius:999px;padding:8px 14px;font:600 14px/1.3 var(--display);color:var(--plum)}
-.fit span span{background:none;padding:0}
 
 /* about */
 .about{display:grid;gap:16px}
@@ -296,8 +339,7 @@ h1,h2,.aud h3{text-wrap:balance}
 /* contact */
 .contact{display:grid;gap:clamp(30px,5vw,64px)}
 @media (min-width:960px){.contact{grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);align-items:start}}
-.contact h2{color:var(--cream)}
-.contact .sub{color:#D8D1DD;margin-top:18px}
+.contact-copy .sub{margin-top:18px}
 .contact-copy .btn{margin-top:28px}
 .direct{margin-top:16px;font-size:16px;color:#CFC7D4}
 .direct a{color:var(--copper-light);text-decoration-thickness:1px;text-underline-offset:3px}
@@ -345,7 +387,7 @@ form .btn{width:100%;margin-top:4px}
 @keyframes settle-2{to{opacity:1;transform:rotate(1.2deg)}}
 @media (max-width:959px){@keyframes settle-2{to{opacity:1;transform:none}}}
 @media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0s!important;scroll-behavior:auto!important}
 }
 </style>
 </head>
@@ -356,14 +398,14 @@ form .btn{width:100%;margin-top:4px}
   <div class="nav-in">
     <a class="brand" href="#top" aria-label="Bassin Consulting, back to top">
       <span class="mark" aria-hidden="true">B</span>
-      <span><span class="brand-name">Bassin Consulting</span><span class="brand-tag">AI for schools and ed-tech</span></span>
+      <span><span class="brand-name">Bassin Consulting</span><span class="brand-tag">Practical AI help</span></span>
     </a>
     <nav aria-label="Main">
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
       <ul class="links" id="menu">
-        <li><a href="#offer">What I offer</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#method">How I use AI</a></li>
+        <li><a href="#teach">What I teach</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#business">Small businesses</a></li>
         <li><a href="#about">About</a></li>
         <li><a class="btn btn-primary" href="https://calendly.com/davidbassin12/30min?hide_gdpr_banner=1&amp;utm_source=website&amp;utm_content=nav" target="_blank" rel="noopener">Book a free call</a></li>
       </ul>
@@ -374,21 +416,21 @@ form .btn{width:100%;margin-top:4px}
 <main id="main">
 
 <section class="panel hero" id="hero" aria-labelledby="hero-title">
-  <div class="hero-text">
-    <p class="pill ld" style="--d:0"><i aria-hidden="true"></i>AI training and tools for schools and ed-tech teams</p>
-    <h1 id="hero-title" class="ld" style="--d:1">A teacher who builds, <span class="l2">not an engineer who explains.</span></h1>
-    <p class="lede ld" style="--d:2">I teach AP Macroeconomics and Global History, and I build the games, videos, and tools my students use. I offer schools hands-on AI training for teachers, and I offer ed-tech teams a working teacher's review.</p>
-    <p class="motto ld" style="--d:3">"The deliverable is not just the tool. It is the understanding."</p>
-    <div class="ctas ld" style="--d:4">
+  <div>
+    <p class="pill ld" style="--d:0"><i aria-hidden="true"></i>From a working teacher who builds with AI</p>
+    <h1 id="hero-title" class="ld" style="--d:1">Practical AI help <span class="l2">for schools, <span class="nw">ed-tech</span> teams, and small businesses.</span></h1>
+    <p class="lede ld" style="--d:2">I'm David Bassin. I teach high school history and economics, and I build AI tools that save real hours. I'll show your teachers or your team the AI tools they're not using yet, in plain language, and help you put them to work.</p>
+    <div class="ctas ld" style="--d:3">
       <a class="btn btn-primary" href="https://calendly.com/davidbassin12/30min?hide_gdpr_banner=1&amp;utm_source=website&amp;utm_content=hero" target="_blank" rel="noopener">Book a free 30-minute call</a>
-      <a class="btn btn-ghost" href="#offer">See what I offer</a>
+      <a class="btn btn-ghost" href="#teach">See what I can show you</a>
     </div>
+    <p class="price-note ld" style="--d:4"><span>Free 30-minute call</span><span>Workshops from $500</span><span>Custom tools from $1,000</span></p>
   </div>
 
   <div class="hero-side">
     <figure class="photo ld">
-      <img src="img/headshot.webp" srcset="img/headshot-480.webp 480w, img/headshot.webp 640w" sizes="(min-width:960px) 310px, 340px" width="640" height="640" alt="David Bassin" fetchpriority="high">
-      <figcaption><strong>David Bassin</strong><span>Teacher and founder</span></figcaption>
+      <img src="img/headshot.webp" srcset="img/headshot-480.webp 480w, img/headshot.webp 640w" sizes="(min-width:960px) 292px, 280px" width="640" height="640" alt="David Bassin" fetchpriority="high">
+      <figcaption><strong>David Bassin</strong><span>Teacher and builder</span></figcaption>
     </figure>
 
     <div class="check ld" id="check" role="group" aria-label="Examples of how I check AI's work">
@@ -401,7 +443,7 @@ form .btn{width:100%;margin-top:4px}
       </div>
       <div class="ex" id="ex-fact" role="tabpanel" aria-labelledby="tab-fact">
         <p class="ex-kind">AP Macro answer key</p>
-        <p class="ex-text">A price ceiling set <span class="fix"><del><span class="vh">crossed out: </span>above</del><svg class="strike" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M2 6.6C24 5.8 52 5 98 3.6"/></svg><ins><span class="vh">, corrected to: below</span><svg class="hand" viewBox="-2 -14 71 25" aria-hidden="true" focusable="false"><path pathLength="1" d="M0 4C0.33 3.5 1.17 2.33 2 1C2.83 -0.33 4.33 -2.83 5 -4C5.67 -5.17 5.67 -5.17 6 -6C6.33 -6.83 6.83 -8.17 7 -9C7.17 -9.83 7.17 -10.5 7 -11C6.83 -11.5 6.5 -12 6 -12C5.5 -12 4.5 -11.5 4 -11C3.5 -10.5 3.33 -10 3 -9C2.67 -8 2.33 -6.83 2 -5C1.67 -3.17 1.17 -0.17 1 2C0.83 4.17 0.83 6.83 1 8C1.17 9.17 1.67 8.83 2 9C2.33 9.17 2.5 9.17 3 9C3.5 8.83 4.33 8.5 5 8C5.67 7.5 6.5 6.83 7 6C7.5 5.17 7.83 4 8 3C8.17 2 7.83 -0.17 8 0C8.17 0.17 8.67 3.17 9 4C9.33 4.83 9.5 4.83 10 5C10.5 5.17 11.33 5.17 12 5C12.67 4.83 13.67 4.17 14 4"/><path pathLength="1" d="M15 7C15.33 6.83 16.5 6.33 17 6C17.5 5.67 17.67 5.5 18 5C18.33 4.5 18.83 3.67 19 3C19.17 2.33 19.17 1.5 19 1C18.83 0.5 18.33 0.17 18 0C17.67 -0.17 17.5 -0.17 17 0C16.5 0.17 15.5 0.5 15 1C14.5 1.5 14.17 2.17 14 3C13.83 3.83 13.830 5.17 14 6C14.17 6.83 14.5 7.5 15 8C15.5 8.5 16.33 8.83 17 9C17.67 9.17 18.33 9.17 19 9C19.67 8.83 20.5 8.33 21 8C21.5 7.67 21.5 7.67 22 7C22.5 6.33 23.33 5 24 4C24.67 3 25.17 2.33 26 1C26.83 -0.33 28.33 -2.83 29 -4C29.67 -5.17 29.67 -5.17 30 -6C30.33 -6.83 30.83 -8.17 31 -9C31.17 -9.83 31.17 -10.5 31 -11C30.83 -11.5 30.5 -12 30 -12C29.5 -12 28.5 -11.5 28 -11C27.5 -10.5 27.33 -10 27 -9C26.67 -8 26.33 -6.83 26 -5C25.67 -3.17 25.17 -0.17 25 2C24.83 4.17 24.83 6.83 25 8C25.17 9.17 25.67 8.83 26 9C26.33 9.17 26.5 9.17 27 9C27.5 8.83 28.5 8.33 29 8C29.5 7.67 29.5 7.67 30 7C30.5 6.33 31.67 4.5 32 4"/><path pathLength="1" d="M38 0C37.67 0 36.67 -0.17 36 0C35.33 0.17 34.5 0.67 34 1C33.5 1.33 33.33 1.5 33 2C32.67 2.5 32.17 3.33 32 4C31.83 4.67 31.83 5.33 32 6C32.17 6.67 32.5 7.5 33 8C33.5 8.5 34.33 8.83 35 9C35.67 9.17 36.33 9.17 37 9C37.67 8.83 38.5 8.33 39 8C39.5 7.67 39.67 7.5 40 7C40.33 6.5 40.83 5.67 41 5C41.17 4.33 41.17 3.67 41 3C40.83 2.33 40.5 1.5 40 1C39.5 0.5 38.5 0 38 0C37.5 0 37.17 0.5 37 1C36.83 1.5 36.83 2.33 37 3C37.17 3.67 37.5 4.5 38 5C38.5 5.5 39.17 5.83 40 6C40.83 6.17 42.17 6.17 43 6C43.83 5.83 44.5 5.33 45 5C45.5 4.67 45.83 4.17 46 4"/><path pathLength="1" d="M49 0C48.67 0.33 47.5 1.17 47 2C46.5 2.83 46.17 4.17 46 5C45.83 5.83 45.83 6.33 46 7C46.17 7.67 46.5 8.67 47 9C47.5 9.33 48.33 9.17 49 9C49.67 8.83 50.33 8.5 51 8C51.67 7.5 52.33 7.33 53 6L55 0L53 6C52.67 7.33 52.83 7.5 53 8C53.17 8.5 53.5 8.83 54 9C54.5 9.17 55.33 9.17 56 9C56.67 8.83 57.33 8.5 58 8C58.67 7.5 59.5 6.83 60 6C60.5 5.17 60.83 4 61 3C61.17 2 60.83 -0.17 61 0C61.17 0.17 61.67 3.17 62 4C62.33 4.83 62.5 4.83 63 5C63.5 5.17 64.33 5.17 65 5C65.67 4.83 66.67 4.17 67 4"/></svg></ins></span> the equilibrium price causes a shortage.</p>
+        <p class="ex-text">A price ceiling set <span class="fix"><del><span class="vh">crossed out: </span>above</del><svg class="strike" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M2 6.6C24 5.8 52 5 98 3.6"/></svg><ins><span class="vh">, corrected to: below</span><svg class="hand" viewBox="-2 -14 71 25" aria-hidden="true" focusable="false"><path pathLength="1" d="M0 4C0.33 3.5 1.17 2.33 2 1C2.83 -0.33 4.33 -2.83 5 -4C5.67 -5.17 5.67 -5.17 6 -6C6.33 -6.83 6.83 -8.17 7 -9C7.17 -9.83 7.17 -10.5 7 -11C6.83 -11.5 6.5 -12 6 -12C5.5 -12 4.5 -11.5 4 -11C3.5 -10.5 3.33 -10 3 -9C2.67 -8 2.33 -6.83 2 -5C1.67 -3.17 1.17 -0.17 1 2C0.83 4.17 0.83 6.83 1 8C1.17 9.17 1.67 8.83 2 9C2.33 9.17 2.5 9.17 3 9C3.5 8.83 4.33 8.5 5 8C5.67 7.5 6.5 6.83 7 6C7.5 5.17 7.83 4 8 3C8.17 2 7.83 -0.17 8 0C8.17 0.17 8.67 3.17 9 4C9.33 4.83 9.5 4.83 10 5C10.5 5.17 11.33 5.17 12 5C12.67 4.83 13.67 4.17 14 4"/><path pathLength="1" d="M15 7C15.33 6.83 16.5 6.33 17 6C17.5 5.67 17.67 5.5 18 5C18.33 4.5 18.83 3.67 19 3C19.17 2.33 19.17 1.5 19 1C18.83 0.5 18.33 0.17 18 0C17.67 -0.17 17.5 -0.17 17 0C16.5 0.17 15.5 0.5 15 1C14.5 1.5 14.17 2.17 14 3C13.83 3.83 13.83 5.17 14 6C14.17 6.83 14.5 7.5 15 8C15.5 8.5 16.33 8.83 17 9C17.67 9.17 18.33 9.17 19 9C19.67 8.83 20.5 8.33 21 8C21.5 7.67 21.5 7.67 22 7C22.5 6.33 23.33 5 24 4C24.67 3 25.17 2.33 26 1C26.83 -0.33 28.33 -2.83 29 -4C29.67 -5.17 29.67 -5.17 30 -6C30.33 -6.83 30.83 -8.17 31 -9C31.17 -9.83 31.17 -10.5 31 -11C30.83 -11.5 30.5 -12 30 -12C29.5 -12 28.5 -11.5 28 -11C27.5 -10.5 27.33 -10 27 -9C26.67 -8 26.33 -6.83 26 -5C25.67 -3.17 25.17 -0.17 25 2C24.83 4.17 24.83 6.83 25 8C25.17 9.17 25.67 8.83 26 9C26.33 9.17 26.5 9.17 27 9C27.5 8.83 28.5 8.33 29 8C29.5 7.67 29.5 7.67 30 7C30.5 6.33 31.67 4.5 32 4"/><path pathLength="1" d="M38 0C37.67 0 36.67 -0.17 36 0C35.33 0.17 34.5 0.67 34 1C33.5 1.33 33.33 1.5 33 2C32.67 2.5 32.17 3.33 32 4C31.83 4.67 31.83 5.33 32 6C32.17 6.67 32.5 7.5 33 8C33.5 8.5 34.33 8.83 35 9C35.67 9.17 36.33 9.17 37 9C37.67 8.83 38.5 8.33 39 8C39.5 7.67 39.67 7.5 40 7C40.33 6.5 40.83 5.67 41 5C41.17 4.33 41.17 3.67 41 3C40.83 2.33 40.5 1.5 40 1C39.5 0.5 38.5 0 38 0C37.5 0 37.17 0.5 37 1C36.83 1.5 36.83 2.33 37 3C37.17 3.67 37.5 4.5 38 5C38.5 5.5 39.17 5.83 40 6C40.83 6.17 42.17 6.17 43 6C43.83 5.83 44.5 5.33 45 5C45.5 4.67 45.83 4.17 46 4"/><path pathLength="1" d="M49 0C48.67 0.33 47.5 1.17 47 2C46.5 2.83 46.17 4.17 46 5C45.83 5.83 45.83 6.33 46 7C46.17 7.67 46.5 8.67 47 9C47.5 9.33 48.33 9.17 49 9C49.67 8.83 50.33 8.5 51 8C51.67 7.5 52.33 7.33 53 6L55 0L53 6C52.67 7.33 52.83 7.5 53 8C53.17 8.5 53.5 8.83 54 9C54.5 9.17 55.33 9.17 56 9C56.67 8.83 57.33 8.5 58 8C58.67 7.5 59.5 6.83 60 6C60.5 5.17 60.83 4 61 3C61.17 2 60.83 -0.17 61 0C61.17 0.17 61.67 3.17 62 4C62.33 4.83 62.5 4.83 63 5C63.5 5.17 64.33 5.17 65 5C65.67 4.83 66.67 4.17 67 4"/></svg></ins></span> the equilibrium price causes a shortage.</p>
         <p class="ok"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path pathLength="1" d="M3.5 10.8C5.3 12.3 6.7 13.8 8 15.6C10.4 10.9 13.5 7 17 3.6"/></svg><span>Checked before it reaches a student.</span></p>
       </div>
       <div class="ex" id="ex-score" role="tabpanel" aria-labelledby="tab-score" hidden>
@@ -413,259 +455,256 @@ form .btn{width:100%;margin-top:4px}
   </div>
 </section>
 
-<section class="panel is-cream" id="offer" aria-labelledby="offer-title">
+<section class="panel is-cream" id="teach" aria-labelledby="teach-title">
   <div class="head-2">
     <div>
-      <p class="label">What I offer</p>
-      <h2 id="offer-title">Training and tools for schools. A teacher's eye for ed-tech teams.</h2>
+      <p class="label">What I can show your teachers</p>
+      <h2 id="teach-title">The AI tools I use every week, shown in plain language.</h2>
     </div>
-    <p class="sub">I teach full time, so I know what a school week can hold. Every project starts with a free 30-minute call.</p>
+    <p class="sub">Every workshop is hands-on. Teachers bring something they teach and leave with something they made and checked, ready to use.</p>
   </div>
-  <div class="offer">
-    <article class="aud" data-rv aria-labelledby="aud-schools">
-      <p class="aud-label">For schools</p>
-      <h3 id="aud-schools">Help your teachers use AI well.</h3>
-      <ul class="svc">
-        <li>
-          <h4>Teacher AI workshops</h4>
-          <p>A hands-on hour, laptops open. Teachers bring a unit they teach, make a review game, a video script, or an IEP version with AI, and check it like a grader. Everyone leaves with something they made.</p>
-          <a class="tl" href="https://dbassin12.github.io/ai-workshop/">See a one-hour workshop plan</a>
-        </li>
-        <li>
-          <h4>AI guidelines and student privacy</h4>
-          <p>Clear rules for students and teachers, a privacy check for any AI tool before the school approves it, and a plan for when a teacher suspects AI misuse.</p>
-          <a class="tl" href="https://dbassin12.github.io/ai-guidelines/">Read sample guidelines</a>
-        </li>
-        <li>
-          <h4>Classroom tools, built to order</h4>
-          <p>Review games, short history videos, IEP versions of worksheets, and time savers for report cards and grading, built for your curriculum and the systems you already use. Then I show your teachers how to make their own.</p>
-        </li>
-      </ul>
+  <div class="menu">
+    <article class="mcard" data-rv>
+      <div class="mvis pad"><img src="img/pacing-calendar-800.webp" width="800" height="368" alt="A Global History pacing calendar for September and October, with each class day labeled by unit and lesson" loading="lazy" decoding="async"></div>
+      <div class="mbody">
+        <h3>Plan a whole year with AI</h3>
+        <p>Turn the school calendar into a day-by-day plan for the year, with tests on exam days and room for sick days. I plan my AP Macro and Global History years this way, with every topic on a named day.</p>
+        <p class="leave"><b>Teachers leave with</b>A first draft of their own year plan.</p>
+      </div>
     </article>
-    <article class="aud is-dark" data-rv style="--i:1" aria-labelledby="aud-edtech">
-      <p class="aud-label">For ed-tech teams</p>
-      <h3 id="aud-edtech">Make tools teachers actually use.</h3>
-      <ul class="svc">
-        <li>
-          <h4>A working teacher's review</h4>
-          <p>I put your product through a real school week: 38-minute periods, shared Chromebooks, a black-and-white printer, and students with IEPs. You get written notes on what works in class and what gets in the way.</p>
-        </li>
-        <li>
-          <h4>AI content checks</h4>
-          <p>I check AI-made questions, explanations, and feedback the way I grade: every fact, every number, and every picture.</p>
-        </li>
-        <li>
-          <h4>Learning design and prototypes</h4>
-          <p>AP-aligned practice, review games, and lesson materials, planned backward from what students need to do on the test, and built with AI.</p>
-          <a class="tl" href="https://dbassin12.github.io/econ-arcade-case-study/">Read the Econ Arcade case study</a>
-        </li>
-      </ul>
+    <article class="mcard" data-rv style="--i:1">
+      <div class="mvis dark"><img src="img/open-outcry-800.webp" width="800" height="500" alt="Open Outcry, a whole-class review game on a projector, with a news headline, a supply and demand graph, and four answers" loading="lazy" decoding="async"></div>
+      <div class="mbody">
+        <h3>Turn a unit into a game</h3>
+        <p>Take a unit you already teach and build a review game students can play on a phone or on the projector. I built seven AP Macro games and a whole-class trading-floor game this way.</p>
+        <p class="leave"><b>Teachers leave with</b>A playable game for an upcoming unit.</p>
+      </div>
+    </article>
+    <article class="mcard" data-rv>
+      <div class="mvis"><div class="bars" aria-hidden="true">
+        <div class="row"><p class="cap">Progress report comments, 106 reports <span>85% less time</span></p><span class="bar"></span><span class="bar after" style="--w:.15"></span></div>
+        <div class="row"><p class="cap">Essay grading with AI as first reader, 87 essays <span>63% less time</span></p><span class="bar"></span><span class="bar after" style="--w:.37"></span></div>
+      </div></div>
+      <div class="mbody">
+        <h3>Automate the busywork</h3>
+        <p>Let AI draft the report card comments, the weekly email, and the grade transfer, and keep your judgment for the parts that matter. Student names come out before anything goes to AI.</p>
+        <p class="leave"><b>Teachers leave with</b>One weekly task that takes minutes instead of hours.</p>
+      </div>
+    </article>
+    <article class="mcard" data-rv style="--i:1">
+      <div class="mvis"><div class="marks" aria-hidden="true">
+        <p><span class="k">Fact</span>A price ceiling set <s>above</s> <em>below</em> equilibrium causes a shortage.</p>
+        <p><span class="k">Quote</span>"Let them eat cake." <em>No source. Cut it.</em></p>
+        <p><span class="k">Score</span>AI gave this essay <s>79</s> <em>96, after my read</em></p>
+      </div></div>
+      <div class="mbody">
+        <h3>Check AI like a grader</h3>
+        <p>AI gets facts, quotes, and scores wrong. Teachers learn the quick checks I use before anything reaches a student, like the AI score of 79 on an essay that earned a 96.</p>
+        <p class="leave"><b>Teachers leave with</b>A short checklist for any AI output.</p>
+      </div>
     </article>
   </div>
-  <p class="also" data-rv><strong>Also for small businesses.</strong> Outside school, I build tools for small-business owners and show them how the tools work. <a class="tl" href="#words">Read what two of them said</a></p>
 </section>
 
-<section class="panel is-lav" id="time" aria-labelledby="time-title">
+<section class="panel" id="services" aria-labelledby="services-title">
   <div class="head-2">
     <div>
-      <p class="label">Time back for teaching</p>
-      <h2 id="time-title">Less paperwork, more teaching.</h2>
+      <p class="label">Services</p>
+      <h2 id="services-title">How schools and teams work with me.</h2>
     </div>
-    <p class="sub">I use AI as a first draft for the paperwork around teaching. Student names come out first, and nothing goes out until I check it.</p>
+    <p class="sub">I teach full time, so I keep it simple: a clear starting price, then we shape the work to what you need.</p>
   </div>
-  <div class="tb">
-    <div class="tb-row" data-rv data-count="85">
-      <div>
-        <h3>Progress report comments</h3>
-        <p>106 reports. AI drafts each comment from my notes, and I edit every one.</p>
-      </div>
-      <div class="tb-viz" aria-hidden="true">
-        <div class="tb-line"><span>Writing every one</span><span class="bar"></span></div>
-        <div class="tb-line"><span>AI draft, my edit</span><span class="bar after" style="--w:.15"></span></div>
-      </div>
-      <p class="tb-num"><strong><span class="ct">85</span>%</strong>less time</p>
-    </div>
-    <div class="tb-row" data-rv data-count="63" style="--i:1">
-      <div>
-        <h3>Essay grading</h3>
-        <p>87 essays. AI reads first, and I check every score.</p>
-      </div>
-      <div class="tb-viz" aria-hidden="true">
-        <div class="tb-line"><span>Grading alone</span><span class="bar"></span></div>
-        <div class="tb-line"><span>AI first reader, my grade</span><span class="bar after" style="--w:.37"></span></div>
-      </div>
-      <p class="tb-num"><strong><span class="ct">63</span>%</strong>less time</p>
-    </div>
+  <div class="prices">
+    <article class="price feature" data-rv>
+      <p class="for">For schools</p>
+      <h3>Faculty workshop</h3>
+      <p class="amount">From $500</p>
+      <p>A hands-on session for your whole staff or one department, on any topic above or one you pick.</p>
+      <ul><li>Laptops open, real lessons</li><li>Everyone leaves with something made</li><li>A short follow-up guide</li></ul>
+    </article>
+    <article class="price" data-rv style="--i:1">
+      <p class="for">For schools and teams</p>
+      <h3>Coaching and monthly help</h3>
+      <p class="amount">From $500 <small>a month</small></p>
+      <p>Coaching hours for teachers in their own subject, and I keep your AI tools running and add new ones as you need them.</p>
+      <ul><li>One-on-one coaching</li><li>Questions answered fast</li><li>New tools as you grow</li></ul>
+    </article>
+    <article class="price" data-rv style="--i:2">
+      <p class="for">For anyone</p>
+      <h3>A custom AI tool</h3>
+      <p class="amount">From $1,000</p>
+      <p>Something eating your time? I build the tool that fixes it, then teach your team to run it.</p>
+      <ul><li>Built for your real workflow</li><li>Works with what you use now</li><li>You own it</li></ul>
+    </article>
+    <article class="price" data-rv style="--i:3">
+      <p class="for">For ed-tech teams</p>
+      <h3>A teacher's review</h3>
+      <p class="amount">Let's talk</p>
+      <p>I put your product or AI-made content through a real school week and tell you what works in class and what gets in the way.</p>
+      <ul><li>38-minute periods, shared Chromebooks</li><li>Every fact and number checked</li><li>Written notes you can act on</li></ul>
+    </article>
   </div>
-  <ul class="chips" data-rv>
-    <li>Grades go from Schoology to Veracross without retyping</li>
-    <li>A pacing calendar for 127 class meetings</li>
-    <li>Weekly update emails drafted from the calendar</li>
-  </ul>
+  <div class="freecall" data-rv>
+    <div>
+      <h3>Every project starts with a free 30-minute call.</h3>
+      <p>This isn't a sales call. It's a teacher sitting down and asking, "Show me what's eating your time." If AI is not the answer, I will tell you.</p>
+    </div>
+    <a class="btn btn-primary" href="https://calendly.com/davidbassin12/30min?hide_gdpr_banner=1&amp;utm_source=website&amp;utm_content=services" target="_blank" rel="noopener">Book a free call</a>
+  </div>
 </section>
 
-<section class="panel" id="work" aria-labelledby="work-title">
+<section class="panel is-cream" id="work" aria-labelledby="work-title">
   <div class="head-2">
     <div>
-      <p class="label">What I have built</p>
-      <h2 id="work-title">Made for my own students first.</h2>
+      <p class="label">Proof from my classroom</p>
+      <h2 id="work-title">I use all of this with my own students first.</h2>
     </div>
-    <p class="sub">I build with AI, then check every fact and every picture. The live ones are free to try.</p>
+    <p class="sub">I teach 106 students a year in AP Macroeconomics and Global History. Everything I show teachers, I built and tested in my own room.</p>
   </div>
-  <div class="bento">
-    <article class="card span-4" data-rv>
-      <div class="shot light"><img src="img/arcade-screens.webp" srcset="img/arcade-screens-800.webp 800w, img/arcade-screens.webp 1400w" sizes="(min-width:1000px) 720px, (min-width:640px) 90vw, 94vw" width="1400" height="875" alt="Two screens from the DRS Econ Arcade: the game list, and Fed Chair asking you to pick a crisis" loading="lazy" decoding="async"></div>
+  <div class="proof">
+    <article class="card" data-rv>
+      <div class="shot light"><img src="img/arcade-screens.webp" srcset="img/arcade-screens-800.webp 800w, img/arcade-screens.webp 1400w" sizes="(min-width:900px) 460px, 94vw" width="1400" height="875" alt="Two screens from the DRS Econ Arcade: the game list, and Fed Chair asking you to pick a crisis" loading="lazy" decoding="async"></div>
       <div class="card-body">
         <p class="kicker">AP Macroeconomics</p>
         <h3>The DRS Econ Arcade</h3>
-        <p>Seven games for the skills the AP exam grades. Shift the curve a headline moves, run the Fed through 1975, 1980, 2008, or 2021, and find the mistakes on a graph. A one-line why follows every answer, and a readiness panel tells each student what to play next.</p>
-        <ul class="facts"><li>7 games</li><li>No student accounts</li><li>Works on phones</li></ul>
-        <div class="links-row"><a class="tl" href="https://dbassin12.github.io/drs-econ-arcade/">Play the arcade</a><a class="tl" href="https://dbassin12.github.io/econ-arcade-case-study/">Read the case study</a></div>
+        <p>Seven games for the skills the AP exam grades, with a one-line why after every answer and a readiness panel that tells each student what to play next.</p>
+        <ul class="facts"><li>7 games</li><li>No student accounts</li></ul>
+        <div class="links-row"><a class="tl" href="https://dbassin12.github.io/drs-econ-arcade/">Play the arcade</a></div>
       </div>
     </article>
-    <article class="card span-2 fill" data-rv style="--i:1">
-      <div class="shot"><img src="img/road-to-revolution.webp" srcset="img/road-to-revolution-800.webp 800w, img/road-to-revolution.webp 1400w" sizes="(min-width:1000px) 360px, (min-width:640px) 45vw, 94vw" width="1400" height="875" alt="Road to Revolution: a 3D town square with a crowd and a stone arch at the end of a brick road" loading="lazy" decoding="async"></div>
+    <article class="card" data-rv style="--i:1">
+      <div class="shot"><img src="img/road-to-revolution-800.webp" width="800" height="500" alt="Road to Revolution: a 3D town square with a crowd and a stone arch at the end of a brick road" loading="lazy" decoding="async"></div>
       <div class="card-body">
         <p class="kicker">Global History</p>
         <h3>Road to Revolution</h3>
-        <p>A 3D review game, 1649 to 1789. Hobbes, Locke, Montesquieu, and Rousseau teach inside the world.</p>
-        <ul class="facts"><li>213 voiced lines</li><li>Saves with no account</li></ul>
+        <p>A 3D review game where Hobbes, Locke, Montesquieu, and Rousseau teach inside the world. 213 voiced lines, and it runs on a phone.</p>
         <div class="links-row"><a class="tl" href="https://road-to-revolution.vercel.app">Play it</a></div>
       </div>
     </article>
-    <article class="card span-3" data-rv>
-      <div class="shot"><img src="img/open-outcry.webp" srcset="img/open-outcry-800.webp 800w, img/open-outcry.webp 1400w" sizes="(min-width:1000px) 540px, (min-width:640px) 45vw, 94vw" width="1400" height="875" alt="Open Outcry on a projector: a board of team money, a breaking news headline about electric cars, a supply and demand graph, and four numbered answers" loading="lazy" decoding="async"></div>
+    <article class="card text-card" data-rv style="--i:2">
       <div class="card-body">
-        <p class="kicker">AP Macroeconomics, whole class</p>
-        <h3>Open Outcry</h3>
-        <p>A trading-floor review game for the projector. Teams read a headline, decide which curve shifts, and flash one to four fingers for their answer. The answer key comes from the graph itself, so the two can never disagree.</p>
-        <ul class="facts"><li>No student devices</li><li>No accounts</li></ul>
-      </div>
-    </article>
-    <article class="card span-3" data-rv style="--i:1">
-      <div class="films" aria-hidden="true">
-        <img src="img/road-to-1789-800.webp" width="800" height="450" alt="" loading="lazy" decoding="async">
-        <img src="img/bastille-480.webp" width="480" height="270" alt="" loading="lazy" decoding="async">
-        <img src="img/reign-of-terror-480.webp" width="480" height="270" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="card-body">
-        <p class="kicker">Global History</p>
-        <h3>Short videos for the French Revolution unit</h3>
-        <p>Four short videos made with AI tools from historical paintings, prints, and maps. Captions on screen, every picture credited, and graphic moments flagged for teachers. The Road to 1789 runs about six minutes and uses 47 pictures.</p>
-        <ul class="facts"><li>4 videos</li><li>Every picture credited</li><li>Notes for teachers</li></ul>
-        <div class="links-row"><a class="tl" href="https://dbassin12.github.io/history-videos/">Watch the videos</a></div>
-      </div>
-    </article>
-    <article class="card span-2" data-rv>
-      <div class="sheets">
-        <figure><figcaption>Regular</figcaption><img src="img/worksheet-regular-480.webp" width="480" height="391" alt="Regular worksheet with the original source beside a modified version" loading="lazy" decoding="async"></figure>
-        <figure><figcaption>IEP version</figcaption><img src="img/worksheet-iep-480.webp" width="480" height="396" alt="IEP version of the same lesson in short boxed parts with stop-and-check questions" loading="lazy" decoding="async"></figure>
-      </div>
-      <div class="card-body">
-        <p class="kicker">Every student</p>
-        <h3>An IEP version of every worksheet</h3>
-        <p>Bigger type, more space, shorter chunks, and sentence starters, with each primary source beside a readable version. The thinking stays the same.</p>
-      </div>
-    </article>
-    <article class="card span-2" data-rv style="--i:1">
-      <div class="shot light pad"><img src="img/cocoa-slide-800.webp" width="800" height="450" alt="Lesson slide: real world, cocoa and your chocolate bar, with a price chart" loading="lazy" decoding="async"></div>
-      <div class="card-body">
-        <p class="kicker">AP Macroeconomics</p>
-        <h3>A year planned backward from the exam</h3>
-        <p>All 42 College Board topics on a named day, 16 new lesson decks on real events and data, and AP-style quizzes with answer keys.</p>
-      </div>
-    </article>
-    <article class="card span-2" data-rv style="--i:2">
-      <div class="shot"><img src="img/mo-cutaway-800.webp" width="800" height="500" alt="Mo's Big Dig: a 3D Earth cut open to show its layers" loading="lazy" decoding="async"></div>
-      <div class="card-body">
-        <p class="kicker">Ages 3 to 5</p>
-        <h3>Mo's Big Dig</h3>
-        <p>A talking 3D Earth for kids who can't read yet. Every line is spoken, and each voice line is checked with speech recognition.</p>
-        <div class="links-row"><a class="tl" href="https://dbassin12.github.io/mos-big-dig/">Play it</a></div>
+        <p class="kicker">At my school</p>
+        <h3>Leading AI with my colleagues</h3>
+        <p>I'm on my school's AI Task Force. This is the same work I offer other schools.</p>
+        <ul class="did"><li>Demos for the whole faculty</li><li>One-on-one coaching with teachers</li><li>Helped write our AI rules</li></ul>
+        <div class="links-row"><a class="tl" href="https://dbassin12.github.io/ai-workshop/">A sample workshop plan</a><a class="tl" href="https://dbassin12.github.io/ai-guidelines/">Sample AI guidelines</a></div>
       </div>
     </article>
   </div>
 </section>
 
-<section class="panel is-cream" id="method" aria-labelledby="method-title">
-  <div class="method">
+<section class="panel" id="business" aria-labelledby="business-title">
+  <div class="head-2">
     <div>
-      <p class="label">How I use AI</p>
-      <h2 id="method-title"><span>AI drafts.</span> <span>I decide.</span></h2>
-      <p class="sub" style="margin-top:22px">AI makes the first version of the game, the video, or the worksheet. It is fast, and it is a starting point. A teacher makes the call.</p>
-      <div class="tf" data-rv>
-        <p>On my school's AI Task Force, I coach teachers in group demos and one-on-one, and I helped write our AI guidelines.</p>
-        <div class="tf-links"><a class="tl" href="https://dbassin12.github.io/ai-guidelines/">Sample AI guidelines</a><a class="tl" href="https://dbassin12.github.io/ai-workshop/">A one-hour workshop plan</a></div>
-      </div>
+      <p class="label">For small businesses</p>
+      <h2 id="business-title">I build for small businesses too.</h2>
     </div>
-    <ul class="principles">
-      <li data-rv><svg class="mark-line" viewBox="0 0 30 12" aria-hidden="true" focusable="false"><path d="M2 8C8 5 14 4 28 3"/></svg><h3>Check it like a grader</h3><p>I check facts against real sources, and I check every number and every picture. As a first reader on 87 essays, AI scored one a 79 that earned a 96.</p></li>
-      <li data-rv style="--i:1"><svg class="mark-line" viewBox="0 0 30 12" aria-hidden="true" focusable="false"><path d="M2 8C8 5 14 4 28 3"/></svg><h3>Student privacy first</h3><p>Student names come out before anything goes to AI. My games have no student accounts, and scores stay on the device.</p></li>
-      <li data-rv style="--i:2"><svg class="mark-line" viewBox="0 0 30 12" aria-hidden="true" focusable="false"><path d="M2 8C8 5 14 4 28 3"/></svg><h3>Built for a real school day</h3><p>38-minute periods, shared Chromebooks, a black-and-white printer, and students with IEPs. If a tool does not work there, it is not done.</p></li>
-      <li data-rv style="--i:3"><svg class="mark-line" viewBox="0 0 30 12" aria-hidden="true" focusable="false"><path d="M2 8C8 5 14 4 28 3"/></svg><h3>Leave the thinking to people</h3><p>The tool does the busywork. Students still draw the graph and write the why. Teachers still make the call.</p></li>
-    </ul>
+    <p class="sub">Owners tell me what's eating their time. I build the fix, then walk them through it until they can run it themselves.</p>
   </div>
-</section>
 
-<section class="panel is-lav" id="words" aria-labelledby="words-title">
-  <div class="head">
-    <p class="label">In their words</p>
-    <h2 id="words-title">Two small-business owners I built tools for.</h2>
+  <div class="feat" data-rv>
+    <div>
+      <p class="kicker">A pergola construction company</p>
+      <h3>Talk into the phone, and the job is in the system</h3>
+      <p>After a call, the owner records a voice note. AI writes it down, pulls out the names, addresses, and job details, matches existing customers, and saves everything to the database. No paperwork at the end of the day.</p>
+      <ul class="facts"><li>Voice notes</li><li>Whisper</li><li>Gemini</li><li>A real database</li></ul>
+    </div>
+    <div class="frame"><img src="img/pergola-system.webp" srcset="img/pergola-system-800.webp 800w, img/pergola-system.webp 1280w" sizes="(min-width:900px) 520px, 94vw" width="1280" height="800" alt="The pergola company's dashboard: customers, active jobs, follow-ups, and a big Record Voice Note button" loading="lazy" decoding="async"></div>
   </div>
+
+  <div class="feat flip" data-rv>
+    <div>
+      <p class="kicker">A plumbing company</p>
+      <h3>A phone call becomes a CRM deal in under a minute</h3>
+      <p>When a call ends, AI writes down what was said and pulls out the job, the address, how urgent it is, the price quoted, and the next step. A new deal shows up in the CRM, built to work with the phone number and CRM a business already has.</p>
+      <ul class="facts"><li>Twilio</li><li>Whisper</li><li>An LLM</li><li>Pipedrive</li></ul>
+    </div>
+    <figure class="callflow seq" id="callflow" aria-labelledby="flow-cap">
+      <ol class="flow">
+        <li><span class="num" aria-hidden="true">1</span><div><p class="step-title">A customer calls</p><p class="quote"><span class="line"><b>Caller:</b> "Hi, I have a big leak in my bathroom. I'm at 12 Oak Lane. Can someone come today?"</span><span class="line"><b>Office:</b> "Yes. A tech can be there in about an hour. The visit is $150."</span></p></div></li>
+        <li><span class="num" aria-hidden="true">2</span><div><p class="step-title">AI pulls out the job</p><dl class="fields"><dt>Job</dt><dd>Leak repair</dd><dt>Urgency</dt><dd>Emergency</dd><dt>Address</dt><dd>12 Oak Lane</dd><dt>Price quoted</dt><dd>$150</dd><dt>Next step</dt><dd>Tech on site in about an hour</dd></dl></div></li>
+        <li><span class="num" aria-hidden="true">3</span><div><p class="step-title">A new deal is waiting in the CRM</p><p class="deal">Leak repair, 12 Oak Lane <span>$150, Emergency</span></p></div></li>
+      </ol>
+      <figcaption id="flow-cap">A made-up sample call, to show how it works.</figcaption>
+    </figure>
+  </div>
+
+  <div class="feat" data-rv>
+    <div>
+      <p class="kicker">A solo law practice</p>
+      <h3>New case details, pulled in automatically</h3>
+      <p>An AI workflow that pulls details from emails, phone notes, and intake forms into the case management system, so nobody spends half a day copying them by hand.</p>
+    </div>
+    <div class="law">
+      <p class="src">What the workflow does</p>
+      <ol>
+        <li>Reads a new email, phone note, or intake form</li>
+        <li>Pulls out the details the case needs</li>
+        <li>Puts them into the case management system</li>
+        <li>The attorney's team checks it and moves on</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="feat flip" data-rv>
+    <div>
+      <p class="kicker">A university financial aid office</p>
+      <h3>FinAid Dashboard</h3>
+      <p>Built with a financial aid counselor. The federal aid formula misses regional cost of living and K-12 tuition. This dashboard adjusts for both with real economic data and shows each step of the math, so the counselor can explain every number.</p>
+      <ul class="facts"><li>Next.js</li><li>TypeScript</li><li>Real economic data</li></ul>
+    </div>
+    <div class="frame"><img src="img/finaid.webp" srcset="img/finaid-800.webp 800w, img/finaid.webp 1280w" sizes="(min-width:900px) 520px, 94vw" width="1280" height="800" alt="FinAid Dashboard with a list of students and aid figures, labeled sample data, not real students" loading="lazy" decoding="async"></div>
+  </div>
+
+  <div class="words-label"><h3>In their words</h3><p>Two small-business owners I built tools for.</p></div>
   <div class="quotes">
-    <figure class="quote" data-rv>
+    <figure class="quote-card" data-rv>
       <blockquote><p>"I was spending hours every week just organizing new client information: pulling details out of emails, phone notes, and intake forms into our case management system. David built us an AI workflow that handles the extraction automatically. What used to take my paralegal half a day now takes minutes. But the best part is he actually showed us how it works so we're not dependent on him."</p></blockquote>
       <figcaption><span class="ini" aria-hidden="true">EL</span><span><strong>Eli Lekht</strong><span>Attorney, Solo Practice</span></span></figcaption>
     </figure>
-    <figure class="quote" data-rv style="--i:1">
+    <figure class="quote-card" data-rv style="--i:1">
       <blockquote><p>"I was keeping track of everything in my head: customer calls, job estimates, follow-ups. David built me a system where I just talk into my phone after a call and it does the rest. Names, addresses, job details: it all goes straight into the database. I'm not a tech guy at all, but he walked me through everything so I actually understand how it works."</p></blockquote>
       <figcaption><span class="ini" aria-hidden="true">IL</span><span><strong>Ilya Lurye</strong><span>Owner, Pergola Construction</span></span></figcaption>
     </figure>
   </div>
-  <ul class="built">
-    <li data-rv><h3>For a law practice</h3><p>An AI workflow that pulls case details from emails, phone notes, and intake forms into the case system.</p></li>
-    <li data-rv style="--i:1"><h3>For a pergola business</h3><p>Talk into the phone after a call, and the names, addresses, and job details go into a database.</p></li>
-    <li data-rv style="--i:2"><h3>For a plumbing company</h3><p>A call system that turns a phone call into a CRM deal in under a minute, built to work with the phone number and CRM a business already has.</p></li>
-    <li data-rv style="--i:3"><h3>With a financial aid counselor</h3><p>FinAid Dashboard adjusts the federal aid formula for regional cost of living and <span class="nw">K-12</span> tuition, and shows each step of the math.</p></li>
-  </ul>
 </section>
 
-<section class="panel is-cream" id="how" aria-labelledby="how-title">
+<section class="panel is-lav" id="how" aria-labelledby="how-title">
   <div class="head">
     <p class="label">Working together</p>
     <h2 id="how-title">Three steps, starting with a free call.</h2>
   </div>
   <ol class="steps">
-    <li data-rv><span class="n">1</span><h3>A free <span class="nw">30-minute</span> call</h3><p>We talk about your school, your product, or your business, and what you want to fix. If AI is not the answer, I will tell you. This isn't a sales call. It's a teacher sitting down and asking, "Show me what's eating your time."</p></li>
-    <li data-rv style="--i:1"><span class="n">2</span><h3>A small pilot</h3><p>One workshop, one department, or one feature tried in a real unit. Something you can see working within a few weeks.</p></li>
-    <li data-rv style="--i:2"><span class="n">3</span><h3>Hand it off</h3><p>Your team learns to make and check their own, and you keep everything we build. No black boxes.</p></li>
+    <li data-rv><span class="n">1</span><h3>A free <span class="nw">30-minute</span> call</h3><p>We talk about your school, your product, or your business, and what is eating your time. You leave with ideas either way.</p></li>
+    <li data-rv style="--i:1"><span class="n">2</span><h3>A first workshop or build</h3><p>One workshop for your teachers, or one tool built for one real problem. Something you can see working within a few weeks.</p></li>
+    <li data-rv style="--i:2"><span class="n">3</span><h3>Keep going, or take it from here</h3><p>Add coaching or monthly help, or run it yourselves. Either way, your team understands everything we build.</p></li>
   </ol>
   <div class="fit" data-rv>
     <strong>Good fit for:</strong>
-    <span>Day schools and yeshivas</span><span>Independent and charter schools</span><span>Departments</span><span><span class="nw">Ed-tech</span> teams</span><span>Small businesses</span>
+    <span>Jewish day schools and yeshivas</span><span>Private and independent schools</span><span>Public and charter schools</span><span><span class="nw">Ed-tech</span> teams</span><span>Small businesses</span>
   </div>
 </section>
 
 <section class="panel" id="about" aria-labelledby="about-title">
   <div class="head">
     <p class="label">About</p>
-    <h2 id="about-title">Who you will work with.</h2>
+    <h2 id="about-title">A teacher who builds, not an engineer who explains.</h2>
   </div>
   <div class="about">
     <div class="me" data-rv>
       <img src="img/headshot-480.webp" width="480" height="480" alt="David Bassin" loading="lazy" decoding="async">
       <h3>David Bassin</h3>
-      <p class="role">Teacher and founder</p>
+      <p class="role">Founder, Bassin Consulting</p>
       <p class="edu">M.S. in Education, <span class="nw">Pace University</span><br>B.A. in History, <span class="nw">Baruch College</span></p>
     </div>
     <div class="about-text" data-rv style="--i:1">
-      <p class="mini">The background</p>
-      <p>I have worked in schools since 2016. Today I teach AP Macroeconomics and Global History at a high school on Long Island. Before teaching, I worked in IT support.</p>
-      <p>On my school's AI Task Force, I coach teachers in group demos and one-on-one, and I helped write our AI guidelines.</p>
+      <p class="mini">Who you will work with</p>
+      <p>I teach AP Macroeconomics and Global History to 106 students a year at a high school on Long Island, and I have worked in schools since 2016. Before teaching, I worked in IT support for 100+ people.</p>
+      <p>On my school's AI Task Force, I run demos for the faculty, coach teachers one-on-one, and helped write our AI rules. Outside school, I build AI tools for small businesses.</p>
     </div>
     <div class="about-text" data-rv style="--i:2">
-      <p class="mini">The difference</p>
-      <p>Many AI trainers come from engineering. I come from the classroom. I know what a 38-minute period feels like, and I check AI's work before any student sees it.</p>
+      <p class="mini">Why a teacher</p>
+      <p>Most people don't need more AI hype. They need someone patient who has done it in a real job and can explain it simply. That's what teachers do all day.</p>
       <ul class="ticks">
         <li>Teaching over selling</li>
         <li>Build with you, not just for you</li>
@@ -681,7 +720,7 @@ form .btn{width:100%;margin-top:4px}
     <div class="contact-copy">
       <p class="label">Get in touch</p>
       <h2 id="contact-title">Show me what's eating your time.</h2>
-      <p class="sub">Tell me about your school, your product, or your business. Or skip the form and book a free <span class="nw">30-minute</span> call.</p>
+      <p class="sub">Tell me about your school, your team, or your business. Or skip the form and book a free <span class="nw">30-minute</span> call.</p>
       <a class="btn btn-primary" href="https://calendly.com/davidbassin12/30min?hide_gdpr_banner=1&amp;utm_source=website&amp;utm_content=contact" target="_blank" rel="noopener">Book a free 30-minute call</a>
       <p class="direct">Or email <a href="mailto:david@bassinconsulting.com">david@bassinconsulting.com</a></p>
     </div>
@@ -692,7 +731,7 @@ form .btn{width:100%;margin-top:4px}
           <div><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
         </div>
         <div><label for="f-company">School or company <span class="opt">(optional)</span></label><input id="f-company" name="company" autocomplete="organization"></div>
-        <div><label for="f-message">Message</label><textarea id="f-message" name="message" required placeholder="What would you like to fix?"></textarea></div>
+        <div><label for="f-message">Message</label><textarea id="f-message" name="message" required placeholder="What would you like help with?"></textarea></div>
         <div class="hp" aria-hidden="true"><label for="f-website">Leave this field empty</label><input id="f-website" name="website" tabindex="-1" autocomplete="off"></div>
         <button class="btn btn-primary" type="submit" id="contactSubmitBtn">Send message</button>
         <p class="status" id="formStatus" role="status" aria-live="polite" tabindex="-1"></p>
@@ -709,7 +748,7 @@ form .btn{width:100%;margin-top:4px}
 
 <footer class="foot">
   <div class="foot-in">
-    <div><span class="brand-name">Bassin Consulting</span><span class="brand-tag">AI training and tools for schools and ed-tech teams</span></div>
+    <div><span class="brand-name">Bassin Consulting</span><span class="brand-tag">Practical AI help for schools, ed-tech teams, and small businesses</span></div>
     <ul>
       <li><a href="mailto:david@bassinconsulting.com">Email</a></li>
       <li><a href="https://www.linkedin.com/in/dbassin/">LinkedIn</a></li>
@@ -729,32 +768,20 @@ form .btn{width:100%;margin-top:4px}
   var onScroll=function(){ nav.classList.toggle('scrolled', W.pageYOffset>8); };
   W.addEventListener('scroll', onScroll, {passive:true}); onScroll();
   var btn=d.querySelector('.menu-btn'), menu=d.getElementById('menu');
-  btn.addEventListener('click', function(){
-    var open=menu.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open);
-  });
-  menu.addEventListener('click', function(e){
-    if(e.target.closest('a')){ menu.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
-  });
+  btn.addEventListener('click', function(){ var open=menu.classList.toggle('open'); btn.setAttribute('aria-expanded', open); });
+  menu.addEventListener('click', function(e){ if(e.target.closest('a')){ menu.classList.remove('open'); btn.setAttribute('aria-expanded','false'); } });
   d.addEventListener('keydown', function(e){
     if(e.key==='Escape' && menu.classList.contains('open')){ menu.classList.remove('open'); btn.setAttribute('aria-expanded','false'); btn.focus(); }
   });
 
-  /* scroll reveals and the time bars */
-  var count=function(row){
-    var el=row.querySelector('.ct'); if(!el) return;
-    var to=+row.getAttribute('data-count'), t0=null, dur=1400;
-    if(reduce){ el.textContent=to; return; }
-    var step=function(t){ if(!t0) t0=t; var p=Math.min(1,(t-t0)/dur); el.textContent=Math.round(to*(1-Math.pow(1-p,3))); if(p<1) requestAnimationFrame(step); };
-    el.textContent='0'; setTimeout(function(){ requestAnimationFrame(step); },250);
-  };
-  var items=[].slice.call(d.querySelectorAll('[data-rv]'));
-  var show=function(el){ el.classList.add('in'); if(el.hasAttribute('data-count')) count(el); };
+  /* scroll reveals: cards rise in, bars shrink, the sample call plays */
+  var items=[].slice.call(d.querySelectorAll('[data-rv], .bars, #callflow'));
+  var show=function(el){ el.classList.add('in'); if(el.id==='callflow') el.classList.add('play'); };
   if(reduce || !('IntersectionObserver' in W)){ items.forEach(show); }
   else{
     var io=new IntersectionObserver(function(entries){
       entries.forEach(function(en){ if(en.isIntersecting){ show(en.target); io.unobserve(en.target); } });
-    },{rootMargin:'0px 0px -8% 0px', threshold:.12});
+    },{rootMargin:'0px 0px -10% 0px', threshold:.15});
     items.forEach(function(el){ io.observe(el); });
   }
 
@@ -773,8 +800,7 @@ form .btn{width:100%;margin-top:4px}
       setTimeout(function(){ p.classList.add('done'); },700);
     };
     var schedule=function(){
-      clearTimeout(timer);
-      if(reduce) return;
+      clearTimeout(timer); if(reduce) return;
       timer=setTimeout(function(){ if(paused){ schedule(); return; } cur=(cur+1)%panels.length; play(cur,true); schedule(); },7000);
     };
     tabs.forEach(function(t,i){
@@ -787,8 +813,7 @@ form .btn{width:100%;margin-top:4px}
     check.addEventListener('mouseleave', function(){ paused=false; });
     check.addEventListener('focusin', function(){ paused=true; });
     check.addEventListener('focusout', function(){ paused=false; });
-    if(reduce){ play(0,false); }
-    else{ setTimeout(function(){ play(0,true); schedule(); },1100); }
+    if(reduce){ play(0,false); } else { setTimeout(function(){ play(0,true); schedule(); },1100); }
   }
 
   /* contact form, posts to the existing /api/contact handler */

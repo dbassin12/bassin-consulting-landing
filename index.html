@@ -376,6 +376,67 @@ form .btn{width:100%;margin-top:4px}
 .foot a:hover{color:var(--copper-light)}
 .fine{grid-column:1/-1;border-top:1px solid rgba(253,252,249,.1);padding-top:20px;font-size:14px;color:#A79EAD}
 
+/* try it: one round of Open Outcry */
+.demo{display:grid;gap:clamp(22px,3vw,40px);background:var(--linen);border:1px solid var(--line-soft);border-radius:24px;padding:clamp(20px,3vw,36px)}
+@media (min-width:900px){.demo{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:center}}
+.demo-eyebrow{display:flex;align-items:center;gap:10px;font:700 12px/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--copper-ink)}
+.demo-eyebrow .dot{flex:none;width:8px;height:8px;border-radius:50%;background:var(--copper)}
+.demo-count{margin-left:auto;color:var(--muted);letter-spacing:.12em}
+.demo-headline{margin-top:14px;font:800 clamp(22px,2.4vw,30px)/1.15 var(--display);letter-spacing:-.03em;color:var(--plum);text-wrap:balance}
+.demo-market{margin-top:8px;font-size:15px;color:var(--muted)}
+.demo-ask{margin-top:18px;font:700 15px var(--display);color:var(--plum)}
+.demo-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.demo-opts button{font:600 15.5px/1.3 var(--display);color:var(--plum);background:var(--cream);border:1.5px solid var(--line);border-radius:12px;padding:14px 12px;min-height:52px;cursor:pointer;text-align:left;transition:border-color .2s,background-color .2s,transform .2s,opacity .2s}
+.demo-opts button:hover:not(:disabled){border-color:var(--copper);transform:translateY(-1px)}
+.demo-opts button.wrong{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--copper);text-decoration-thickness:2px}
+.demo-opts button.right{border-color:var(--copper);background:#FBF1E8}
+.demo-opts button:disabled{cursor:default}
+.demo-opts button:disabled:not(.right){opacity:.55}
+.demo-out{min-height:96px;margin-top:16px;font-size:16.5px;line-height:1.6;color:var(--ink)}
+.demo-out b{font-family:var(--display);color:var(--plum)}
+.demo-moves{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.demo-moves span{font:600 13.5px/1 var(--display);color:var(--plum);background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:8px 12px}
+.demo-next{display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px;margin-top:8px}
+.demo-next .btn{min-height:46px;font-size:16px;padding:0 18px}
+.demo-graph{margin:0;background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:10px 10px 6px;box-shadow:var(--shadow)}
+.demo-graph svg{display:block;width:100%;height:auto;overflow:visible}
+.demo-graph figcaption{padding:4px 8px 6px;font-size:14px;color:var(--muted)}
+.g-ax{fill:none;stroke:var(--plum);stroke-width:2;stroke-linecap:square}
+.g-ln{fill:none;stroke-width:3.5;stroke-linecap:round}
+.g-d{stroke:var(--plum)}
+.g-s{stroke:var(--copper)}
+.g-old{stroke-dasharray:7 6;opacity:.35}
+.g-guide{stroke:var(--muted);stroke-width:1.4;stroke-dasharray:4 5;fill:none}
+.g-guide.old{opacity:.45}
+.g-eq{fill:var(--plum)}
+.g-eq.new{fill:var(--copper);stroke:var(--cream);stroke-width:3}
+.g-lab{font:700 16px var(--display);fill:var(--plum)}
+.g-lab.s{fill:var(--copper-ink)}
+.g-lab.faint{opacity:.45}
+.g-axlab{font:500 14px var(--body);fill:var(--muted)}
+.g-tick{font:700 14.5px var(--display);fill:var(--plum)}
+.g-tick.faint{opacity:.45}
+.g-tick.new{fill:var(--copper-ink)}
+@media (prefers-reduced-motion:no-preference){
+  .demo-eyebrow .dot{animation:demo-blink 1.2s steps(2) infinite}
+  .demo-out.show{animation:demo-in .45s var(--ease) both}
+}
+@media (max-width:899px){
+  .demo{gap:14px}
+  .demo-q{display:contents}
+  .demo-eyebrow{order:1}
+  .demo-headline{order:2;margin-top:0}
+  .demo-market{order:3;margin-top:-8px}
+  .demo-graph{order:4}
+  .demo-ask{order:5;margin-top:4px}
+  .demo-opts{order:6;margin-top:-4px}
+  .demo-out{order:7;margin-top:0;min-height:0}
+  .demo-out:empty{display:none}
+  .demo-next{order:8;margin-top:0}
+}
+@keyframes demo-blink{50%{opacity:.25}}
+@keyframes demo-in{from{opacity:0;transform:translateY(6px)}}
+
 /* motion: page load and scroll reveals */
 @media (prefers-reduced-motion:no-preference){
   .js .ld{opacity:0;transform:translateY(16px);animation:rise .9s var(--ease) forwards;animation-delay:calc(var(--d,0) * 90ms + 80ms)}
@@ -507,6 +568,61 @@ form .btn{width:100%;margin-top:4px}
     </article>
   </div>
 </section>
+
+<section class="panel is-lav" id="try" aria-labelledby="try-title">
+  <div class="head-2">
+    <div>
+      <p class="label">Try it yourself</p>
+      <h2 id="try-title">One round of a game I built for my class.</h2>
+    </div>
+    <p class="sub">This is the kind of game I help teachers build from their own units: a real headline, one decision, and a one-line why.</p>
+  </div>
+  <div class="demo" id="demo" data-rv>
+    <div class="demo-q">
+      <p class="demo-eyebrow"><span class="dot" aria-hidden="true"></span>Breaking news <span class="demo-count" id="demo-count">1 of 4</span></p>
+      <p class="demo-headline" id="demo-headline">Frost destroys a third of Brazil's coffee crop</p>
+      <p class="demo-market" id="demo-market">Market: coffee</p>
+      <p class="demo-ask" id="demo-ask">Which curve shifts?</p>
+      <div class="demo-opts" role="group" aria-labelledby="demo-ask">
+        <button type="button" data-c="D" data-d="1">Demand shifts right</button>
+        <button type="button" data-c="D" data-d="-1">Demand shifts left</button>
+        <button type="button" data-c="S" data-d="1">Supply shifts right</button>
+        <button type="button" data-c="S" data-d="-1">Supply shifts left</button>
+      </div>
+      <div class="demo-out" id="demo-out" aria-live="polite"></div>
+      <div class="demo-next">
+        <button type="button" class="btn btn-ghost" id="demo-next" hidden>Next headline</button>
+        <a class="tl" href="https://dbassin12.github.io/drs-econ-arcade/games/shift-happens.html">Play more in Shift Happens</a>
+      </div>
+    </div>
+    <figure class="demo-graph">
+      <svg id="demo-svg" viewBox="0 0 330 262" role="img" aria-label="A supply and demand graph at equilibrium, before the news.">
+        <defs><clipPath id="demo-clip"><rect x="47" y="8" width="272" height="209"/></clipPath></defs>
+        <text class="g-axlab" x="52" y="14">Price</text>
+        <path class="g-ax" d="M46 20 V218 H318"/>
+        <text class="g-axlab" x="318" y="256" text-anchor="end">Quantity</text>
+        <g clip-path="url(#demo-clip)">
+          <line id="g-old" class="g-ln g-old" style="display:none"/>
+          <path id="g-guide-old" class="g-guide old" style="display:none"/>
+          <path id="g-guide" class="g-guide"/>
+          <line id="g-dl" class="g-ln g-d"/>
+          <line id="g-sl" class="g-ln g-s"/>
+        </g>
+        <circle id="g-eq-old" class="g-eq" r="5" style="display:none;opacity:.4"/>
+        <circle id="g-eq" class="g-eq" r="6"/>
+        <text id="g-oldlab" class="g-lab faint" style="display:none"></text>
+        <text id="g-dlab" class="g-lab">D1</text>
+        <text id="g-slab" class="g-lab s">S1</text>
+        <text id="g-p1" class="g-tick" text-anchor="end">P1</text>
+        <text id="g-q1" class="g-tick" text-anchor="middle">Q1</text>
+        <text id="g-p2" class="g-tick new" text-anchor="end" style="display:none">P2</text>
+        <text id="g-q2" class="g-tick new" text-anchor="middle" style="display:none">Q2</text>
+      </svg>
+      <figcaption id="demo-cap">Start: the market at equilibrium.</figcaption>
+    </figure>
+  </div>
+</section>
+
 
 <section class="panel" id="services" aria-labelledby="services-title">
   <div class="head-2">
@@ -843,6 +959,129 @@ form .btn{width:100%;margin-top:4px}
       }
     });
   }
+})();
+</script>
+<script>
+/* Try it: one round of Open Outcry. Headlines and explanations come from the game's own bank. */
+(function(){
+  var root=document.getElementById('demo'); if(!root) return;
+  var reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ROUNDS=[
+    {headline:"Frost destroys a third of Brazil's coffee crop", market:"coffee", c:"S", d:-1,
+     why:"The frost hits coffee growers, so this is a supply story. Growers have fewer beans to sell at every price, so supply shifts left. Price rises and quantity falls.",
+     hint:"Did the frost change what buyers want, or what sellers can bring to market?"},
+    {headline:"A star player wears a new sneaker in the playoffs and the shoe goes viral", market:"sneakers", c:"D", d:1,
+     why:"Buyers suddenly want this sneaker more, so this is a demand story. Demand shifts right. Price and quantity both rise.",
+     hint:"Who changed here, buyers or sellers?"},
+    {headline:"New battery technology cuts the cost of building an electric car", market:"electric cars", c:"S", d:1,
+     why:"Better technology makes each car cheaper to build, so sellers offer more cars at every price. Supply shifts right. Price falls and quantity rises.",
+     hint:"Cheaper to make. Does that change buyers or sellers?"},
+    {headline:"Streaming services cut their monthly price in half", market:"movie theater tickets", c:"D", d:-1,
+     why:"Streaming is a substitute for going to the movies. When the substitute gets cheaper, fewer people want theater tickets at every price. Demand shifts left. Price and quantity both fall.",
+     hint:"Streaming and movie theaters: used together, or used instead of each other?"}
+  ];
+  var BASE={D:[84,44,276,196], S:[84,196,276,44]}, SHIFT=50;
+  var $=function(id){ return document.getElementById(id); };
+  var svg=$('demo-svg'), dl=$('g-dl'), sl=$('g-sl'), old=$('g-old'), guide=$('g-guide'), guideOld=$('g-guide-old');
+  var eq=$('g-eq'), eqOld=$('g-eq-old'), dlab=$('g-dlab'), slab=$('g-slab'), oldlab=$('g-oldlab');
+  var p1=$('g-p1'), q1=$('g-q1'), p2=$('g-p2'), q2=$('g-q2');
+  var head=$('demo-headline'), market=$('demo-market'), count=$('demo-count'), out=$('demo-out'), next=$('demo-next'), cap=$('demo-cap');
+  var opts=[].slice.call(root.querySelectorAll('.demo-opts button'));
+  var cur=0, solved=false;
+
+  var esc=function(t){ return String(t).replace(/[&<>"]/g,function(ch){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]; }); };
+  var show=function(el,on){ el.style.display=on?'':'none'; };
+  var setLine=function(el,c){ el.setAttribute('x1',c[0]); el.setAttribute('y1',c[1]); el.setAttribute('x2',c[2]); el.setAttribute('y2',c[3]); };
+  var place=function(el,x,y){ el.setAttribute('x',x.toFixed(1)); el.setAttribute('y',y.toFixed(1)); };
+  var moved=function(c,dx){ return [c[0]+dx,c[1],c[2]+dx,c[3]]; };
+  /* where two curves cross: the equilibrium */
+  var cross=function(a,b){
+    var den=(a[0]-a[2])*(b[1]-b[3])-(a[1]-a[3])*(b[0]-b[2]);
+    var u=a[0]*a[3]-a[1]*a[2], v=b[0]*b[3]-b[1]*b[2];
+    return [(u*(b[0]-b[2])-(a[0]-a[2])*v)/den, (u*(b[1]-b[3])-(a[1]-a[3])*v)/den];
+  };
+  var draw=function(d,s){
+    setLine(dl,d); setLine(sl,s);
+    var p=cross(d,s);
+    eq.setAttribute('cx',p[0].toFixed(1)); eq.setAttribute('cy',p[1].toFixed(1));
+    guide.setAttribute('d','M46 '+p[1].toFixed(1)+' H'+p[0].toFixed(1)+' V218');
+    place(dlab,d[2]+6,d[3]+5); place(slab,s[2]+6,s[3]+5);
+    return p;
+  };
+
+  var reset=function(){
+    var p=draw(BASE.D,BASE.S);
+    dlab.textContent='D1'; slab.textContent='S1';
+    [old,guideOld,eqOld,oldlab,p2,q2].forEach(function(el){ show(el,false); });
+    eq.setAttribute('class','g-eq');
+    p1.setAttribute('class','g-tick'); q1.setAttribute('class','g-tick');
+    place(p1,40,p[1]+5); place(q1,p[0],236);
+    svg.setAttribute('aria-label','A supply and demand graph at equilibrium, before the news.');
+    cap.textContent='Start: the market at equilibrium.';
+  };
+
+  var load=function(i){
+    cur=i; solved=false;
+    var r=ROUNDS[i];
+    head.textContent=r.headline; market.textContent='Market: '+r.market; count.textContent=(i+1)+' of '+ROUNDS.length;
+    out.innerHTML=''; out.classList.remove('show'); next.hidden=true;
+    opts.forEach(function(b){ b.disabled=false; b.classList.remove('wrong','right'); });
+    reset();
+  };
+
+  var say=function(html){ out.innerHTML=html; out.classList.remove('show'); void out.offsetWidth; out.classList.add('show'); };
+
+  var shift=function(c,dir,done){
+    var base=BASE[c], start=null, dur=reduce?0:950;
+    var p0=cross(BASE.D,BASE.S);
+    setLine(old,base); old.setAttribute('class','g-ln g-old '+(c==='D'?'g-d':'g-s')); show(old,true);
+    guideOld.setAttribute('d',guide.getAttribute('d')); show(guideOld,true);
+    eqOld.setAttribute('cx',p0[0].toFixed(1)); eqOld.setAttribute('cy',p0[1].toFixed(1)); show(eqOld,true);
+    oldlab.textContent=c+'1'; oldlab.setAttribute('class','g-lab faint'+(c==='S'?' s':'')); place(oldlab,base[2]+6,base[3]+5); show(oldlab,true);
+    p1.setAttribute('class','g-tick faint'); q1.setAttribute('class','g-tick faint');
+    (c==='D'?dlab:slab).textContent=c+'2';
+    eq.setAttribute('class','g-eq new');
+    var frame=function(t){
+      if(start===null) start=t;
+      var k=dur?Math.min(1,(t-start)/dur):1, e=1-Math.pow(1-k,3);
+      var m=moved(base,dir*SHIFT*e);
+      var p=draw(c==='D'?m:BASE.D, c==='S'?m:BASE.S);
+      if(k<1){ requestAnimationFrame(frame); return; }
+      place(p2,40,p[1]+5); place(q2,p[0],236); show(p2,true); show(q2,true);
+      done(p0,p);
+    };
+    if(dur) requestAnimationFrame(frame); else frame(0);
+  };
+
+  opts.forEach(function(b){
+    b.addEventListener('click',function(){
+      if(solved) return;
+      var r=ROUNDS[cur], c=b.getAttribute('data-c'), d=+b.getAttribute('data-d');
+      if(c===r.c && d===r.d){
+        solved=true; b.classList.add('right');
+        opts.forEach(function(o){ o.disabled=true; });
+        shift(c,d,function(p0,p){
+          var priceUp=p[1]<p0[1], qtyUp=p[0]>p0[0];
+          var words=(c==='D'?'Demand':'Supply')+' shifted '+(d>0?'right':'left')+'. Price went '+(priceUp?'up':'down')+' and quantity went '+(qtyUp?'up':'down')+'.';
+          say('<b>Right.</b> '+esc(r.why)+'<span class="demo-moves"><span>Price '+(priceUp?'▲ up':'▼ down')+'</span><span>Quantity '+(qtyUp?'▲ up':'▼ down')+'</span></span>');
+          svg.setAttribute('aria-label','The graph after the news. '+words);
+          cap.textContent=words+' The dashed line is where it started.';
+          next.textContent=(cur===ROUNDS.length-1)?'Play again':'Next headline';
+          next.hidden=false;
+          next.focus({preventScroll:true});
+        });
+      } else {
+        b.classList.add('wrong'); b.disabled=true;
+        if(c===r.c) say('<b>Right curve, wrong direction.</b> Does the news mean more or less at every price?');
+        else say('<b>Not quite.</b> '+esc(r.hint));
+      }
+    });
+  });
+  next.addEventListener('click',function(){
+    load((cur+1)%ROUNDS.length);
+    opts[0].focus({preventScroll:true});
+  });
+  load(0);
 })();
 </script>
 </body>

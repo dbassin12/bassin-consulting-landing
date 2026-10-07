@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bassin Consulting | AI for schools and ed-tech teams</title>
-<meta name="description" content="AI training and tools for schools, and a working teacher's eye for ed-tech teams. From David Bassin, who builds AI tools that real people use and teaches every day.">
+<meta name="description" content="AI training and tools for schools, and a working teacher's eye for ed-tech teams. From David Bassin, a high school teacher who builds the learning tools his students use.">
 <meta name="author" content="David Bassin">
 <link rel="canonical" href="https://www.bassinconsulting.com/">
 <meta property="og:type" content="website">
@@ -29,192 +29,383 @@
 }
 </script>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='15' fill='%232A2530'/><circle cx='16' cy='16' r='13' fill='none' stroke='%23C07842' stroke-width='1.5'/><text x='16' y='21' font-size='16' font-weight='800' font-family='sans-serif' text-anchor='middle' fill='%23FDFCF9'>B</text></svg>" type="image/svg+xml">
+<script>(function(r){r.className+=' js';setTimeout(function(){if(!window.__bc)r.className+=' no-mo'},2500)})(document.documentElement)</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
   --cream:#FDFCF9; --linen:#F7F3EE; --plum:#2A2530; --copper:#C07842; --copper-light:#D49A68;
-  --driftwood:#8E857E; --lavender:#F3F0F6; --ink:#4A4450; --line:#E5DBCF;
+  --driftwood:#8E857E; --lavender:#F3F0F6; --ink:#4A4450; --line:#E5DBCF; --line-2:#D6C8B8;
+  --copper-ink:#9C5B29;
   --display:'Sora','DM Sans',ui-sans-serif,system-ui,sans-serif;
   --body:'DM Sans',ui-sans-serif,system-ui,sans-serif;
-  --wrap:1140px;
+  --ease:cubic-bezier(.2,.7,.2,1); --pen:cubic-bezier(.6,0,.3,1);
+  --gutter:20px; --nav-h:60px; --sec:80px;
+  --arrow:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%232A2530' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2.5 8h10M8.5 4l4 4-4 4'/%3E%3C/svg%3E");
+  --arrow-copper:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%239C5B29' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2.5 8h10M8.5 4l4 4-4 4'/%3E%3C/svg%3E");
+  --arrow-cream:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23FDFCF9' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2.5 8h10M8.5 4l4 4-4 4'/%3E%3C/svg%3E");
+  --arrow-light:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23D49A68' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2.5 8h10M8.5 4l4 4-4 4'/%3E%3C/svg%3E");
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{margin:0;background:var(--cream);color:var(--plum);font-family:var(--body);font-size:17px;line-height:1.7}
-img{max-width:100%;height:auto;display:block}
+@media (min-width:768px){:root{--gutter:32px; --nav-h:68px; --sec:104px}}
+@media (min-width:1024px){:root{--gutter:40px; --sec:128px}}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; scroll-padding-top:calc(var(--nav-h) + 16px)}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0; padding-top:var(--nav-h); background:var(--cream); color:var(--plum); font-family:var(--body); font-size:17px; line-height:1.7; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale}
+img{max-width:100%; height:auto; display:block}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--copper);outline-offset:3px;border-radius:4px}
-.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
-h1,h2,h3{font-family:var(--display);color:var(--plum);margin:0}
-h2{font-size:clamp(28px,3.4vw,38px);font-weight:700;line-height:1.18;letter-spacing:-.01em}
-h3{font-size:20px;font-weight:700;line-height:1.3}
-p{margin:0 0 1em}
-.label{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--copper);margin:0 0 14px}
-.lede{font-size:19px;color:var(--ink);max-width:62ch}
+:focus-visible{outline:3px solid var(--copper); outline-offset:3px; border-radius:4px}
+::selection{background:#F0DDCB; color:var(--plum)}
+.wrap{max-width:calc(1120px + 2 * var(--gutter)); margin:0 auto; padding:0 var(--gutter)}
+h1,h2,h3,h4{font-family:var(--display); color:var(--plum); margin:0; text-wrap:balance}
+h2{font-size:clamp(28px, 4.1vw, 48px); font-weight:700; line-height:1.12; letter-spacing:-.025em}
+h3{font-size:20px; font-weight:700; line-height:1.3; letter-spacing:-.012em}
+p{margin:0 0 1em; text-wrap:pretty}
+.label{font-family:var(--display); font-weight:700; font-size:12.5px; line-height:1.4; letter-spacing:.2em; text-transform:uppercase; color:var(--copper-ink); margin:0 0 16px}
+.lede{font-size:18px; line-height:1.65; color:var(--ink); max-width:60ch}
 .muted{color:var(--ink)}
-.skip{position:absolute;left:-999px;top:8px;background:var(--plum);color:var(--cream);padding:8px 14px;border-radius:8px;z-index:20}
+.nw{white-space:nowrap}
+.skip{position:absolute; left:-999px; top:12px; z-index:60; background:var(--plum); color:var(--cream); padding:10px 16px; border-radius:8px; font-family:var(--display); font-weight:600; font-size:15px; text-decoration:none}
 .skip:focus{left:12px}
 
-.nav{background:var(--plum);color:var(--cream);position:sticky;top:0;z-index:10}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:66px}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--cream)}
-.mark{height:32px;width:32px;border-radius:50%;background:var(--plum);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 1.5px var(--copper);flex:none}
-.mark span{font-family:var(--display);font-weight:800;color:var(--cream);font-size:14px}
-.wordmark{font-family:var(--display);font-weight:800;letter-spacing:.3em;font-size:14px;white-space:nowrap}
-.nav ul{list-style:none;margin:0;padding:0;display:flex;gap:26px;align-items:center}
-.nav ul a{font-family:var(--display);font-size:14px;font-weight:600;text-decoration:none;color:#E9E3EC;white-space:nowrap}
-.nav ul a:hover{color:var(--copper-light)}
-.nav .navbtn{display:inline-block;background:var(--copper-light);color:var(--plum);padding:9px 16px;border-radius:8px}
-.nav .navbtn:hover{background:var(--cream);color:var(--plum)}
+/* ---------- nav ---------- */
+.nav{position:fixed; top:0; left:0; right:0; z-index:40; background:var(--plum); color:var(--cream); transition:transform .32s var(--ease), box-shadow .32s var(--ease)}
+.nav .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px; height:var(--nav-h); transition:height .32s var(--ease)}
+.nav.tight{box-shadow:0 12px 32px -20px rgba(42,37,48,.6)}
+.nav.away{transform:translateY(-100%); box-shadow:none}
+.nav :focus-visible{outline-color:var(--copper-light)}
+.nav .progress{position:absolute; left:0; right:0; bottom:0; height:2px; background:var(--copper-light); transform:scaleX(0); transform-origin:0 50%; pointer-events:none}
+.brand{display:flex; align-items:center; gap:11px; min-height:44px; text-decoration:none; color:var(--cream)}
+.mark{height:30px; width:30px; border-radius:50%; background:var(--plum); display:flex; align-items:center; justify-content:center; box-shadow:inset 0 0 0 1.5px var(--copper); flex:none}
+.mark span{font-family:var(--display); font-weight:800; color:var(--cream); font-size:13px; line-height:1}
+.wordmark{font-family:var(--display); font-weight:800; letter-spacing:.24em; font-size:11.5px; line-height:1; white-space:nowrap}
+.nav ul{list-style:none; margin:0; padding:0; display:flex; gap:2px; align-items:center}
+.nav ul a{position:relative; display:inline-flex; align-items:center; min-height:44px; padding:0 12px; font-family:var(--display); font-size:14px; font-weight:600; line-height:1; text-decoration:none; color:#E6E0EA; white-space:nowrap; transition:color .2s var(--ease)}
+.nav ul a:not(.navbtn)::after{content:""; position:absolute; left:12px; right:12px; bottom:9px; height:1.5px; border-radius:2px; background:var(--copper-light); transform:scaleX(0); transform-origin:0 50%; transition:transform .35s var(--ease)}
+.nav ul a:not(.navbtn):hover{color:#fff}
+.nav ul a.on{color:var(--copper-light)}
+.nav ul a.on::after{transform:scaleX(1)}
+.nav .navbtn{background:var(--copper-light); color:var(--plum); padding:0 16px; border-radius:8px; transition:background-color .2s var(--ease)}
+.nav .navbtn:hover{background:var(--cream)}
+@media (max-width:767px){
+  .nav ul li.hide-md,.nav ul li.hide-sm{display:none}
+  .nav .progress{display:none}
+}
+@media (min-width:768px){
+  .nav .wrap{gap:24px}
+  .nav.tight .wrap{height:58px}
+  .mark{height:32px; width:32px}
+  .mark span{font-size:14px}
+  .wordmark{font-size:13px; letter-spacing:.3em}
+  .nav ul{gap:4px}
+  .nav .navbtn{margin-left:10px; min-height:44px}
+}
+@media (max-width:389px){.nav .wrap{gap:10px} .wordmark{font-size:11px; letter-spacing:.17em} .nav .navbtn{padding:0 13px}}
+@media (max-width:339px){.wordmark{display:none}}
 
-.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:12px 22px;border-radius:8px;font-family:var(--display);font-weight:700;font-size:19px;text-decoration:none;border:2px solid transparent;cursor:pointer}
-.btn-primary{background:var(--copper);color:#fff}
-.btn-primary:hover{background:var(--copper-light);color:var(--plum)}
-.btn-ghost{border-color:var(--plum);color:var(--plum);background:transparent}
-.btn-ghost:hover{background:var(--plum);color:var(--cream)}
-.btn[disabled]{opacity:.7;cursor:wait}
-.textlink{font-family:var(--display);font-weight:700;font-size:16px;color:var(--plum);text-decoration:underline;text-decoration-color:var(--copper);text-decoration-thickness:2px;text-underline-offset:5px}
-.textlink:hover{color:var(--copper)}
+/* ---------- buttons and links ---------- */
+.btns{display:grid; gap:12px; margin-top:32px}
+.btn{display:inline-flex; align-items:center; justify-content:center; min-height:54px; padding:0 26px; border-radius:8px; font-family:var(--display); font-weight:700; font-size:19px; line-height:1; letter-spacing:-.005em; text-decoration:none; white-space:nowrap; border:1.5px solid transparent; cursor:pointer; transition:background-color .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease), box-shadow .25s var(--ease), transform .25s var(--ease)}
+.btn-primary{background:var(--copper); color:#fff}
+.btn-primary:hover{background:#A9652F; box-shadow:0 12px 24px -14px rgba(156,91,41,.85)}
+.btn-ghost{border-color:var(--plum); color:var(--plum); background:transparent}
+.btn-ghost:hover{background:var(--plum); color:var(--cream)}
+.btn:active{transform:translateY(1px)}
+.btn[disabled]{opacity:.7; cursor:wait; transform:none; box-shadow:none}
+@media (min-width:480px){.btns{display:flex; flex-wrap:wrap}}
+@media (hover:hover) and (prefers-reduced-motion:no-preference){.btn:hover{transform:translateY(-1px)}}
 
-.hero{padding:72px 0 84px}
-.hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:center}
-.hero h1{font-size:clamp(38px,5.2vw,62px);font-weight:800;line-height:1.06;letter-spacing:-.02em;max-width:13ch}
-.hero .lede{margin-top:22px}
-.tagline{margin:26px 0 0;padding-left:16px;border-left:3px solid var(--copper);font-family:var(--display);font-weight:600;font-size:17px;line-height:1.5;color:var(--plum);max-width:44ch}
-.agenda{background:var(--linen);border:1px solid var(--line);border-radius:14px;padding:26px 26px 18px}
-.agenda-head{border-bottom:2px solid var(--copper);padding-bottom:12px;margin-bottom:6px}
-.agenda-head h2{font-size:22px}
-.agenda-head p{margin:4px 0 0;font-size:15px;color:var(--ink)}
-.agenda ol{list-style:none;margin:0;padding:0}
-.agenda li{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 2px;border-bottom:1px solid var(--line);font-size:17px;font-weight:500}
+.textlink,a.inline{display:inline-flex; align-items:center; min-height:44px; text-decoration:underline; text-decoration-color:var(--copper); text-decoration-thickness:1.5px; text-underline-offset:6px; transition:color .2s var(--ease), text-decoration-color .2s var(--ease)}
+.textlink{font-family:var(--display); font-weight:700; font-size:16px; color:var(--plum)}
+.textlink::after,a.inline::after{content:""; flex:none; width:15px; height:15px; margin-left:8px; background:var(--arrow) no-repeat center/contain; transition:transform .25s var(--ease)}
+.textlink:hover,a.inline:hover{color:var(--copper-ink); text-decoration-color:var(--copper-ink)}
+.textlink:hover::after,a.inline:hover::after{background-image:var(--arrow-copper); transform:translateX(3px)}
+a.inline{display:flex; width:fit-content; margin:6px 0 -8px; font-weight:700; color:var(--plum); white-space:nowrap}
+.buyer.dark a.inline{color:var(--cream); text-decoration-color:var(--copper-light)}
+.buyer.dark a.inline::after{background-image:var(--arrow-cream)}
+.buyer.dark a.inline:hover{color:var(--copper-light); text-decoration-color:var(--copper-light)}
+.buyer.dark a.inline:hover::after{background-image:var(--arrow-light)}
+.links{display:flex; flex-wrap:wrap; gap:0 28px}
+
+/* ---------- hero ---------- */
+.hero{padding:44px 0 76px}
+.hero-grid{display:grid; gap:52px}
+.hero h1{font-size:clamp(32px, 10vw, 44px); font-weight:800; line-height:1.04; letter-spacing:-.03em; max-width:13ch}
+.hero .label{margin-bottom:18px}
+.hero .lede{margin:24px 0 0}
+.tagline{margin:28px 0 0; padding:3px 0 3px 18px; border-left:2px solid var(--copper); font-family:var(--display); font-weight:600; font-size:17px; line-height:1.5; color:var(--plum); max-width:48ch; text-wrap:balance}
+.pen{position:relative; white-space:nowrap}
+.pen svg{position:absolute; left:-.02em; bottom:-.15em; width:calc(100% + .06em); height:.22em; overflow:visible; pointer-events:none}
+.pen path{fill:none; stroke:var(--copper); stroke-width:2.8; stroke-linecap:round; stroke-dasharray:1 1.2; stroke-dashoffset:0}
+.agenda{background:var(--linen); border:1px solid var(--line); border-radius:18px; padding:24px 22px 20px; box-shadow:0 1px 0 rgba(42,37,48,.03),0 32px 64px -44px rgba(42,37,48,.32)}
+.agenda-head{border-bottom:2px solid var(--copper); padding-bottom:16px; margin-bottom:4px}
+.agenda-head h2{font-size:22px; line-height:1.25; letter-spacing:-.015em}
+.agenda-head p{margin:6px 0 0; font-size:16px; line-height:1.5; color:var(--ink); text-wrap:balance}
+.agenda ol{list-style:none; margin:0; padding:0}
+.agenda li{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 0; border-bottom:1px solid var(--line); font-size:16.5px; font-weight:500; line-height:1.45}
 .agenda li:last-child{border-bottom:0}
-.agenda .time{flex:none;font-family:var(--display);font-size:13px;font-weight:700;background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
-.agenda .time.exit{background:var(--plum);color:var(--cream);border-color:var(--plum)}
-.agenda-note{font-size:15px;color:var(--ink);margin:12px 2px 0}
+.agenda li > span:first-child{text-wrap:balance}
+.agenda .time{flex:none; font-family:var(--display); font-size:12.5px; font-weight:600; line-height:1; letter-spacing:.02em; font-variant-numeric:tabular-nums; background:var(--cream); border:1px solid var(--line-2); border-radius:999px; padding:7px 11px}
+.agenda .time.exit{background:var(--plum); color:var(--cream); border-color:var(--plum)}
+.agenda-note{font-size:16px; line-height:1.55; color:var(--ink); margin:12px 0 0; padding-top:14px; border-top:1px solid var(--line)}
+@media (min-width:768px){
+  .hero{padding:88px 0 112px}
+  .hero h1{font-size:clamp(52px, 7vw, 64px)}
+  .hero .lede{font-size:19.5px; margin-top:28px}
+  .agenda{max-width:560px; padding:32px 32px 26px}
+}
+@media (min-width:1024px){
+  .hero{padding:96px 0 128px}
+  .hero-grid{grid-template-columns:1.18fr 1fr; gap:64px; align-items:center}
+  .hero h1{font-size:clamp(50px, 5.2vw, 66px)}
+  .agenda{max-width:none}
+}
 
-section{padding:88px 0}
-.alt{background:var(--linen)}
-.section-head{max-width:720px;margin-bottom:44px}
-.section-head .lede{margin-top:16px}
+/* ---------- sections ---------- */
+section{padding:var(--sec) 0}
+.alt{background:var(--linen); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+.section-head{max-width:760px; margin-bottom:40px}
+.section-head .lede{margin:18px 0 0}
+@media (min-width:768px){.section-head{margin-bottom:60px} .section-head .lede{font-size:19.5px}}
 
-.problems{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.problems div{border-top:2px solid var(--copper);padding-top:18px}
-.problems h3{font-size:19px;margin-bottom:8px}
-.problems p{margin:0;color:var(--ink);font-size:16px}
+/* problems */
+.problems{display:grid; gap:36px}
+.problems > div{position:relative; padding-top:22px; border-top:1px solid var(--line-2)}
+.problems > div::before{content:""; position:absolute; left:-2px; top:-6px; width:68px; height:11px; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 68 11' preserveAspectRatio='none'%3E%3Cpath d='M2 7.4C14 5.4 27 4.3 40 4.7S58 6.6 66 3.4' fill='none' stroke='%23C07842' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat 0 0/100% 100%}
+.problems h3{font-size:20px; margin-bottom:10px}
+.problems p{margin:0; color:var(--ink); font-size:16.5px}
+@media (min-width:900px){.problems{grid-template-columns:repeat(3,1fr); gap:40px}}
 
-.buyers{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}
-.buyer{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:28px 28px 10px}
-.buyer.dark{background:var(--plum);border-color:var(--plum);color:#E9E3EC}
+/* offers */
+.buyers{display:grid; gap:20px}
+.buyer{position:relative; background:var(--cream); border:1px solid var(--line); border-radius:20px; padding:28px 22px 14px; transition:border-color .35s var(--ease), box-shadow .35s var(--ease)}
+.buyer:hover,.buyer:focus-within{border-color:var(--line-2); box-shadow:0 1px 0 rgba(42,37,48,.03),0 30px 60px -38px rgba(42,37,48,.34)}
+.buyer.dark{background:var(--plum); border-color:var(--plum); color:#E9E3EC; box-shadow:inset 0 1px 0 rgba(255,255,255,.05)}
+.buyer.dark:hover,.buyer.dark:focus-within{border-color:#3E3746; box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 30px 60px -34px rgba(42,37,48,.6)}
 .buyer.dark .label{color:var(--copper-light)}
-.buyer-h{font-size:24px;line-height:1.25;margin-bottom:8px}
+.buyer-h{font-size:24px; line-height:1.22; letter-spacing:-.02em; margin-bottom:16px}
 .buyer.dark .buyer-h,.buyer.dark h4{color:var(--cream)}
-.olist{list-style:none;margin:0;padding:0}
-.olist li{padding:16px 0;border-top:1px solid var(--line)}
-.buyer.dark .olist li{border-top-color:#4A4252}
-.olist h4{font-family:var(--display);font-size:18px;font-weight:700;margin:0 0 4px;color:var(--plum)}
-.olist p{margin:0;color:var(--ink);font-size:16px}
+.olist{list-style:none; margin:0; padding:0}
+.olist li{padding:20px 0; border-top:1px solid var(--line)}
+.buyer.dark .olist li{border-top-color:#463F4E}
+.olist h4{font-family:var(--display); font-size:18px; font-weight:700; line-height:1.35; letter-spacing:-.01em; margin:0 0 6px; color:var(--plum)}
+.olist p{margin:0; color:var(--ink); font-size:16.5px; line-height:1.65}
 .buyer.dark .olist p{color:#D9D2DE}
-.note-line{margin:28px 0 0;font-size:17px;color:var(--ink);border-left:3px solid var(--copper);padding-left:14px;max-width:70ch}
+.note-line{margin:36px 0 0; font-size:17px; color:var(--ink); border-left:2px solid var(--copper); padding:2px 0 2px 16px; max-width:70ch}
+@media (min-width:768px){
+  .buyer{padding:40px 40px 22px}
+  .buyer-h{font-size:28px}
+}
+@media (min-width:900px){.buyers{grid-template-columns:1fr 1fr; gap:24px; align-items:stretch} .buyer-h{max-width:14.5ch}}
 
-/* call flow sample */
-.callflow{background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:22px 22px 16px}
-.flow{list-style:none;margin:0;padding:0;display:grid;gap:16px}
-.flow li{display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start}
-.flow .num{width:32px;height:32px;border-radius:50%;border:2px solid var(--copper);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:14px;background:var(--cream)}
-.flow .step-title{font-family:var(--display);font-weight:700;font-size:16px;line-height:1.35;margin:5px 0 8px;color:var(--plum)}
-.callflow .flow .quote{margin:0;font-style:italic;color:var(--ink);font-size:16px;background:var(--linen);border-radius:8px;padding:10px 14px}
-.fields{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;margin:0;font-size:15px;background:var(--linen);border-radius:8px;padding:10px 14px}
-.fields dt{font-family:var(--display);font-weight:700}
-.fields dd{margin:0;color:var(--ink)}
-.callflow .deal{margin:0;background:var(--plum);color:var(--cream);border-radius:8px;padding:10px 14px;font-family:var(--display);font-weight:600;font-size:15px}
-.callflow .deal span{color:var(--copper-light)}
-.callflow figcaption{margin-top:14px}
-.links{display:flex;flex-wrap:wrap;gap:10px 22px}
-
+/* work */
 figure{margin:0}
-.shot{border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--cream)}
-figcaption{font-size:15px;color:var(--ink);margin-top:10px}
-.work{display:grid;grid-template-columns:repeat(6,1fr);gap:28px}
-.work .w{grid-column:span 3}
-.work .w.wide{grid-column:span 6;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
-.work h3{margin-top:16px}
-.work .w.wide h3{margin-top:0;font-size:24px}
-.work p{color:var(--ink);margin:6px 0 10px;font-size:16px}
-.work .w.wide p{font-size:17px}
-.films3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.sheets{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+figcaption{font-size:16px; color:var(--ink); margin-top:12px; text-wrap:balance}
+.shot{border-radius:14px; overflow:hidden; border:1px solid var(--line); background:var(--linen); aspect-ratio:16/10}
+.shot img{width:100%; height:100%; object-fit:cover}
+.work{display:grid; gap:64px}
+.work .w.wide{display:grid; gap:24px}
+.work .w.wide.text-first > div{order:-1}
+.work h3{margin-top:20px; font-size:21px}
+.work .w.wide h3{margin-top:0; font-size:clamp(24px, 2.6vw, 30px); line-height:1.2; letter-spacing:-.02em}
+.work .w > p,.work .w > div > p{color:var(--ink); margin:8px 0 6px; font-size:16.5px}
+.work .w.wide > div > p{font-size:17.5px; margin-top:12px}
+.films3{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+.films3 .shot{aspect-ratio:16/9; border-color:rgba(42,37,48,.16); background:#1B171F}
+.films3 .shot:first-child{grid-column:1 / -1}
+.films3 .shot img{transition:transform 1.2s var(--ease)}
+.sheets{display:flex; align-items:center; justify-content:center; gap:12px; aspect-ratio:16/10; padding:5% 7%; background:var(--linen); border:1px solid var(--line); border-radius:14px}
+.sheets .shot{flex:1 1 0; min-width:0; aspect-ratio:855/700; border-radius:4px; border:1px solid #E4DDD3; background:var(--cream); box-shadow:0 1px 2px rgba(42,37,48,.06),0 14px 26px -18px rgba(42,37,48,.45)}
+.sheets .shot img{object-position:50% 0}
+@media (min-width:768px){
+  .work{grid-template-columns:1fr 1fr; gap:80px 40px}
+  .work .w.wide{grid-column:1 / -1}
+  .films3{grid-template-columns:2fr 1fr}
+  .films3 .shot:first-child{grid-column:1; grid-row:1 / span 2; aspect-ratio:auto; position:relative}
+  .films3 .shot:first-child img{position:absolute; inset:0}
+}
+@media (min-width:1024px){
+  .work .w.wide{grid-template-columns:1.25fr 1fr; gap:56px; align-items:center}
+  .work .w.wide.text-first{grid-template-columns:1fr 1.12fr}
+}
+@media (min-width:768px) and (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  .films3 .shot:hover img{transform:scale(1.045)}
+}
+@media (min-width:768px) and (prefers-reduced-motion:no-preference){
+  .work .w.wide:first-child:focus-within .films3 .shot img{transform:scale(1.045)}
+}
 
-.steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;counter-reset:s}
-.steps li{counter-increment:s;background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:24px}
-.alt .steps li{background:var(--cream)}
-.steps li::before{content:counter(s);display:grid;place-items:center;width:36px;height:36px;border-radius:50%;border:2px solid var(--copper);font-family:var(--display);font-weight:800;font-size:15px;margin-bottom:14px}
-.steps h3{font-size:19px;margin-bottom:6px}
-.steps p{margin:0;color:var(--ink);font-size:16px}
-.who{margin-top:36px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.who span.k{font-family:var(--display);font-weight:700;font-size:15px;margin-right:6px}
-.who span.c{font-size:15px;font-weight:500;background:var(--lavender);border-radius:999px;padding:5px 12px}
+/* call system card */
+.callflow{display:grid; grid-template-columns:1fr auto; align-items:center; column-gap:12px; background:var(--cream); border:1px solid var(--line); border-radius:18px; padding:22px 18px 18px; box-shadow:0 1px 0 rgba(42,37,48,.03),0 32px 64px -46px rgba(42,37,48,.38)}
+.callflow .flow{grid-column:1 / -1}
+.flow{list-style:none; margin:0; padding:0; display:grid; gap:18px}
+.flow li{display:grid; grid-template-columns:32px 1fr; gap:14px; align-items:start}
+.flow .num{width:32px; height:32px; border-radius:50%; border:1.5px solid var(--copper); display:grid; place-items:center; font-family:var(--display); font-weight:700; font-size:14px; line-height:1; background:var(--cream); color:var(--plum); transition:border-color .3s var(--ease), color .3s var(--ease)}
+.flow .step-title{display:flex; align-items:center; min-height:32px; font-family:var(--display); font-weight:700; font-size:16px; line-height:1.35; margin:0 0 8px; color:var(--plum); text-wrap:balance}
+.callflow .flow .quote{margin:0; font-style:italic; color:var(--ink); font-size:16px; line-height:1.6; background:var(--linen); border-radius:10px; padding:12px 16px}
+.fields{display:grid; grid-template-columns:auto 1fr; gap:6px 18px; margin:0; font-size:16px; line-height:1.5; background:var(--linen); border-radius:10px; padding:12px 16px}
+.fields dt{font-family:var(--display); font-weight:600; font-size:15px}
+.fields dd{margin:0; color:var(--ink)}
+.callflow .deal{margin:0; background:var(--plum); color:var(--cream); border-radius:10px; padding:12px 16px; font-family:var(--display); font-weight:600; font-size:16px; line-height:1.45}
+.callflow .deal span{color:var(--copper-light)}
+.callflow .deal .amt{white-space:nowrap}
+.callflow .flow .quote .line{display:block}
+.callflow .flow .quote .line+.line{margin-top:8px}
+.callflow .flow .quote b{font-style:normal; font-family:var(--display); font-weight:600; font-size:14px; color:var(--plum); margin-right:2px}
+@media (max-width:767px){.callflow .deal .sep{display:none} .callflow .deal .amt{display:block}}
+.callflow figcaption{margin-top:16px}
+.replay{display:none; align-items:center; gap:7px; margin-top:16px; min-height:44px; padding:0 4px; background:none; border:0; border-radius:6px; font-family:var(--display); font-weight:700; font-size:12.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--copper-ink); cursor:pointer; transition:color .2s var(--ease)}
+.replay svg{width:14px; height:14px; transition:transform .5s var(--ease)}
+.replay:hover{color:var(--plum)}
+.replay:hover svg{transform:rotate(-200deg)}
+.callflow.seq .replay{display:inline-flex}
+@media (min-width:768px){.callflow{padding:30px 30px 22px}}
+@media (max-width:767px){.callflow .replay{display:none}}
 
-.about{display:grid;grid-template-columns:280px 1fr;gap:48px;align-items:start}
-.about img{border-radius:14px;border:1px solid var(--line)}
+/* how it works */
+.steps{list-style:none; padding:0; margin:0; display:grid; gap:40px; counter-reset:s; --gap:40px}
+.steps li{counter-increment:s; position:relative; display:grid; grid-template-columns:44px 1fr; column-gap:18px}
+.steps li::before{content:counter(s); grid-row:1 / span 2; display:grid; place-items:center; width:44px; height:44px; border-radius:50%; border:1.5px solid var(--copper); background:var(--cream); font-family:var(--display); font-weight:700; font-size:15px; line-height:1; color:var(--plum); transition:border-color .35s var(--ease), color .35s var(--ease)}
+.steps li:not(:last-child)::after{content:""; position:absolute; left:19px; top:52px; bottom:calc(8px - var(--gap)); width:6px; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 100' preserveAspectRatio='none'%3E%3Cpath d='M3 1C2.2 30 3.9 62 3 99' fill='none' stroke='%23C07842' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat 0 0/100% 100%}
+.steps h3{grid-column:2; font-size:20px; margin:10px 0 8px}
+.steps p{grid-column:2; margin:0; color:var(--ink); font-size:16.5px}
+.who{margin-top:56px; display:flex; flex-wrap:wrap; gap:10px; align-items:center}
+.who span.k{flex-basis:100%; font-family:var(--display); font-weight:600; font-size:16px; margin:0 0 2px}
+.who span.c{font-size:16px; font-weight:500; line-height:1.3; background:var(--lavender); border:1px solid #E8E2EE; border-radius:999px; padding:7px 14px}
+@media (min-width:768px){
+  .steps{grid-template-columns:repeat(3,1fr); gap:40px}
+  .steps li{display:block}
+  .steps li::before{margin-bottom:24px}
+  .steps h3{margin:0 0 8px}
+  .steps li:not(:last-child)::after{left:58px; right:calc(14px - var(--gap)); top:17px; bottom:auto; width:auto; height:10px; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 10' preserveAspectRatio='none'%3E%3Cpath d='M1 5.8C40 3.9 86 6.3 128 4.8S182 4.4 199 5.2' fill='none' stroke='%23C07842' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E")}
+}
 
-.contact{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start}
-form{background:var(--linen);border:1px solid var(--line);border-radius:14px;padding:26px}
-.field{margin-bottom:16px}
-label{display:block;font-family:var(--display);font-weight:700;font-size:15px;margin-bottom:6px}
-label .opt{font-weight:400;color:var(--ink)}
-input,textarea{width:100%;font:inherit;font-size:16px;color:var(--plum);background:var(--cream);border:1.5px solid var(--driftwood);border-radius:8px;padding:12px 14px}
-input:focus,textarea:focus{outline:none;border-color:var(--copper);box-shadow:0 0 0 3px rgba(192,120,66,.25)}
-input[aria-invalid="true"],textarea[aria-invalid="true"]{border-color:#9B2C2C}
-textarea{min-height:130px;resize:vertical}
-.status{margin-top:14px;font-weight:500;display:none}
+/* about */
+.about{display:grid; gap:32px}
+.about img{width:200px; border-radius:18px; border:1px solid var(--line)}
+.about h2{max-width:21ch}
+.about .lede{max-width:62ch}
+.about .muted{max-width:66ch}
+@media (min-width:768px){
+  .about{grid-template-columns:220px 1fr; gap:48px; align-items:start}
+  .about img{width:100%}
+  .about .lede{font-size:19.5px}
+}
+@media (min-width:1024px){.about{grid-template-columns:296px 1fr; gap:72px}}
+
+/* contact */
+.contact{display:grid; gap:40px}
+.contact h2{font-size:clamp(28px, 3.5vw, 42px)}
+form{background:var(--linen); border:1px solid var(--line); border-radius:20px; padding:24px 20px}
+.field{margin-bottom:20px}
+.hp{position:absolute!important; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden}
+@media print{.nav{position:absolute} body{padding-top:0} .nav .progress,.replay{display:none}}
+label{display:block; font-family:var(--display); font-weight:600; font-size:16px; line-height:1.3; margin-bottom:8px; color:var(--plum); transition:color .2s var(--ease)}
+label .opt{font-family:var(--body); font-weight:400; color:var(--ink)}
+.field:focus-within label{color:var(--copper-ink)}
+.field:focus-within label .opt{color:var(--ink)}
+input,textarea{width:100%; font:inherit; font-size:16px; line-height:1.5; color:var(--plum); background:var(--cream); border:1px solid var(--driftwood); border-radius:10px; padding:13px 15px; min-height:52px; -webkit-appearance:none; appearance:none; transition:border-color .2s var(--ease), box-shadow .2s var(--ease)}
+input:hover,textarea:hover{border-color:#6F675F}
+input:focus,textarea:focus{outline:none; border-color:var(--copper); box-shadow:0 0 0 4px rgba(192,120,66,.22)}
+input[aria-invalid="true"],textarea[aria-invalid="true"]{border-color:#9B2C2C; box-shadow:0 0 0 4px rgba(155,44,44,.1)}
+input[aria-invalid="true"]:focus,textarea[aria-invalid="true"]:focus{box-shadow:0 0 0 4px rgba(155,44,44,.24)}
+textarea{min-height:140px; resize:vertical; display:block}
+form .btn{margin-top:4px}
+@media (max-width:479px){form .btn{width:100%}}
+.status{margin:16px 0 0; font-weight:500; display:none}
 .status.show{display:block}
 .status.error{color:#9B2C2C}
-.status a{color:#9B2C2C;font-weight:700}
-.sent{display:none;background:var(--lavender);border-radius:14px;padding:28px}
+.status a{color:#9B2C2C; font-weight:700}
+.status:focus{outline:none}
+.sent{display:none; background:var(--lavender); border:1px solid #E6E0EC; border-radius:20px; padding:30px 26px}
 .sent.show{display:block}
-.sent h3{margin-bottom:6px}
-.direct{margin-top:26px;font-size:17px;color:var(--ink)}
-.direct a{font-weight:700;color:var(--plum)}
+.sent .check{display:block; width:52px; height:52px; margin:0 0 14px -4px; overflow:visible}
+.sent .check path{fill:none; stroke:var(--copper); stroke-width:3.2; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:1 1.2; stroke-dashoffset:0}
+.sent h3{margin-bottom:6px; font-size:22px}
+.sent:focus{outline:none}
+.sent:focus-visible{outline:3px solid var(--copper); outline-offset:3px}
+.direct{margin-top:28px; font-size:17px; color:var(--ink)}
+.direct a{font-weight:700; color:var(--plum); text-decoration-color:var(--copper); text-decoration-thickness:1.5px; text-underline-offset:4px; transition:color .2s var(--ease)}
+.direct a:hover{color:var(--copper-ink)}
+@media (min-width:768px){form{padding:36px} .contact .lede{font-size:19.5px}}
+@media (min-width:1024px){.contact{grid-template-columns:1fr 1.1fr; gap:72px; align-items:start}}
 
-.foot{background:var(--plum);color:#D9D2DE;padding:56px 0 40px}
-.foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:flex-start}
+/* footer */
+.foot{background:var(--plum); color:#D9D2DE; padding:64px 0 36px}
+.foot-grid{display:flex; flex-wrap:wrap; justify-content:space-between; gap:28px 40px; align-items:flex-start}
 .foot .brand{margin-bottom:10px}
-.foot .tag{font-family:var(--display);font-weight:600;color:var(--copper-light);font-size:15px;max-width:38ch;margin:0}
-.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:16px}
-.foot a{color:#EDE8F0;text-decoration:none}
-.foot a:hover{color:var(--copper-light)}
-.fine{margin-top:40px;padding-top:20px;border-top:1px solid #443D4B;font-size:15px;color:#C9C1CE}
+.foot .tag{font-family:var(--display); font-weight:600; color:var(--copper-light); font-size:15.5px; line-height:1.5; max-width:34ch; margin:0}
+.foot ul{list-style:none; margin:0; padding:0; display:grid}
+.foot ul a{display:inline-flex; align-items:center; min-height:44px; font-size:16px; color:#EDE8F0; text-decoration:none; transition:color .2s var(--ease)}
+.foot ul a:hover{color:var(--copper-light)}
+.foot :focus-visible{outline-color:var(--copper-light)}
+.fine{margin:36px 0 0; padding-top:22px; border-top:1px solid #443D4B; font-size:16px; color:#C9C1CE; text-wrap:balance}
+@media (min-width:768px){.foot{padding:80px 0 40px} .foot ul{text-align:right}}
 
-@media (max-width:980px){
-  .nav ul li.hide-md{display:none}
-  .hero-grid,.contact,.work .w.wide{grid-template-columns:1fr}
-  .problems,.steps{grid-template-columns:1fr}
-  .about{grid-template-columns:200px 1fr}
+/* ---------- motion (only when JS runs and motion is allowed) ---------- */
+@keyframes pen-draw{from{stroke-dashoffset:1.1} to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:no-preference){
+  .sent.show .check path{animation:pen-draw .6s var(--pen) .18s both}
+  .js:not(.no-mo) .hero :is(.label,h1,.lede,.tagline,.btns),.js:not(.no-mo) .agenda{opacity:0}
+  .js.go .hero :is(.label,h1,.lede,.tagline,.btns),.js.go .agenda{opacity:1; transform:none; transition:opacity .5s var(--ease) var(--d,0ms),transform .5s var(--ease) var(--d,0ms)}
+  .hero h1{--d:60ms} .hero .lede{--d:200ms} .hero .tagline{--d:270ms} .hero .btns{--d:330ms} .agenda{--d:160ms}
+  .js:not(.no-mo) .hero h1.split{opacity:1; transition:none}
+  .js:not(.no-mo) .rv{opacity:0}
+  .js:not(.no-mo) .rv.in{opacity:1; transform:none; transition:opacity .5s var(--ease) var(--d,0ms),transform .5s var(--ease) var(--d,0ms)}
 }
-@media (max-width:640px){
-  body{font-size:16px}
-  .wordmark{letter-spacing:.2em;font-size:12px}
-  .nav ul li.hide-sm{display:none}
-  .hero{padding:44px 0 56px}
-  section{padding:64px 0}
-  .buyers{grid-template-columns:1fr}
-  .buyer{padding:22px 20px 6px}
-  .work{grid-template-columns:1fr}
-  .work .w,.work .w.wide{grid-column:auto}
-  .about{grid-template-columns:1fr}
-  .about img{max-width:220px}
-  .agenda{padding:20px 18px 14px}
-  .lede{font-size:17px}
+@media (prefers-reduced-motion:no-preference) and (min-width:768px){
+  .js:not(.no-mo) .hero :is(.lede,.tagline,.btns),.js:not(.no-mo) .agenda,.js:not(.no-mo) .rv{transform:translateY(12px)}
+  .js.go .hero :is(.lede,.tagline,.btns),.js.go .agenda{transform:none}
+  .hero h1 .ln{display:block; clip-path:inset(-.3em -.6em -.14em -.6em)}
+  .hero h1 .ln-i{display:block; transform:translateY(110%)}
+  .hero h1.lines-in .ln-i{transform:none; transition:transform .5s var(--ease)}
+  .js:not(.no-mo) .pen path{stroke-dashoffset:1.1}
+  .js .pen.drawn path{stroke-dashoffset:0; transition:stroke-dashoffset .6s var(--pen)}
+  .js:not(.no-mo) .agenda li{opacity:0; transform:translateY(8px)}
+  .js:not(.no-mo) .agenda .time{opacity:0; transform:translateX(-8px) scale(.94)}
+  .js:not(.no-mo) .agenda-note{opacity:0}
+  .js.go .agenda li,.js.go .agenda .time,.js.go .agenda-note{opacity:1; transform:none; transition:opacity .4s var(--ease) var(--d),transform .45s var(--ease) var(--d)}
+  .agenda li:nth-child(1){--d:360ms} .agenda li:nth-child(2){--d:430ms} .agenda li:nth-child(3){--d:500ms} .agenda li:nth-child(4){--d:570ms} .agenda li:nth-child(5){--d:640ms}
+  .agenda li:nth-child(1) .time{--d:480ms} .agenda li:nth-child(2) .time{--d:550ms} .agenda li:nth-child(3) .time{--d:620ms} .agenda li:nth-child(4) .time{--d:690ms} .agenda li:nth-child(5) .time{--d:760ms}
+  .agenda-note{--d:860ms}
+  /* problem pen marks */
+  .js:not(.no-mo) .problems > div.rv:not(.in)::before{clip-path:inset(0 100% 0 0)}
+  .problems > div.rv.in::before{clip-path:inset(0 0 0 0); transition:clip-path .5s var(--pen) calc(var(--d,0ms) + 220ms)}
+  /* how it works: line draws from step to step */
+  .js:not(.no-mo) .steps.seq li{opacity:0; transform:translateY(10px)}
+  .js:not(.no-mo) .steps.seq li::before{border-color:var(--line-2); color:var(--driftwood)}
+  .js:not(.no-mo) .steps.seq li:not(:last-child)::after{clip-path:inset(0 100% 0 0)}
+  .js .steps.seq.in li{opacity:1; transform:none; transition:opacity .5s var(--ease),transform .5s var(--ease)}
+  .js .steps.seq.in li:nth-child(2){transition-delay:70ms} .js .steps.seq.in li:nth-child(3){transition-delay:140ms}
+  .js .steps.seq.in li::before{border-color:var(--copper); color:var(--plum)}
+  .js .steps.seq.in li:nth-child(1)::before{transition-delay:200ms}
+  .js .steps.seq.in li:nth-child(2)::before{transition-delay:760ms}
+  .js .steps.seq.in li:nth-child(3)::before{transition-delay:1320ms}
+  .js .steps.seq.in li:not(:last-child)::after{clip-path:inset(0 0 0 0)}
+  .js .steps.seq.in li:nth-child(1)::after{transition:clip-path .5s var(--pen) 300ms}
+  .js .steps.seq.in li:nth-child(2)::after{transition:clip-path .5s var(--pen) 860ms}
+  /* call system: quote, then fields, then the deal */
+  .js:not(.no-mo) .callflow.seq :is(.quote,.fields > *,.deal){opacity:0; transform:translateY(6px)}
+  .js:not(.no-mo) .callflow.seq .num{border-color:var(--line-2); color:var(--driftwood)}
+  .js .callflow.seq.play :is(.quote,.fields > *,.deal){opacity:1; transform:none; transition:opacity .4s var(--ease),transform .4s var(--ease)}
+  .js .callflow.seq.play .num{border-color:var(--copper); color:var(--plum)}
+  .js .callflow.seq.play li:nth-child(1) .num{transition-delay:0ms}
+  .js .callflow.seq.play .quote{transition-delay:120ms}
+  .js .callflow.seq.play li:nth-child(2) .num{transition-delay:560ms}
+  .js .callflow.seq.play .fields > :nth-child(-n+2){transition-delay:660ms}
+  .js .callflow.seq.play .fields > :nth-child(n+3):nth-child(-n+4){transition-delay:730ms}
+  .js .callflow.seq.play .fields > :nth-child(n+5):nth-child(-n+6){transition-delay:800ms}
+  .js .callflow.seq.play .fields > :nth-child(n+7):nth-child(-n+8){transition-delay:870ms}
+  .js .callflow.seq.play .fields > :nth-child(n+9){transition-delay:940ms}
+  .js .callflow.seq.play li:nth-child(3) .num{transition-delay:1140ms}
+  .js .callflow.seq.play .deal{transition-delay:1240ms; transition-duration:.5s}
+  .callflow.seq.reset *{transition:none !important}
 }
-@media (max-width:420px){
-  .nav .brand .wordmark{display:none}
+@media (prefers-reduced-motion:no-preference) and (max-width:767px){
+  .js:not(.no-mo) .rv{transform:none}
 }
-.nw{white-space:nowrap}
-@media (max-width:980px){.work .w.wide.text-first > div{order:-1}}
 </style>
 </head>
 <body>
@@ -238,9 +429,9 @@ textarea{min-height:130px;resize:vertical}
   <div class="wrap hero-grid">
     <div>
       <p class="label">AI for schools and <span class="nw">ed-tech</span></p>
-      <h1>AI that works in a real classroom.</h1>
-      <p class="lede">I'm David Bassin. I build AI tools that real people use, and I teach high school history and economics. For schools, I offer teacher training and classroom tools. For <span class="nw">ed-tech</span> teams, I offer a working teacher's eye on your product.</p>
-      <p class="tagline">The deliverable is not just the tool. It is the understanding.</p>
+      <h1>AI that works in a <span class="pen">real classroom<svg viewBox="0 0 300 14" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M2 10C48 6.6 98 5.2 152 5.7S252 8.4 298 3.8"/></svg></span>.</h1>
+      <p class="lede">I'm David Bassin. I teach high school history and AP Macro, and I build the learning tools my students use. For schools, I offer teacher training and classroom tools. For <span class="nw">ed-tech</span> teams, I offer a working teacher's eye on your product.</p>
+      <p class="tagline">I also teach your team how it works, so they can run it without me.</p>
       <div class="btns">
         <a class="btn btn-primary" href="https://calendly.com/davidbassin12/30min?hide_gdpr_banner=1&amp;utm_source=website&amp;utm_content=hero">Book a free call</a>
         <a class="btn btn-ghost" href="#work">See the work</a>
@@ -252,7 +443,7 @@ textarea{min-height:130px;resize:vertical}
         <p>One hour, laptops open, your own curriculum</p>
       </div>
       <ol>
-        <li><span>Make a short video or review game from a unit you teach</span><span class="time">20 min</span></li>
+        <li><span>Make a review game or a short video script from a unit you teach</span><span class="time">20 min</span></li>
         <li><span>Turn one worksheet into an IEP version</span><span class="time">10 min</span></li>
         <li><span>Check the AI's work like a grader</span><span class="time">15 min</span></li>
         <li><span>Write the AI rules for your own class</span><span class="time">10 min</span></li>
@@ -269,7 +460,7 @@ textarea{min-height:130px;resize:vertical}
       <h2 id="problem-title">Many teachers have AI tools and little training.</h2>
     </div>
     <div class="problems">
-      <div><h3>No real training</h3><p>A login does not show a teacher what AI is good for, or where it goes wrong.</p></div>
+      <div><h3>No training</h3><p>A login does not show a teacher what AI is good for, or where it goes wrong.</p></div>
       <div><h3>Students are already using it</h3><p>School rules written before AI do not cover it. Students need clear rules, and so do teachers.</p></div>
       <div><h3>Built far from the classroom</h3><p>Class periods are short, Chromebooks are shared, some students have IEPs, and the printer is black and white. A lot of AI training and AI products miss that.</p></div>
     </div>
@@ -280,16 +471,16 @@ textarea{min-height:130px;resize:vertical}
   <div class="wrap">
     <div class="section-head">
       <h2 id="services-title">What I offer</h2>
-      <p class="lede">Everything is made by a working teacher who builds real tools, and handed off so your team can keep it going.</p>
+      <p class="lede">I make everything myself, and I hand it off so your team can keep it going.</p>
     </div>
     <div class="buyers">
       <div class="buyer">
         <p class="label">For schools</p>
         <h3 class="buyer-h">Help your teachers use AI well.</h3>
         <ul class="olist">
-          <li><h4>Teacher workshops and coaching</h4><p>Hands-on sessions where every teacher makes something they will use next week, then checks it before it reaches a student.</p></li>
+          <li><h4>Teacher workshops and coaching</h4><p><span class="nw">Hands-on</span> sessions where every teacher makes something they will use next week, then checks it before it reaches a student. <a class="inline" href="https://dbassin12.github.io/ai-workshop/">See a sample workshop plan</a></p></li>
           <li><h4>Custom classroom tools</h4><p>Short history videos, review games, and worksheets built around your curriculum, your calendar, and your devices.</p></li>
-          <li><h4>AI guidelines for your school</h4><p>Clear rules for staff and students, written with your team, with a one-page version teachers can use in class.</p></li>
+          <li><h4>AI guidelines for your school</h4><p>Clear rules for staff and students, written with your team, with a <span class="nw">one-page</span> version teachers can use in class. <a class="inline" href="https://dbassin12.github.io/ai-guidelines/">See sample guidelines</a></p></li>
           <li><h4>Less paperwork</h4><p>Pacing calendars that absorb sick days, first drafts of weekly updates, and fewer things typed twice.</p></li>
         </ul>
       </div>
@@ -297,10 +488,10 @@ textarea{min-height:130px;resize:vertical}
         <p class="label">For <span class="nw">ed-tech</span> teams</p>
         <h3 class="buyer-h">Make tools teachers will actually use.</h3>
         <ul class="olist">
-          <li><h4>A teacher's eye on your product</h4><p>I use your tool with a real unit and a 38-minute period, and tell you plainly where teachers will use it and where they will drop it.</p></li>
-          <li><h4>Lessons and demos</h4><p>Sample lessons and short videos that show your tool inside a real class, made the way I make my own.</p></li>
+          <li><h4>A teacher's eye on your product</h4><p>I use your tool with a real unit and a <span class="nw">38-minute</span> period, and tell you plainly where teachers will use it and where they will drop it.</p></li>
+          <li><h4>Lessons and demos</h4><p>Sample lessons and short videos that show your tool inside a class, made the way I make my own. <a class="inline" href="https://dbassin12.github.io/shift-happens-guide/">See a teacher guide I wrote</a></p></li>
           <li><h4>Teacher training for your tool</h4><p>Workshops and short guides that help teachers start using your product well.</p></li>
-          <li><h4>Classroom-ready checks</h4><p>Does it work on a shared Chromebook and on a phone? For students with IEPs? On a black-and-white printer? I check before your users find out.</p></li>
+          <li><h4><span class="nw">Classroom-ready</span> checks</h4><p>Does it work on a shared Chromebook and on a phone? For students with IEPs? On a <span class="nw">black-and-white</span> printer? I check these before your users do.</p></li>
         </ul>
       </div>
     </div>
@@ -311,63 +502,63 @@ textarea{min-height:130px;resize:vertical}
 <section class="alt" id="work" aria-labelledby="work-title">
   <div class="wrap">
     <div class="section-head">
-      <h2 id="work-title">Built for real people</h2>
-      <p class="lede">Most of these I made for my own students, and the live ones are free to try. Two are for offices and businesses outside school.</p>
+      <h2 id="work-title">What I have built</h2>
+      <p class="lede">Most of these I made for my own students, and the live ones are free to try. I built the last two outside school.</p>
     </div>
     <div class="work">
       <div class="w wide">
         <figure>
           <div class="films3">
-            <div class="shot"><img src="img/road-to-1789.webp" width="1280" height="720" alt="Title card: The Road to 1789" loading="lazy"></div>
-            <div class="shot"><img src="img/bastille.webp" width="1280" height="720" alt="Title card: The Storming of the Bastille" loading="lazy"></div>
-            <div class="shot"><img src="img/reign-of-terror.webp" width="960" height="540" alt="Title card: The Reign of Terror" loading="lazy"></div>
+            <div class="shot"><img src="img/road-to-1789.webp" width="1280" height="720" alt="Title card: The Road to 1789" srcset="img/road-to-1789-800.webp 800w, img/road-to-1789.webp 1280w" sizes="(min-width:1024px) 390px, (min-width:768px) 62vw, calc(100vw - 40px)" loading="lazy" decoding="async"></div>
+            <div class="shot"><img src="img/bastille.webp" width="1280" height="720" alt="Title card: The Storming of the Bastille" srcset="img/bastille-480.webp 480w, img/bastille-800.webp 800w, img/bastille.webp 1280w" sizes="(min-width:1024px) 195px, (min-width:768px) 31vw, calc(50vw - 25px)" loading="lazy" decoding="async"></div>
+            <div class="shot"><img src="img/reign-of-terror.webp" width="960" height="540" alt="Title card: The Reign of Terror" srcset="img/reign-of-terror-480.webp 480w, img/reign-of-terror.webp 960w" sizes="(min-width:1024px) 195px, (min-width:768px) 31vw, calc(50vw - 25px)" loading="lazy" decoding="async"></div>
           </div>
         </figure>
         <div>
-          <h3>AI videos that teach the French Revolution</h3>
-          <p>A series of short narrated videos for my history class, made from real paintings and prints, with captions on screen and a question at the end for discussion.</p>
+          <h3>Short videos for the French Revolution unit</h3>
+          <p>A series of short narrated videos for my history class, made with AI from historical paintings and prints, with captions on screen. The documentaries end on a question for discussion.</p>
           <div class="links"><a class="textlink" href="https://dbassin12.github.io/history-videos/road-to-1789/">Watch The Road to 1789</a><a class="textlink" href="https://dbassin12.github.io/history-videos/">See all four videos</a></div>
         </div>
       </div>
       <div class="w">
-        <figure><div class="shot"><img src="img/road-to-revolution.webp" width="1400" height="875" alt="Road to Revolution: a 3D town square with a crowd and a stone arch at the end of a brick road" loading="lazy"></div></figure>
+        <figure><div class="shot"><img src="img/road-to-revolution.webp" width="1400" height="875" alt="Road to Revolution: a 3D town square with a crowd and a stone arch at the end of a brick road" srcset="img/road-to-revolution-800.webp 800w, img/road-to-revolution.webp 1400w" sizes="(min-width:1200px) 540px, (min-width:768px) calc(50vw - 52px), calc(100vw - 40px)" loading="lazy" decoding="async"></div></figure>
         <h3>Road to Revolution</h3>
-        <p>A 3D review game for the Enlightenment and the French Revolution. Hobbes, Locke and Rousseau teach inside the world, all 213 lines are spoken, and it runs on a phone.</p>
+        <p>A 3D review game for the Enlightenment and the French Revolution. Hobbes, Locke, Montesquieu, and Rousseau teach inside the world, all 213 lines are spoken, and it runs on a phone.</p>
         <a class="textlink" href="https://road-to-revolution.vercel.app">Play Road to Revolution</a>
       </div>
       <div class="w">
-        <figure><div class="shot"><img src="img/arcade-screens.webp" width="1400" height="875" alt="Two phone screens from an AP Macro game arcade: the game list, and Fed Chair asking you to pick a crisis" loading="lazy"></div></figure>
-        <h3>AP Macro games</h3>
+        <figure><div class="shot"><img src="img/arcade-screens.webp" width="1400" height="875" alt="Two phone screens from an AP Macro game arcade: the game list, and Fed Chair asking you to pick a crisis" srcset="img/arcade-screens-800.webp 800w, img/arcade-screens.webp 1400w" sizes="(min-width:1200px) 540px, (min-width:768px) calc(50vw - 52px), calc(100vw - 40px)" loading="lazy" decoding="async"></div></figure>
+        <h3>The DRS Econ Arcade</h3>
         <p>Seven arcade games for the skills the AP exam grades: shift the curve a headline moves, run the Fed through a real crisis, find the mistakes on a graph.</p>
         <a class="textlink" href="https://dbassin12.github.io/drs-econ-arcade/">Open the DRS Econ Arcade</a>
       </div>
       <div class="w">
         <figure>
           <div class="sheets">
-            <div class="shot"><img src="img/worksheet-regular.webp" width="855" height="696" alt="Regular worksheet with the original source beside a modified version" loading="lazy"></div>
-            <div class="shot"><img src="img/worksheet-iep.webp" width="855" height="706" alt="IEP version of the same lesson in short boxed parts, each with Locke's original words and a stop-and-check question" loading="lazy"></div>
+            <div class="shot"><img src="img/worksheet-regular.webp" width="855" height="696" alt="Regular worksheet with the original source beside a modified version" srcset="img/worksheet-regular-480.webp 480w, img/worksheet-regular.webp 855w" sizes="(min-width:1200px) 228px, (min-width:768px) calc(21vw - 22px), calc(43vw - 24px)" loading="lazy" decoding="async"></div>
+            <div class="shot"><img src="img/worksheet-iep.webp" width="855" height="706" alt="IEP version of the same lesson in short boxed parts, each with Locke's original words and a stop-and-check question" srcset="img/worksheet-iep-480.webp 480w, img/worksheet-iep.webp 855w" sizes="(min-width:1200px) 228px, (min-width:768px) calc(21vw - 22px), calc(43vw - 24px)" loading="lazy" decoding="async"></div>
           </div>
         </figure>
         <h3>An IEP version of every worksheet</h3>
         <p>History lessons with primary sources and an IEP version that keeps the same thinking: bigger type, more space, and shorter chunks.</p>
       </div>
       <div class="w">
-        <figure><div class="shot"><img src="img/finaid.webp" width="1280" height="800" alt="FinAid Dashboard showing a list of students with aid figures, labeled sample data, not real students" loading="lazy"></div></figure>
+        <figure><div class="shot"><img src="img/finaid.webp" width="1280" height="800" alt="FinAid Dashboard showing a list of students with aid figures, labeled sample data, not real students" srcset="img/finaid-800.webp 800w, img/finaid.webp 1280w" sizes="(min-width:1200px) 540px, (min-width:768px) calc(50vw - 52px), calc(100vw - 40px)" loading="lazy" decoding="async"></div></figure>
         <h3>FinAid Dashboard</h3>
-        <p>Built with a university financial aid counselor. It adjusts the federal aid formula for regional cost of living and K-12 tuition, and shows each step of the math. The demo uses made-up students.</p>
+        <p>Built with a university financial aid counselor. It adjusts the federal aid formula for regional cost of living and <span class="nw">K-12</span> tuition, and shows each step of the math. The demo uses <span class="nw">made-up</span> students.</p>
       </div>
       <div class="w wide text-first">
         <figure class="callflow" aria-labelledby="flow-cap">
           <ol class="flow">
-            <li><span class="num" aria-hidden="true">1</span><div><p class="step-title">A customer calls</p><p class="quote">"Hi, I have a big leak in my bathroom. I'm at 12 Oak Lane. Can someone come today?"</p></div></li>
+            <li><span class="num" aria-hidden="true">1</span><div><p class="step-title">A customer calls</p><p class="quote"><span class="line"><b>Caller:</b> "Hi, I have a big leak in my bathroom. I'm at 12 Oak Lane. Can someone come today?"</span><span class="line"><b>Office:</b> "Yes. A tech can be there in about an hour. The visit is $150."</span></p></div></li>
             <li><span class="num" aria-hidden="true">2</span><div><p class="step-title">AI writes it down and pulls out the job</p>
               <dl class="fields"><dt>Job</dt><dd>Leak repair</dd><dt>Urgency</dt><dd>Emergency</dd><dt>Address</dt><dd>12 Oak Lane</dd><dt>Price quoted</dt><dd>$150</dd><dt>Next step</dt><dd>Tech on site in about an hour</dd></dl></div></li>
-            <li><span class="num" aria-hidden="true">3</span><div><p class="step-title">A new deal is waiting in the CRM</p><p class="deal">Leak repair, 12 Oak Lane <span>&middot; $150 &middot; Emergency</span></p></div></li>
+            <li><span class="num" aria-hidden="true">3</span><div><p class="step-title">A new deal is waiting in the CRM</p><p class="deal">Leak repair, 12 Oak Lane<span class="sep"> &middot; </span><span class="amt">$150 &middot; Emergency</span></p></div></li>
           </ol>
-          <figcaption id="flow-cap">A made-up sample call, to show how it works.</figcaption>
+          <figcaption id="flow-cap">A <span class="nw">made-up</span> sample call, to show how it works.</figcaption>
         </figure>
         <div>
-          <h3>A call system for a plumbing company</h3>
+          <h3>A call system that turns a phone call into a CRM deal</h3>
           <p>When a call ends, AI writes down what was said and pulls out the address, the job, how urgent it is, the price quoted, and the next step. A new deal shows up in the CRM in under a minute. It is designed to work with the phone number and CRM a business already has. Built with Twilio, Whisper, an LLM, and Pipedrive.</p>
         </div>
       </div>
@@ -381,23 +572,23 @@ textarea{min-height:130px;resize:vertical}
       <h2 id="how-title">How it works</h2>
     </div>
     <ol class="steps">
-      <li><h3>A free 30-minute call</h3><p>We talk about your school or your product, and what you want to fix. If AI is not the answer, I will tell you.</p></li>
+      <li><h3>A free <span class="nw">30-minute</span> call</h3><p>We talk about your school or your product, and what you want to fix. If AI is not the answer, I will tell you.</p></li>
       <li><h3>A small pilot</h3><p>One workshop, one department, or one feature tried in a real unit. Something you can see working within a few weeks.</p></li>
       <li><h3>Hand it off</h3><p>Your team learns to make and check their own. You keep everything we build.</p></li>
     </ol>
     <div class="who">
       <span class="k">Good fit for:</span>
-      <span class="c">Day schools and yeshivas</span><span class="c">Private and charter schools</span><span class="c">Departments</span><span class="c"><span class="nw">Ed-tech</span> startups</span><span class="c">Product and content teams</span>
+      <span class="c">Day schools and yeshivas</span><span class="c">Independent and charter schools</span><span class="c">Departments</span><span class="c"><span class="nw">Ed-tech</span> startups</span><span class="c">Product and content teams</span>
     </div>
   </div>
 </section>
 
 <section class="alt" id="about" aria-labelledby="about-title">
   <div class="wrap about">
-    <img src="img/headshot.webp" width="640" height="640" alt="David Bassin" loading="lazy">
+    <img src="img/headshot.webp" width="640" height="640" alt="David Bassin" srcset="img/headshot-480.webp 480w, img/headshot.webp 640w" sizes="(min-width:1024px) 296px, (min-width:768px) 220px, 200px" loading="lazy" decoding="async">
     <div>
-      <h2 id="about-title">A teacher who builds, not an engineer who presents.</h2>
-      <p class="lede" style="margin-top:16px">I build AI tools. My students use the history videos and review games I make for class, and outside school I've built a call system for a plumbing company and a financial aid dashboard with a university counselor. I teach AP Macroeconomics and Global History at a high school on Long Island, and I have worked in schools since 2016.</p>
+      <h2 id="about-title">A teacher who builds.</h2>
+      <p class="lede" style="margin-top:16px">I teach AP Macroeconomics and Global History at a high school on Long Island, and I build the learning tools my students use. Outside school, I've also built a call system that turns phone calls into CRM deals, and a financial aid dashboard with a university counselor. I have worked in schools since 2016.</p>
       <p class="muted">Before teaching, I worked in IT support. On my school's AI Task Force, I coach teachers and helped write our AI guidelines. I check everything AI makes before anyone else sees it. I hold an M.S. in Education from Pace University.</p>
       <a class="textlink" href="https://dbassin12.github.io/">See more of my work</a>
     </div>
@@ -409,7 +600,7 @@ textarea{min-height:130px;resize:vertical}
     <div>
       <h2 id="contact-title">Tell me about your school or your product.</h2>
       <p class="lede" style="margin-top:16px">A few lines is plenty: who you are, what you teach, run, or build, and what you would like AI to help with. I answer every message myself.</p>
-      <p class="direct">Rather talk? <a href="https://calendly.com/davidbassin12/30min?hide_gdpr_banner=1&amp;utm_source=website&amp;utm_content=contact">Book a free 30-minute call</a>, or email <a href="mailto:david@bassinconsulting.com">david@bassinconsulting.com</a>.</p>
+      <p class="direct">Rather talk? <a href="https://calendly.com/davidbassin12/30min?hide_gdpr_banner=1&amp;utm_source=website&amp;utm_content=contact">Book a free <span class="nw">30-minute call</span></a>, or email <a href="mailto:david@bassinconsulting.com">david@bassinconsulting.com</a>.</p>
     </div>
     <div>
       <form id="contactForm" novalidate>
@@ -417,10 +608,12 @@ textarea{min-height:130px;resize:vertical}
         <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
         <div class="field"><label for="f-company">School or company <span class="opt">(optional)</span></label><input id="f-company" name="company" autocomplete="organization"></div>
         <div class="field"><label for="f-message">Message</label><textarea id="f-message" name="message" required></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="f-website">Leave this field empty</label><input id="f-website" name="website" tabindex="-1" autocomplete="off"></div>
         <button class="btn btn-primary" type="submit" id="contactSubmitBtn">Send message</button>
         <p class="status" id="formStatus" role="status" aria-live="polite" tabindex="-1"></p>
       </form>
       <div class="sent" id="contactSuccess" role="status" tabindex="-1">
+        <svg class="check" viewBox="0 0 52 52" aria-hidden="true" focusable="false"><path pathLength="1" d="M11 27.5c3.4 2.7 6.6 6 9.4 9.6 5.2-9.4 11.4-17.6 20.6-24.6"/></svg>
         <h3>Message sent.</h3>
         <p class="muted" style="margin:0">Thanks. I'll write back within a few days.</p>
       </div>
@@ -434,7 +627,7 @@ textarea{min-height:130px;resize:vertical}
     <div class="foot-grid">
       <div>
         <a class="brand" href="#top"><span class="mark" aria-hidden="true"><span>B</span></span><span class="wordmark">BASSIN CONSULTING</span></a>
-        <p class="tag">AI training and tools for schools and <span class="nw">ed-tech</span> teams.</p>
+        <p class="tag">The deliverable is not just the tool. It is the understanding.</p>
       </div>
       <ul>
         <li><a href="mailto:david@bassinconsulting.com">david@bassinconsulting.com</a></li>
@@ -463,7 +656,7 @@ textarea{min-height:130px;resize:vertical}
     if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){fields.email.setAttribute('aria-invalid','true'); show('That email address looks incomplete.',fields.email); return;}
     btn.disabled=true; btn.textContent='Sending...'; status.className='status';
     try{
-      var res=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:name,email:email,company:form.company.value.trim(),message:message})});
+      var res=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:name,email:email,company:form.company.value.trim(),message:message,website:form.website.value})});
       if(!res.ok) throw new Error('Failed');
       form.style.display='none';
       var sent=document.getElementById('contactSuccess'); sent.classList.add('show'); sent.focus();
@@ -472,6 +665,141 @@ textarea{min-height:130px;resize:vertical}
       show('That didn\'t go through. Please email <a href="mailto:david@bassinconsulting.com">david@bassinconsulting.com</a> instead.');
     }
   });
+})();
+</script>
+<script data-bc="motion">
+(function(){
+  var d=document, root=d.documentElement, W=window;
+  W.__bc=1;
+  W.addEventListener('beforeprint',function(){ root.classList.add('no-mo'); });
+  var mm=function(q){ return W.matchMedia ? W.matchMedia(q) : {matches:false}; };
+  var reduce=mm('(prefers-reduced-motion: reduce)').matches;
+  var desk=mm('(min-width: 768px)');
+  var hasIO='IntersectionObserver' in W;
+  var raf=W.requestAnimationFrame || function(f){ return setTimeout(f,16); };
+  var safe=function(f){ return function(){ try{ f.apply(this,arguments); }catch(e){ root.classList.add('no-mo'); } }; };
+  try{
+    /* nav: tighten on scroll, reading line, active section, hide on scroll down (phones) */
+    var nav=d.querySelector('.nav');
+    if(nav){
+      var bar=d.createElement('span'); bar.className='progress'; bar.setAttribute('aria-hidden','true'); nav.appendChild(bar);
+      var lastY=W.pageYOffset, queued=false;
+      var update=safe(function(){
+        queued=false;
+        var y=W.pageYOffset, max=root.scrollHeight-W.innerHeight;
+        nav.classList.toggle('tight', y>12);
+        bar.style.transform='scaleX('+(max>0 ? Math.min(1,Math.max(0,y/max)) : 0).toFixed(4)+')';
+        if(!desk.matches && !reduce && !nav.contains(d.activeElement)){
+          if(y>lastY+4 && y>160) nav.classList.add('away');
+          else if(y<lastY-4 || y<=160) nav.classList.remove('away');
+        } else nav.classList.remove('away');
+        lastY=y;
+      });
+      W.addEventListener('scroll',function(){ if(!queued){ queued=true; raf(update); } },{passive:true});
+      W.addEventListener('resize',update);
+      nav.addEventListener('focusin',function(){ nav.classList.remove('away'); });
+      update();
+      if(hasIO){
+        var map={};
+        [].forEach.call(nav.querySelectorAll('ul a[href^="#"]'),function(a){ var s=d.getElementById(a.getAttribute('href').slice(1)); if(s) map[s.id]=a; });
+        var aio=new IntersectionObserver(function(es){ es.forEach(function(e){ var a=map[e.target.id]; if(a) a.classList.toggle('on',e.isIntersecting); }); },{rootMargin:'-42% 0px -52% 0px'});
+        Object.keys(map).forEach(function(id){ aio.observe(d.getElementById(id)); });
+      }
+    }
+
+    if(reduce || root.classList.contains('no-mo')) return;
+
+    /* hero: headline lines rise into place, then the pen underline draws */
+    var h1=d.querySelector('.hero h1'), sora='800 1em Sora', started=false;
+    var fontOK=!(d.fonts && d.fonts.forEach && d.fonts.load);
+    if(!fontOK) d.fonts.forEach(function(f){ if(/sora/i.test(f.family) && String(f.weight).indexOf('800')>-1 && f.status==='loaded') fontOK=true; });
+    var drawPen=function(){ var p=h1 && h1.querySelector('.pen'); if(p) raf(function(){ raf(function(){ p.classList.add('drawn'); }); }); };
+    var splitLines=function(el){
+      var html=el.innerHTML, kids=[].slice.call(el.childNodes), units=[];
+      el.textContent='';
+      kids.forEach(function(n){
+        if(n.nodeType===3){
+          n.nodeValue.split(/(\s+)/).forEach(function(t){
+            if(!t) return;
+            var sp=/^\s+$/.test(t), node=sp ? d.createTextNode(t) : d.createElement('span');
+            if(!sp) node.textContent=t;
+            el.appendChild(node); units.push({n:node, sp:sp, w:!sp});
+          });
+        } else { el.appendChild(n); units.push({n:n}); }
+      });
+      var lines=[], cur=null, top=null;
+      units.forEach(function(u){
+        if(u.sp){ if(cur) cur.push(u); return; }
+        var t=u.n.offsetTop;
+        if(top===null || Math.abs(t-top)>3){ cur=[]; lines.push(cur); top=t; }
+        cur.push(u);
+      });
+      el.textContent='';
+      lines.forEach(function(line,i){
+        var o=d.createElement('span'), inr=d.createElement('span');
+        o.className='ln'; inr.className='ln-i'; inr.style.transitionDelay=(i*60)+'ms';
+        line.forEach(function(u){ inr.appendChild(u.w ? d.createTextNode(u.n.textContent) : u.n); });
+        o.appendChild(inr); el.appendChild(o);
+      });
+      return {n:lines.length, restore:function(){ el.innerHTML=html; }};
+    };
+    var start=function(){
+      if(started) return; started=true;
+      raf(function(){
+        var s=null;
+        try{ if(desk.matches && fontOK && h1){ s=splitLines(h1); h1.classList.add('split'); } }catch(e){ s=null; }
+        root.classList.add('go');
+        if(s){
+          raf(function(){ raf(function(){ h1.classList.add('lines-in'); }); });
+          setTimeout(safe(function(){ s.restore(); h1.classList.remove('split','lines-in'); drawPen(); }), 540+(s.n-1)*60);
+        } else if(desk.matches) setTimeout(drawPen, 520);
+      });
+    };
+    if(!desk.matches || fontOK) start();
+    else { d.fonts.load(sora).then(function(){ fontOK=true; start(); },function(){}); setTimeout(start, 150); }
+    setTimeout(function(){ if(!root.classList.contains('go')) root.classList.add('no-mo'); }, 3000);
+
+    if(!hasIO) return;
+
+    /* quiet reveals as sections come into view */
+    var rio=new IntersectionObserver(function(es){
+      var k=0;
+      es.forEach(function(e){
+        if(!e.isIntersecting) return;
+        var el=e.target, delay=k++*80; rio.unobserve(el);
+        el.style.setProperty('--d',delay+'ms'); el.classList.add('in');
+        setTimeout(function(){ el.classList.remove('rv','in'); el.style.removeProperty('--d'); }, delay+1100);
+      });
+    },{rootMargin:'0px 0px -6% 0px', threshold:0.08});
+    var watch=function(el){ el.classList.add('rv'); rio.observe(el); };
+    [].forEach.call(d.querySelectorAll('.section-head,.problems > div,.buyer,.note-line,.work > .w,.who,.about > img,.about > div,.contact > div'),watch);
+
+    /* how it works: the line draws from step to step (desktop) */
+    var steps=d.querySelector('.steps');
+    if(steps){
+      if(desk.matches){
+        steps.classList.add('seq');
+        var sio=new IntersectionObserver(function(es){ if(es[0].isIntersecting){ sio.disconnect(); steps.classList.add('in'); } },{threshold:0.35});
+        sio.observe(steps);
+      } else watch(steps);
+    }
+
+    /* call system card: quote, then fields, then the deal (desktop), with Replay */
+    var flow=d.querySelector('.callflow');
+    if(flow && desk.matches){
+      flow.classList.add('seq');
+      var btn=d.createElement('button');
+      btn.type='button'; btn.className='replay'; btn.setAttribute('aria-label','Replay the sample call');
+      btn.innerHTML='<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M13.2 9.4A5.4 5.4 0 1 1 11.6 4.2M12.2 1.8v2.9H9.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Replay';
+      flow.appendChild(btn);
+      btn.addEventListener('click',function(){
+        flow.classList.add('reset'); flow.classList.remove('play'); void flow.offsetWidth; flow.classList.remove('reset');
+        raf(function(){ raf(function(){ flow.classList.add('play'); }); });
+      });
+      var fio=new IntersectionObserver(function(es){ if(es[0].isIntersecting){ fio.disconnect(); setTimeout(function(){ flow.classList.add('play'); },180); } },{threshold:0.45});
+      fio.observe(flow);
+    }
+  }catch(err){ root.classList.add('no-mo'); }
 })();
 </script>
 <script defer src="/_vercel/insights/script.js"></script>

@@ -437,6 +437,41 @@ form .btn{width:100%;margin-top:4px}
 @keyframes demo-blink{50%{opacity:.25}}
 @keyframes demo-in{from{opacity:0;transform:translateY(6px)}}
 
+/* try it: tabs and the AI check */
+.demo-tabs{display:inline-flex;flex-wrap:wrap;gap:4px;background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:5px;margin-bottom:18px}
+.demo-tabs button{font:700 15px/1.2 var(--display);color:var(--muted);background:none;border:0;border-radius:999px;padding:12px 18px;cursor:pointer;transition:background-color .25s,color .25s,box-shadow .25s}
+.demo-tabs button[aria-selected="true"]{background:var(--plum);color:var(--cream);box-shadow:0 8px 18px -10px rgba(42,37,48,.6)}
+.spot{display:grid;gap:clamp(20px,3vw,36px);background:var(--linen);border:1px solid var(--line-soft);border-radius:24px;padding:clamp(20px,3vw,36px)}
+@media (min-width:900px){.spot{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);align-items:start}}
+.spot-paper{position:relative;background:#FFFEFB;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:20px 18px 18px}
+.spot-paper::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;border-radius:18px 18px 0 0;background:repeating-linear-gradient(90deg,rgba(192,120,66,.55) 0 10px,transparent 10px 16px);opacity:.6}
+.spot-tag{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;font:700 12px/1.2 var(--display);letter-spacing:.16em;text-transform:uppercase;color:var(--plum)}
+.spot-tag b{border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-weight:700}
+.spot-tag span{letter-spacing:.04em;text-transform:none;font:600 14px var(--display);color:var(--copper-ink)}
+.spot-lines{list-style:none;margin:12px 0 0;padding:0;counter-reset:ln}
+.spot-lines li{counter-increment:ln;border-top:1px solid rgba(42,37,48,.07)}
+.spot-lines li:first-child{border-top:0}
+.spot-lines button{display:grid;grid-template-columns:22px 1fr;gap:8px;width:100%;text-align:left;font:400 17px/1.6 var(--body);color:var(--plum);background:none;border:0;border-radius:10px;padding:10px 8px;cursor:pointer;transition:background-color .2s}
+.spot-lines button::before{content:counter(ln);font:700 13px/1.9 var(--display);color:var(--muted)}
+.spot-lines .t{min-width:0}
+.spot-lines button:hover:not([aria-disabled="true"]){background:rgba(192,120,66,.08)}
+.spot-lines button[aria-disabled="true"]{cursor:default}
+.spot-lines .bad{transition:color .3s}
+.spot-lines .caught .bad{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--copper);text-decoration-thickness:2px}
+.spot-fix{display:block;margin-top:4px;font:italic 600 16px/1.5 var(--body);color:var(--copper-ink)}
+.spot-ok{display:inline-block;margin-left:8px;font:700 12px/1 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);vertical-align:2px}
+.spot-side{display:grid;gap:14px;align-content:start}
+.spot-count{font:700 15px var(--display);color:var(--plum)}
+.spot-count b{display:block;font:800 clamp(40px,4vw,52px)/1 var(--display);letter-spacing:-.04em;color:var(--copper);margin-bottom:4px}
+.spot-out{font-size:16.5px;line-height:1.6;color:var(--ink)}
+.spot-out b{font-family:var(--display);color:var(--plum)}
+.spot-side .btn{justify-self:start;min-height:46px;font-size:16px;padding:0 18px}
+@media (prefers-reduced-motion:no-preference){
+  .spot-fix,.spot-ok{animation:demo-in .45s var(--ease) both}
+  .spot-count.bump b{animation:spot-bump .5s var(--ease)}
+}
+@keyframes spot-bump{40%{transform:scale(1.18)}}
+
 /* motion: page load and scroll reveals */
 @media (prefers-reduced-motion:no-preference){
   .js .ld{opacity:0;transform:translateY(16px);animation:rise .9s var(--ease) forwards;animation-delay:calc(var(--d,0) * 90ms + 80ms)}
@@ -573,11 +608,33 @@ form .btn{width:100%;margin-top:4px}
   <div class="head-2">
     <div>
       <p class="label">Try it yourself</p>
-      <h2 id="try-title">One round of a game I built for my class.</h2>
+      <h2 id="try-title">See how I teach, in two minutes.</h2>
     </div>
-    <p class="sub">This is the kind of game I help teachers build from their own units: a real headline, one decision, and a one-line why.</p>
+    <p class="sub">Two short demos: the AI check I teach teachers, and a round of a game like the ones I help them build.</p>
   </div>
-  <div class="demo" id="demo" data-rv>
+  <div data-rv>
+  <div class="demo-tabs" role="tablist" aria-label="Choose a demo"><button type="button" role="tab" id="tab-spot" aria-controls="panel-spot" aria-selected="true">Spot the AI's mistake</button><button type="button" role="tab" id="tab-game" aria-controls="panel-game" aria-selected="false" tabindex="-1">Play one round</button></div>
+<div id="panel-spot" role="tabpanel" aria-labelledby="tab-spot">
+  <div class="spot" id="spot">
+    <div class="spot-paper">
+      <p class="spot-tag"><b>AI draft</b><span>Answer key: inflation and the Fed</span></p>
+      <ol class="spot-lines" id="spot-lines">
+        <li><button type="button"><span class="t">Inflation is a general rise in the price level across the whole economy.</span></button></li>
+        <li><button type="button" data-fix="It raises interest rates, so people borrow and spend less." data-why="AI flipped the tool. To slow inflation, the Fed raises rates."><span class="t">When the Fed wants to slow inflation, it <span class="bad">lowers interest rates so people borrow more</span>.</span></button></li>
+        <li><button type="button"><span class="t">The CPI tracks the price of a fixed basket of goods and services that a typical household buys.</span></button></li>
+        <li><button type="button"><span class="t">In 1980, Fed Chair Paul Volcker raised interest rates sharply to bring inflation down.</span></button></li>
+        <li><button type="button" data-fix="In the short run, lower unemployment often comes with higher inflation. That trade-off is the Phillips curve." data-why="AI overgeneralized. In my class, &quot;always&quot; is a red flag."><span class="t"><span class="bad">Unemployment and inflation always rise and fall together.</span></span></button></li>
+      </ol>
+    </div>
+    <div class="spot-side">
+      <p class="spot-count" id="spot-count" aria-live="polite"><b>0 of 2</b>mistakes found</p>
+      <p class="spot-out" id="spot-out" aria-live="polite">This AI draft has two mistakes. Click each sentence you think is wrong.</p>
+      <button type="button" class="btn btn-ghost" id="spot-reset" hidden>Try it again</button>
+    </div>
+  </div>
+</div>
+<div id="panel-game" role="tabpanel" aria-labelledby="tab-game" hidden>
+  <div class="demo" id="demo">
     <div class="demo-q">
       <p class="demo-eyebrow"><span class="dot" aria-hidden="true"></span>Breaking news <span class="demo-count" id="demo-count">1 of 4</span></p>
       <p class="demo-headline" id="demo-headline">Frost destroys a third of Brazil's coffee crop</p>
@@ -620,6 +677,8 @@ form .btn{width:100%;margin-top:4px}
       </svg>
       <figcaption id="demo-cap">Start: the market at equilibrium.</figcaption>
     </figure>
+  </div>
+</div>
   </div>
 </section>
 
@@ -1082,6 +1141,62 @@ form .btn{width:100%;margin-top:4px}
     opts[0].focus({preventScroll:true});
   });
   load(0);
+})();
+</script>
+<script>
+/* Try it: tabs, and the AI check (find the two mistakes in an AI draft) */
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('#try .demo-tabs [role="tab"]'));
+  var panels=tabs.map(function(t){ return document.getElementById(t.getAttribute('aria-controls')); });
+  var pick=function(i,focus){
+    tabs.forEach(function(t,j){ t.setAttribute('aria-selected', j===i); t.tabIndex=(j===i)?0:-1; });
+    panels.forEach(function(p,j){ p.hidden=(j!==i); });
+    if(focus) tabs[i].focus();
+  };
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){ pick(i); });
+    t.addEventListener('keydown',function(e){
+      if(e.key==='ArrowRight'||e.key==='ArrowLeft'){ e.preventDefault(); pick((i+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length,true); }
+    });
+  });
+
+  var list=document.getElementById('spot-lines'); if(!list) return;
+  var lines=[].slice.call(list.querySelectorAll('button'));
+  var count=document.getElementById('spot-count'), out=document.getElementById('spot-out'), reset=document.getElementById('spot-reset');
+  var total=lines.filter(function(b){ return b.hasAttribute('data-fix'); }).length, found=0;
+  var original=lines.map(function(b){ return b.innerHTML; });
+  var setCount=function(){
+    count.innerHTML='<b>'+found+' of '+total+'</b>mistakes found';
+    count.classList.remove('bump'); void count.offsetWidth; count.classList.add('bump');
+  };
+  var addNote=function(b,cls,text){ var s=document.createElement('span'); s.className=cls; s.textContent=text; (b.querySelector('.t')||b).appendChild(s); return s; };
+  lines.forEach(function(b){
+    b.addEventListener('click',function(){
+      if(b.getAttribute('aria-disabled')==='true') return;
+      b.setAttribute('aria-disabled','true');
+      if(b.hasAttribute('data-fix')){
+        found++; b.parentNode.classList.add('caught');
+        addNote(b,'spot-fix','Fix: '+b.getAttribute('data-fix'));
+        setCount();
+        if(found===total){
+          out.innerHTML='<b>You found both.</b> That is the check I teach: read AI like a grader, and fix it before it reaches a student. Teachers leave my workshop with a short checklist for this.';
+          lines.forEach(function(o){ o.setAttribute('aria-disabled','true'); });
+          reset.hidden=false;
+        } else {
+          out.innerHTML='<b>Caught one.</b> '+b.getAttribute('data-why')+' One more to go.';
+        }
+      } else {
+        addNote(b,'spot-ok','Checks out');
+        out.innerHTML='<b>That one checks out.</b> Keep reading like a grader.';
+      }
+    });
+  });
+  reset.addEventListener('click',function(){
+    found=0; setCount();
+    lines.forEach(function(b,i){ b.innerHTML=original[i]; b.removeAttribute('aria-disabled'); b.parentNode.classList.remove('caught'); });
+    out.textContent='This AI draft has two mistakes. Click each sentence you think is wrong.';
+    reset.hidden=true; lines[0].focus({preventScroll:true});
+  });
 })();
 </script>
 </body>
